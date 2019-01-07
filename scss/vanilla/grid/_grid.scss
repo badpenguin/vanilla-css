@@ -56,7 +56,7 @@ $vanilla-grid-gutter-size: 2em;
 	// NEW behavior: fall back to sm-1-1 and need grid-auto or cell-auto for auto size
 	@include from_breakpoint(small) {
 		&.grid-auto .cell {
-			@include flex(1, 0, auto);
+			@include flex(1, 0, 0);
 		}
 
 		// ... or can grow automatically
