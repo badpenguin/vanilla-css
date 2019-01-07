@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Vanilla CSS: Images, General, Filters</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<link href="vanilla.css" rel="stylesheet" type="text/css"/>
+		<link href="test.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body class="test test-margin">
+
+		<div class="container-fluid">
+
+			<h1>Images</h1>
+			<p>A squared 300x300 fixed box area with dotted border it is used to show the test.</p>
+
+			<h2>Images are responsive by default; .filter-grayscale example</h2>
+			<p>Try to resize the screen for seeing the results.</p>
+			<div class="test-squaredimagebox">
+				<img class="filter-grayscale" src="https://unsplash.it/400/300">
+			</div>
+
+			<h2>.reset will make image non-responsive; .filter-blur example</h2>
+			<div class="test-squaredimagebox">
+				<img class="reset filter-blur" src="https://unsplash.it/400/300">
+			</div>
+
+			<h2>.cover.circular</h2>
+			<div>
+				<img class="test-squaredimagebox cover circular" src="https://unsplash.it/400/300">
+			</div>
+
+			<h2>.cover.rounded</h2>
+			<div>
+				<img class="test-squaredimagebox cover rounded" src="https://unsplash.it/400/300">
+			</div>
+
+
+			<h2>.contain will apply "object-fit: scale-down"</h2>
+			<div>
+				<img class="test-squaredimagebox contain" src="https://unsplash.it/400/300">
+			</div>
+
+			<h2>.cover will apply "object-fit: cover"</h2>
+			<div class="">
+				<img class="test-squaredimagebox cover" src="https://unsplash.it/400/300">
+			</div>
+
+			<h2>.responsive on tag IFRAME</h2>
+			<div class="test-squaredimagebox">
+				<iframe class="responsive" width="560" height="315" src="https://www.youtube-nocookie.com/embed/8xNOH5QfHQk?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+
+			<h2>.responsive on tag VIDEO</h2>
+			<div class="test-squaredimagebox">
+
+				<video class="responsive" idth="640" height="360" controls="" data-chrome-better-html5-video-type="normal">
+					<!-- MP4 must be first for iPad! -->
+					<source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4"><!-- Safari / iOS, IE9 -->
+					<source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm"><!-- Chrome10+, Ffx4+, Opera10.6+ -->
+					<source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg"><!-- Firefox3.6+ / Opera 10.5+ -->
+					<!-- fallback to Flash: -->
+					<object width="640" height="360" type="application/x-shockwave-flash" data="player.swf">
+						<!-- Firefox uses the `data` attribute above, IE/Safari uses the param below -->
+						<param name="movie" value="player.swf">
+						<param name="flashvars" value="autostart=true&amp;controlbar=over&amp;image=poster.jpg&amp;file=http://clips.vorwaerts-gmbh.de/VfE_flash.mp4">
+						<!-- fallback image -->
+						<img src="poster.jpg" width="640" height="360" alt="Big Buck Bunny" title="No video playback capabilities, please download the video below">
+					</object>
+					<p>Your browser does not support H.264/MP4.</p>
+				</video>
+
+
+			</div>
+
+
+			<h2>.responsive on tag OBJECT for old flash videos</h2>
+			<div class="test-squaredimagebox">
+
+				<object class="responsive" width="640" height="360" type="application/x-shockwave-flash" data="player.swf">
+					<!-- Firefox uses the `data` attribute above, IE/Safari uses the param below -->
+					<param name="movie" value="player.swf">
+					<param name="flashvars" value="autostart=false&amp;controlbar=over&amp;image=poster.jpg&amp;file=http://clips.vorwaerts-gmbh.de/VfE_flash.mp4">
+					<!-- fallback image -->
+					<p>Your browser does not support Flash.</p>
+				</object>
+
+
+			</div>
+
+		</div>
+
+		<script src="menu.js"></script>
+
+	</body>
+</html>

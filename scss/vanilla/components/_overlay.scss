@@ -1,0 +1,139 @@
+
+.cover-parent {
+	position: relative;
+	overflow: hidden;
+}
+
+.cover-child {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	&.cover-inline {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%,-50%);
+		transform: translate(-50%,-50%);
+	}
+
+	&.cover-center {
+		@extend .flex;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&.cover-top {
+		bottom: auto;
+	}
+
+	&.cover-bottom {
+		top: auto;
+	}
+
+	&.cover-left {
+		right: auto;
+	}
+
+	&.cover-right {
+		left: auto;
+	}
+
+	&.cover-top-left {
+		bottom: auto;
+		right: auto;
+	}
+
+	&.cover-top-right {
+		bottom: auto;
+		left: auto;
+	}
+
+	&.cover-bottom-left {
+		top: auto;
+		right: auto;
+	}
+
+	&.cover-bottom-right {
+		top: auto;
+		left: auto;
+	}
+
+}
+
+
+.cover-overlay-opacity {
+	.cover-child {
+		opacity: 0;
+		transition: .5s ease;
+		background-color: #008CBA;
+	}
+
+	&:hover	.cover-child {
+		opacity: 1;
+	}
+}
+
+.cover-overlay-bottom {
+	.cover-child {
+		height: 0;
+		transition: .5s ease;
+		background-color: #008CBA;
+		top: auto;
+	}
+
+	&:hover	.cover-child {
+		height: 100%;
+	}
+}
+
+
+.cover-overlay-top {
+	.cover-child {
+		bottom: 100%;
+		height: 0;
+		transition: .5s ease;
+		background-color: #008CBA;
+		//top: auto;
+		overflow: hidden;
+	}
+
+	&:hover	.cover-child {
+		bottom: 0;
+		height: 100%;
+	}
+}
+
+.cover-overlay-left {
+	.cover-child {
+		width: 0;
+		transition: .5s ease;
+		background-color: #008CBA;
+		overflow: hidden;
+	}
+
+	&:hover	.cover-child {
+		width: 100%;
+	}
+}
+
+
+.cover-overlay-right {
+	.cover-child {
+		left: 100%;
+		width: 0;
+		transition: .5s ease;
+		background-color: #008CBA;
+		//top: auto;
+		overflow: hidden;
+	}
+
+	&:hover	.cover-child {
+		left: 0;
+		width: 100%;
+	}
+}

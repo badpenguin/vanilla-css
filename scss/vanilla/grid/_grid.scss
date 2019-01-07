@@ -1,0 +1,92 @@
+/*
+ * Thanks to
+ * - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ */
+
+$vanilla-grid-gutter-size: 2em;
+
+@mixin cell-builder($num-cells, $dim:''){
+	@for $i from 1 through $num-cells {
+		@for $j from 1 through $i {
+			.cell.#{$dim}-#{$j}-#{$i}{
+				@include flex(0, 0, (100%/$i)*$j );
+			}
+		}
+	}
+}
+
+@mixin flex-item-order-builder($num-cells, $dim:''){
+	@for $i from 0 to $num-cells{
+		.order-#{$dim}-#{$i + 1}{
+			@include flex-item-order( $i + 1 );
+		}
+	}
+}
+
+
+.grid {
+	@extend .flex;
+
+	// Basic Grid
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: space-between;
+
+	// GUTTER (it still needs a bit more testing)
+	&.grid-gutter
+	{
+		margin-right: -($vanilla-grid-gutter-size/2);
+		margin-left: -($vanilla-grid-gutter-size/2);
+
+		> .cell {
+			padding-right: ($vanilla-grid-gutter-size/2);
+			padding-left: ($vanilla-grid-gutter-size/2);
+		}
+	}
+
+
+	// Cells - by default are equal width
+	.cell {
+		//@include flex(1, 0, 0); - OLD behavior was not falling back to sm-1-1, so you always need to specify sm-x-y
+		@include flex(1, 0, 100%);
+	}
+
+	// NEW behavior: fall back to sm-1-1 and need grid-auto or cell-auto for auto size
+	@include from_breakpoint(small) {
+		&.grid-auto .cell {
+			@include flex(1, 0, auto);
+		}
+
+		// ... or can grow automatically
+		.cell.cell-auto {
+			@include flex(1, 0, auto);
+		}
+
+	}
+
+
+	// Fixed size cells, non-responsive
+	@include cell-builder(5, 's');
+
+
+	// Responsive Cells
+
+	@include cell-builder(5, 'sm');
+
+	@include from_breakpoint(small) {
+		@include cell-builder(5, 'md');
+	}
+	@include from_breakpoint(medium) {
+		@include cell-builder(5, 'lg');
+	}
+	@include from_breakpoint(large) {
+		@include cell-builder(5, 'xlg');
+	}
+	@include from_breakpoint(x-large) {
+		@include cell-builder(5, 'xxlg');
+	}
+
+}
+

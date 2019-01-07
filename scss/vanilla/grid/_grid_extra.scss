@@ -1,0 +1,51 @@
+.grid {
+
+	&.grid-equalize {
+
+		> .cell {
+			@extend .flex;
+			align-items: center;
+		}
+
+	}
+
+	&.grid-pair {
+		> .cell {
+			text-align: left;
+
+			+ .cell {
+				text-align: right;
+			}
+		}
+	}
+
+	&.grid-unpair {
+		> .cell {
+			text-align: right;
+
+			+ .cell {
+				text-align: left;
+			}
+		}
+	}
+
+	// Set order on cells
+	@include flex-item-order-builder(5, 's');
+
+	// Responsive Cells
+	@include flex-item-order-builder(5, 'sm');
+
+	@include from_breakpoint(small) {
+		@include flex-item-order-builder(5, 'md');
+	}
+	@include from_breakpoint(medium) {
+		@include flex-item-order-builder(5, 'lg');
+	}
+	@include from_breakpoint(large) {
+		@include flex-item-order-builder(5, 'xlg');
+	}
+	@include from_breakpoint(x-large) {
+		@include flex-item-order-builder(5, 'xxlg');
+	}
+
+}

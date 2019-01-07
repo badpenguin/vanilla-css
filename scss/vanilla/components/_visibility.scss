@@ -1,0 +1,25 @@
+
+
+@media  (min-width: $vanilla-breakpoint-small+1) {
+	.visible-on-small {
+		display: none;
+	}
+}
+
+@media  (min-width: $vanilla-breakpoint-medium + 1px), (max-width: $vanilla-breakpoint-small) {
+	.visible-on-medium {
+		display: none;
+	}
+}
+
+@media  (min-width: $vanilla-breakpoint-large + 1px), (max-width: $vanilla-breakpoint-medium) {
+	.visible-on-large {
+		display: none;
+	}
+}
+
+@media  (max-width: $vanilla-breakpoint-large)  {
+	.visible-on-x-large {
+		display: none;
+	}
+}

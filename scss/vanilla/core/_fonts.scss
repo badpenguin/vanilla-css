@@ -1,0 +1,57 @@
+/*
+ * Includes:
+ * -Box Sizing: https://css-tricks.com/box-sizing/
+ */
+
+// Native Font, don't touch
+$native-family-base: -apple-system,  system-ui,  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$native-family-monospace: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+$generic-family-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$generic-family-serif: Georgia, "Times New Roman", Times, serif;
+
+// Those are the font we use - override them
+$vanilla-fontstack-base: $native-family-base;
+$vanilla-fontstack-mono: $native-family-monospace;
+$vanilla-fontstack-headers: $native-family-base;
+
+
+// set HTML font base to 16px then use REM
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	font-size: 16px;
+	font-family: $vanilla-fontstack-base;
+	line-height: 1.4;
+	// Border box
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+// Border Box
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+// Normalize button size
+BODY, button, input, select {
+	font-size: 1rem;
+}
+
+// Normalize with native font stack
+
+button, input {
+	font-family: inherit;
+}
+
+
+code, pre, kbd, .text-mono {
+	font-family: $vanilla-fontstack-mono;
+	tab-size: 3;
+}

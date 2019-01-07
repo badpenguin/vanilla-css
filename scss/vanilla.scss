@@ -1,0 +1,45 @@
+/*
+ * You can avoid importing the "components" if you do not need them.
+ */
+@charset "UTF-8";
+
+// RESET
+@import "vanilla/core/reset";
+// We set native font and basic to use REM
+@import "vanilla/core/fonts";
+
+
+// Basic (also some reset merge)
+@import "vanilla/basic/typography";
+@import "vanilla/basic/images";
+@import "vanilla/basic/buttons";
+//TODO @import "vanilla/basic/forms";
+
+
+// Grid Layout
+@import "vanilla/grid/breakpoints";
+@import "vanilla/grid/flexbox";
+@import "vanilla/grid/grid";
+@import "vanilla/grid/grid_extra";      // TODO: probably it can be moved to components except for grid-equalize
+@import "vanilla/grid/flexbox_utils";   // TODO: probably it can be moved to components
+@import "vanilla/grid/layout";
+
+
+// Components
+@import "vanilla/components/image_filters";
+@import "vanilla/components/visibility";
+
+@import "vanilla/components/fabs";
+@import "vanilla/components/pulse";
+
+@import "vanilla/components/overlay";
+@import "vanilla/components/float";
+@import "vanilla/components/shadows";
+
+
+// Animations - requires Vanilla JS for "animate-when-visible"
+@import "vanilla/animations/animations";
+
+
+// Include general at the end so it can override any other class when used
+@import "vanilla/core/general";

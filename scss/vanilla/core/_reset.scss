@@ -1,0 +1,95 @@
+/*! Vanilla CSS by Antonio Gallo - https://www.badpenguin.org/
+*/
+
+
+/*
+ * Based on / Inspired by:
+ * http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
+ * http://meyerweb.com/eric/tools/css/reset/
+ * see also normalize.css
+ */
+
+
+// remove margins
+body, p, figure, ol, ul
+{
+	margin: 0;
+	padding: 0;
+}
+h1, h2, h3, h4, h5, h6, fieldset, blockquote
+{
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+// force block
+main /*, li*/
+{
+	display: block;
+}
+
+b, strong {
+	font-weight: inherit;
+}
+b, strong {
+	font-weight: bolder;
+}
+
+// normalize.css
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:active,
+a:hover {
+	outline-width: 0;
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+}
+
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sub {
+	bottom: -0.25em;
+}
+sup {
+	top: -0.5em;
+}
+
+a, button {
+	color: inherit;
+	transition: .3s;
+}
+
+::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+:focus {
+	outline: 0;
+}
+
+[hidden], .hidden {
+	display: none;
+}

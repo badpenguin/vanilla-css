@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Buttons and Shadows</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<link href="vanilla.css" rel="stylesheet" type="text/css"/>
+		<link href="test.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body class="test test-margin">
+
+		<div class="container">
+			<h1>Buttons</h1>
+			<p>Normalize button to be the same no matter what tag or css is used.</p>
+
+			<h2>Active buttons (with .shadow-X classes)</h2>
+			<a href="#" class="btn">a.btn</a>
+
+			<button>button</button>
+
+			<button class="shadow-1" type="reset">button reset</button>
+
+			<button class="shadow-2" type="submit">button submit</button>
+
+			<input class="shadow-3" type="button" value="input button">
+
+			<input class="shadow-4" type="reset" value="input reset">
+
+			<input class="shadow-5" type="submit" value="input submit">
+
+			<h2>.disabled class</h2>
+			<p>They still get TAB keyboard focus.</p>
+
+			<a href="#" class="btn disabled">a.btn</a>
+
+			<button class="disabled">button</button>
+
+			<button class="disabled" type="reset">button reset</button>
+
+			<button class="disabled" type="submit">button submit</button>
+
+			<input class="disabled" type="button" value="input button">
+
+			<input class="disabled" type="reset" value="input reset">
+
+			<input class="disabled" type="submit" value="input submit">
+
+			<h2>disabled attribute</h2>
+			<p>Note that it will not work on the tag "A".</p>
+
+			<a href="#" disabled class="btn">a.btn</a>
+
+			<button disabled >button</button>
+
+			<button disabled type="reset">button reset</button>
+
+			<button disabled type="submit">button submit</button>
+
+			<input disabled type="button" value="input button">
+
+			<input disabled type="reset" value="input reset">
+
+			<input disabled type="submit" value="input submit">
+
+			<h1>"primary" buttons</h1>
+			<p>use the button-builder() mixin to build your own button's class!.</p>
+
+			<a href="#" class="btn btn-primary">.btn.btn-primary</a>
+			<a href="#" class="btn btn-primary btn-outline">.btn.btn-primary.btn-outline</a>
+			<a href="#" class="btn btn-primary btn-flat">.btn.btn-primary.btn-flat</a>
+			<a href="#" class="btn btn-primary rounded">.btn.btn-primary.rounded</a>
+			<a href="#" title="btn btn-primary circular" class="btn btn-primary circular">C</a>
+		</div>
+
+		<script src="menu.js"></script>
+
+	</body>
+</html>
