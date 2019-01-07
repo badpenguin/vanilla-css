@@ -1,3 +1,6 @@
 \.idea/
 materiale/
 \.sass-cache/
+\.hg/
+\.hgignore
+*.swp
