@@ -1,25 +1,36 @@
 
-
-@media  (min-width: $vanilla-breakpoint-small+1) {
-	.visible-on-small {
+@media  (min-width: $vanilla-breakpoint-small) {
+	.visible-on-x-small {
 		display: none;
 	}
 }
 
 @media  (min-width: $vanilla-breakpoint-medium + 1px), (max-width: $vanilla-breakpoint-small) {
-	.visible-on-medium {
+	.visible-on-small {
 		display: none;
 	}
 }
 
 @media  (min-width: $vanilla-breakpoint-large + 1px), (max-width: $vanilla-breakpoint-medium) {
+	.visible-on-medium {
+		display: none;
+	}
+}
+
+@media  (min-width: $vanilla-breakpoint-x-large + 1px), (max-width: $vanilla-breakpoint-large) {
 	.visible-on-large {
 		display: none;
 	}
 }
 
-@media  (max-width: $vanilla-breakpoint-large)  {
+@media  (min-width: $vanilla-breakpoint-xx-large + 1px), (max-width: $vanilla-breakpoint-x-large) {
 	.visible-on-x-large {
+		display: none;
+	}
+}
+
+@media  (max-width: $vanilla-breakpoint-xx-large)  {
+	.visible-on-xx-large {
 		display: none;
 	}
 }

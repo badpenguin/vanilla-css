@@ -72,21 +72,20 @@ $vanilla-grid-gutter-size: 2em;
 
 
 	// Responsive Cells
-
-	@include cell-builder(5, 'sm');
-
 	@include from_breakpoint(small) {
-		@include cell-builder(5, 'md');
+		@include cell-builder(5, 'sm');
 	}
 	@include from_breakpoint(medium) {
-		@include cell-builder(5, 'lg');
+		@include cell-builder(5, 'md');
 	}
 	@include from_breakpoint(large) {
-		@include cell-builder(5, 'xlg');
+		@include cell-builder(5, 'lg');
 	}
 	@include from_breakpoint(x-large) {
+		@include cell-builder(5, 'xlg');
+	}
+	@include from_breakpoint(xx-large) {
 		@include cell-builder(5, 'xxlg');
 	}
 
 }
-

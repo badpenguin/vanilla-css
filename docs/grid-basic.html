@@ -14,10 +14,12 @@
 	<p>Container Fixed 1000px</p>
 
 	<p>
+		<span class="visible-on-x-small">x-small</span>
 		<span class="visible-on-small">small</span>
 		<span class="visible-on-medium">medium</span>
 		<span class="visible-on-large">large</span>
 		<span class="visible-on-x-large">x-large</span>
+		<span class="visible-on-xx-large">xx-large</span>
 	</p>
 
 
@@ -45,14 +47,19 @@
 	<p>When they shrink to small they will always be 100% width if no other settings is used.</p>
 
 	<div class="grid">
-		<div class="cell sm-1-2">1 sm-1-2</div>
-		<div class="cell sm-1-2">2 sm-1-2</div>
+		<div class="cell s-1-2 sm-1-2">1 s-1-2 sm-1-2</div>
+		<div class="cell s-1-2 sm-1-2">2 s-1-2 sm-1-2</div>
 	</div>
 
 
 	<div class="grid">
 		<div class="cell md-1-2">1 md-1-2</div>
 		<div class="cell md-1-2">2 md-1-2</div>
+	</div>
+
+	<div class="grid">
+		<div class="cell sm-1-2 md-1-2">1 sm-1-2 md-1-2</div>
+		<div class="cell sm-1-2 md-1-2">2 sm-1-2 md-1-2</div>
 	</div>
 
 	<div class="grid">

@@ -33,18 +33,20 @@
 	@include flex-item-order-builder(5, 's');
 
 	// Responsive Cells
-	@include flex-item-order-builder(5, 'sm');
-
 	@include from_breakpoint(small) {
+		@include flex-item-order-builder(5, 'sm');
+	}
+
+	@include from_breakpoint(medium) {
 		@include flex-item-order-builder(5, 'md');
 	}
-	@include from_breakpoint(medium) {
+	@include from_breakpoint(large) {
 		@include flex-item-order-builder(5, 'lg');
 	}
-	@include from_breakpoint(large) {
+	@include from_breakpoint(x-large) {
 		@include flex-item-order-builder(5, 'xlg');
 	}
-	@include from_breakpoint(x-large) {
+	@include from_breakpoint(xx-large) {
 		@include flex-item-order-builder(5, 'xxlg');
 	}
 
