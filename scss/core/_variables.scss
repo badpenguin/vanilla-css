@@ -1,5 +1,5 @@
-$vanilla-version: '0.2';
-$vanilla-text-color: #333 !default;
+$vanilla-use-medium: 1 !default;
+$vanilla-text-color: rgba(0,0,0,.8) !default; // same as #333
 $vanilla-disabled-color: #777 !default;
 
 $vanilla-headers-color: $vanilla-text-color !default;

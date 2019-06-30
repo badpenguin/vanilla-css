@@ -1,6 +1,7 @@
 var menu = [
-	['index.html', 'Vanilla CSS', 'home vanilla-version dont-toggle'],
+	['index.html', 'Vanilla CSS', 'home dont-toggle'],
 	['10.typography.html', 'Typography', ''],
+	['11.medium.html', 'Medium.Com', ''],
 	['20.images.html', 'Images', ''],
 	['30.buttons.html', 'Buttons', ''],
 	['forms.html', 'Forms', ''],
@@ -22,7 +23,11 @@ function writeResponsiveMenu() {
 		document.write('<li class="' + item[2] + '"><a href="' + item[0] + '">' + item[1] + '</a></li>');
 	});
 
-	document.write('</ul><div class="navbar-toggle"><label for="navbar-toggle">&#9776; Menu</label><input type="checkbox" id="navbar-toggle"/><div class="navbar-overlay"><label class="navbar-overlay-close" for="navbar-toggle">&times;</label><ul>');
+	document.write(
+		'</ul><div class="navbar-toggle"><label for="navbar-toggle">&#9776; Menu</label>' +
+		'<input type="checkbox" id="navbar-toggle"/><div class="navbar-overlay">' +
+		'<label class="navbar-overlay-close" for="navbar-toggle">&times;</label><ul>'
+	);
 
 	[].forEach.call(menu, function (item) {
 		document.write('<li class="' + item[2] + '"><a href="' + item[0] + '">' + item[1] + '</a></li>');

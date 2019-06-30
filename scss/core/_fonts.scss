@@ -4,15 +4,17 @@
  */
 
 // Native Font, don't touch
-$native-family-base: -apple-system,  system-ui,  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$native-family-monospace: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+$native-family-base: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Arial, sans-serif;
+$native-family-monospace: Consolas, 'Liberation Mono', Menlo, Monaco, "Courier New", Courier, monospace;
 $generic-family-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$generic-family-serif: Georgia, "Times New Roman", Times, serif;
+$generic-family-serif: 'PT Serif', Georgia, Cambria, "Times New Roman", Times, serif;
+$generic-family-headers: 'Source Sans Pro', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 
 // Those are the font we use - override them
 $vanilla-fontstack-base: $native-family-base !default;
 $vanilla-fontstack-mono: $native-family-monospace !default;
 $vanilla-fontstack-headers: $native-family-base !default;
+$vanilla-fontstack-serif: $generic-family-serif !default;
 
 
 // set HTML font base to 16px then use REM
@@ -27,6 +29,7 @@ html {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 // Border Box
 *, *:before, *:after {
 	-webkit-box-sizing: inherit;
@@ -37,6 +40,7 @@ html {
 body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+	color: $vanilla-text-color;
 }
 
 // Normalize button sizes
@@ -50,8 +54,50 @@ button, input {
 	font-family: inherit;
 }
 
-
 code, pre, kbd, .text-mono {
 	font-family: $vanilla-fontstack-mono;
 	tab-size: 3;
 }
+
+/*
+* HEADERS
+* https://joshnh.com/weblog/how-to-set-up-a-baseline-grid/
+*/
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6 {
+	font-family: $vanilla-fontstack-headers;
+	color: $vanilla-headers-color;
+	line-height: 1.5;
+}
+
+h1,.h1 {
+	font-size: 3rem;
+	@extend .font-antialias;
+}
+h2,.h2 {
+	font-size: 2.25rem;
+}
+h3,.h3 {
+	font-size: 2rem;
+}
+h4,.h4 {
+	font-size: 1.75rem;
+}
+h5,.h5 {
+	font-size: 1.25rem;
+}
+h6,.h6 {
+	font-size: 1rem;
+}
+
+// Make P consistent with the baseline
+p {
+	margin-bottom: 1.5rem;
+	line-height: 1.5;
+}
+

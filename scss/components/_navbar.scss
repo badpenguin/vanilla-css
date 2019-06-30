@@ -83,6 +83,8 @@
 	background: $vanilla-navbar-overlay-background;
 	color: $vanilla-navbar-overlay-color;
 
+	overflow-y: scroll;
+
 	li > a {
 		display: block;
 	}
@@ -95,8 +97,6 @@
 			color: $vanilla-text-color;
 		}
 	}
-
-
 }
 
 .navbar-overlay-close {

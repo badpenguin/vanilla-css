@@ -1,0 +1,9 @@
+
+
+.text-terminal {
+	@extend .text-mono;
+	white-space: pre-wrap;
+	background: #111;
+	color: #00ff00;
+	padding: 1rem;
+}
