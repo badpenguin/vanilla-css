@@ -2,16 +2,12 @@ body {
 	min-height: 100vh;
 }
 
+header {
+	margin-bottom: 3rem;
+}
+
 .navbar {
 	background: #eee;
-}
-.navbar-overlay li {
-	padding: 1rem;
-	transition: none;
-}
-.navbar-overlay li:hover {
-	background: #eee;
-	color: #333;
 }
 
 
@@ -21,8 +17,6 @@ body {
 nav.docmenu {
 	width: 100%;
 	background: #eee;
-	margin-top: 6rem;
-	/*height: 3rem;*/
 	display: block;
 	text-align: center;
 	padding-left: 1rem;
@@ -199,7 +193,7 @@ footer {
 
 
 	body {
-		padding-bottom: 6rem;
+		padding-bottom: 9rem;
 	}
 
 	footer {

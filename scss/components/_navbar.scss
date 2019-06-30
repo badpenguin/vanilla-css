@@ -6,6 +6,7 @@
 	align-items: center;
 	justify-content: space-between;
 	position: relative; // for absolute
+	max-width: 100%;
 }
 
 .navbar.scrollable {
@@ -20,9 +21,14 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
+	@extend .flex-wrap;
 
-	li {
+	li  {
 		padding: $vanilla-navbar-li-padding;
+	}
+
+	li > a {
+		display: block;
 	}
 
 	&.flex-center {
@@ -65,6 +71,7 @@
 
 .navbar-overlay {
 	position: fixed;
+	z-index: 2;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -79,6 +86,16 @@
 	li > a {
 		display: block;
 	}
+
+	li {
+		padding: 1rem;
+
+		&:hover {
+			background: $vanilla-form-border-color;
+			color: $vanilla-text-color;
+		}
+	}
+
 
 }
 

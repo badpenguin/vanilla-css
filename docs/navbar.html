@@ -27,19 +27,46 @@
 <body>
 
 <header>
+
 	<div class="container">
+
 		<nav class="navbar">
+
 			<ul class="navbar-menu  navbar-menu-left">
 				<li>left</li>
 				<li><a href="#">link</a></li>
 				<li><a href="#">link</a></li>
 			</ul>
+
 			<ul class="navbar-menu  navbar-menu-center">
 				<li class="dont-toggle">LOGO</li>
 			</ul>
+
 			<ul class="navbar-menu  navbar-menu-right">
 				<li>right</li>
-				<li><a href="#">link</a></li>
+				<li class="hover-master">
+					<a href="#">Hover me</a>
+					<ul class="hover-slave">
+						<li><a href="#">one</a></li>
+						<li><a href="#">two</a></li>
+						<li><a href="#">three</a></li>
+					</ul>
+				</li>
+<!--
+<div class="pure-menu pure-menu-horizontal">
+	<ul class="pure-menu-list">
+
+		<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
+			<a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
+			<ul class="pure-menu-children">
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
+				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
+			</ul>
+		</li>
+	</ul>
+</div>
+-->
 				<li><a href="#">link</a></li>
 			</ul>
 
@@ -57,7 +84,9 @@
 			</div>
 
 		</nav>
+
 	</div>
+
 </header>
 
 
@@ -75,7 +104,7 @@
 			<li><a href="#">link</a></li>
 		</ul>
 		<ul class="navbar-menu navbar-menu-right border1">
-			<li class="dont-toggle">right</li>
+			<li>right</li>
 			<li><a href="#">link</a></li>
 			<li><a href="#">link</a></li>
 		</ul>
@@ -113,3 +142,4 @@
 
 </body>
 </html>
+
