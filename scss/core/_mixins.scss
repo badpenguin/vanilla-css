@@ -1,0 +1,208 @@
+/*! Vanilla CSS by Antonio Gallo - https://www.badpenguin.org/
+*/
+
+/*
+ * To allow to reuse only some small part of the framework i prefer to have all the most common mixins in a separate file
+ * that can be imported by everyone
+ */
+
+
+@mixin margin-auto() {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+@mixin placeholder() {
+
+	&::-webkit-input-placeholder {
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+		@content;
+	}
+
+	&::-ms-input-placeholder {
+		@content;
+	}
+
+	&::placeholder {
+		@content;
+	}
+
+}
+
+
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+
+/**
+ * $ratio must be a % between width and height. i.e. 100% = SQUARE
+ */
+@mixin aspect-ratio($ratio) {
+	position: relative;
+	overflow: hidden;
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: $ratio;
+
+	}
+	> .inner {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+/*
+ * AutoPrefixer:
+ * last 2 version, ios >= 10, safari >=10, ie >=11, > 0.2%, not dead
+ * http://shouldiprefix.com/#animation
+ * https://autoprefixer.github.io/
+ */
+
+@mixin animation($animation...) {
+	-webkit-animation: $animation;
+	animation: $animation;
+}
+
+@mixin filter($filter...) {
+	-webkit-filter: $filter;
+	filter: $filter;
+}
+
+@mixin transform($transform...) {
+	-webkit-transform: $transform;
+	transform: $transform;
+}
+
+@mixin transform-origin($transform-origin...) {
+	-webkit-transform-origin: $transform-origin;
+	transform-origin: $transform-origin;
+}
+
+/*
+ * Units
+ */
+
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+
+@function rem2px($value) {
+	@return strip-unit($value)*16px;
+}
+
+// 12pt	16px	1em
+@function pt2px($value) {
+	@return ($value/12*14px);
+}
+
+// px2rem
+@function px2rem($value) {
+	@return strip-unit($value / 16 ) * 1rem;
+}
+
+// Convert PSD Tracking to rem
+@function kerning($unit) {
+	@return ($unit / 1000)+rem;
+}
+
+
+/*
+ * Fluid Typography - https://css-tricks.com/snippets/css/fluid-typography/
+ * Usage: @include fluid-type($min_width, $max_width, $min_font, $max_font);
+ */
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
+			}
+		}
+	}
+}
+
+
+@mixin fluid-type3($min-vw, $mid-vw, $max-vw, $min-font-size, $min2-font-size, $max1-font-size, $max-font-size) {
+
+	& {
+		font-size: $min-font-size;
+		@media screen and (min-width: $min-vw) {
+			font-size: calc(#{$min-font-size} + #{strip-unit($min2-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($mid-vw - $min-vw)}));
+		}
+		@media screen and (min-width: $mid-vw + 1) {
+			font-size: calc(#{$max1-font-size} + #{strip-unit($max-font-size - $max1-font-size)} * ((100vw - #{$mid-vw}) / #{strip-unit($max-vw - $mid-vw)}));
+		}
+		@media screen and (min-width: $max-vw) {
+			font-size: $max-font-size;
+		}
+	}
+
+}
+
+
+@mixin fluid-option($name, $min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			#{$name}: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				#{$name}: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+			}
+			@media screen and (min-width: $max-vw) {
+				#{$name}: $max-font-size;
+			}
+		}
+	}
+}
+
+
+@mixin fluid-option3($name, $min-vw, $mid-vw, $max-vw, $min-font-size, $min2-font-size, $max1-font-size, $max-font-size) {
+
+	& {
+		#{$name}: $min-font-size;
+		@media screen and (min-width: $min-vw) {
+			#{$name}: calc(#{$min-font-size} + #{strip-unit($min2-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($mid-vw - $min-vw)}));
+		}
+		@media screen and (min-width: $mid-vw + 1) {
+			#{$name}: calc(#{$max1-font-size} + #{strip-unit($max-font-size - $max1-font-size)} * ((100vw - #{$mid-vw}) / #{strip-unit($max-vw - $mid-vw)}));
+		}
+		@media screen and (min-width: $max-vw) {
+			#{$name}: $max-font-size;
+		}
+	}
+
+}

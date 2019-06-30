@@ -1,0 +1,89 @@
+/*
+ * To make "animate-when-visible" to work then Vanilla JS is required too.
+ */
+
+/*
+ * BASE
+ */
+
+%animation {
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-play-state: paused;
+	animation-play-state: paused;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+
+/*
+ * FADE IN
+ */
+
+@include keyframes('fadeIn') {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+
+.animate-fade-in {
+	@extend %animation;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+	// change default
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+
+.animated.animate-fade-in {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+
+
+
+/*
+ *
+ */
+
+@include keyframes(slideInRight) {
+	from {
+		@include transform(translate3d(100%, 0, 0));
+		visibility: visible;
+	}
+	to {
+		@include transform(translate3d(0, 0, 0));
+	}
+}
+
+.animate-slide-in-right {
+	@extend %animation;
+	-webkit-animation-name: slideInRight;
+	animation-name: slideInRight;
+}
+
+
+/*
+ * defined later, so it will start the animation
+ */
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-play-state: running;
+	animation-play-state: running;
+
+	&.duration-1 {
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+	}
+
+	&.duration-2s {
+		-webkit-animation-duration: 2s;
+		animation-duration: 2s;
+	}
+
+}

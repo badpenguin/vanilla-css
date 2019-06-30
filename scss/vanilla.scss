@@ -1,45 +1,53 @@
+@charset "UTF-8";
+/*! Vanilla CSS by Antonio Gallo - https://www.badpenguin.org/
+*/
+
+
 /*
  * You can avoid importing the "components" if you do not need them.
  */
-@charset "UTF-8";
+@import "core/variables";
+@import "core/mixins";
 
 // RESET
-@import "vanilla/core/reset";
+@import "core/reset";
 // We set native font and basic to use REM
-@import "vanilla/core/fonts";
+@import "core/fonts";
 
 
 // Basic (also some reset merge)
-@import "vanilla/basic/typography";
-@import "vanilla/basic/images";
-@import "vanilla/basic/buttons";
-//TODO @import "vanilla/basic/forms";
-
+@import "basic/typography";
+@import "basic/images";
+@import "basic/buttons";
+@import "basic/forms";
 
 // Grid Layout
-@import "vanilla/grid/breakpoints";
-@import "vanilla/grid/flexbox";
-@import "vanilla/grid/grid";
-@import "vanilla/grid/grid_extra";      // TODO: probably it can be moved to components except for grid-equalize
-@import "vanilla/grid/flexbox_utils";   // TODO: probably it can be moved to components
-@import "vanilla/grid/layout";
+@import "grid/breakpoints";
+@import "grid/flexbox";
+@import "grid/grid";
+@import "grid/layout";
 
 
 // Components
-@import "vanilla/components/image_filters";
-@import "vanilla/components/visibility";
+@import "components/grid_extra";
+@import "components/flexbox_utils";
+@import "components/form-flex";
+@import "components/image_filters";
+@import "components/visibility";
 
-@import "vanilla/components/fabs";
-@import "vanilla/components/pulse";
+@import "components/overlay";
+@import "components/float";
+@import "components/shadows";
 
-@import "vanilla/components/overlay";
-@import "vanilla/components/float";
-@import "vanilla/components/shadows";
+@import "components/navbar";
+
+// Rarely used
+@import "components/fabs";
+@import "components/pulse";
+
+// Animations - requires Vanilla JS to add the "animate-when-visible" class
+@import "animations/animations";
 
 
-// Animations - requires Vanilla JS for "animate-when-visible"
-@import "vanilla/animations/animations";
-
-
-// Include general at the end so it can override any other class when used
-@import "vanilla/core/general";
+// Include general rules at the end so them can be used to override any other of the above components
+@import "core/general";

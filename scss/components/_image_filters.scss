@@ -1,0 +1,20 @@
+
+/*
+ * Thanks to
+ * https://www.w3schools.com/howto/howto_css_image_effects.asp
+ */
+
+.filter-grayscale {
+	@include filter(grayscale(100%));
+}
+
+.filter-blur {
+	@include filter(blur(5px));
+}
+
+
+/*
+ * FOR MORE FILTERS JUST SEE/USE:
+ * - https://github.com/picturepan2/instagram.css
+ * - https://github.com/una/CSSgram
+ */

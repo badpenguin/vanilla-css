@@ -1,0 +1,116 @@
+/*
+ * Thanks to
+ * https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ */
+
+
+.flex-none {
+	@include flex(none);
+}
+
+.flex-auto {
+	@include flex(auto);
+}
+
+
+/* SHORTCUTS */
+
+.flex-row-vcenter {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+
+/* UNUSED
+
+
+.flex-wrap {
+	-ms-flex-wrap:wrap;
+	flex-wrap: wrap;
+}
+.flex-wrap-off {
+	-ms-flex-wrap:nowrap;
+	flex-wrap: nowrap;
+}
+*/
+
+// Horizontal Align
+
+/* UNUSED
+.flex-justify-left {
+	justify-content: flex-start;
+}
+.flex-justify-right {
+	justify-content: flex-end;
+}
+.flex-justify-center {
+	justify-content: center;
+}
+.flex-justify-outer {
+	justify-content: space-between;
+}
+.flex-justify-inner {
+	justify-content: space-around;
+}
+*/
+
+// Vertical Align
+
+/* UNUSED
+.flex-valign-top{
+	align-items: flex-start;
+}
+.flex-valign-bottom{
+	align-items: flex-end;
+}
+.flex-valign-center{
+	align-items: center;
+}
+.flex-valign-baseline{
+	align-items: baseline;
+}
+.flex-valign-stretch{
+	align-items: stretch;
+}
+*/
+
+// Vertical Spacing
+
+/*
+.flex-vspacing-left {
+	align-content: flex-start;
+}
+.flex-vspacing-right {
+	align-content: flex-end;
+}
+.flex-vspacing-center {
+	align-content: center;
+}
+.flex-vspacing-outer {
+	align-content: space-between;
+}
+.flex-vspacing-inner {
+	align-content: space-around;
+}
+*/
+
+/* FLEX ITEM */
+
+/* UNUSED
+.flex-item-valign-top{
+	align-self: flex-start;
+}
+.flex-item-valign-bottom{
+	align-self: flex-end;
+}
+.flex-item-valign-center{
+	align-self: center;
+}
+.flex-item-valign-baseline{
+	align-self: baseline;
+}
+.flex-item-valign-stretch{
+	align-self: stretch;
+}
+*/

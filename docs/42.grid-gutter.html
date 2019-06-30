@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vanilla CSS: Grid-Gutter</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="test grid-debug">
+<header>
+	<script src="menu.js"></script>
+</header>
+
+
+<div class="container">
+
+	<p>Same example as before but its to test the grid with gutter.</p>
+
+	<h1>Auto Grid</h1>
+
+	<div class="grid  grid-gutter">
+		<div class="cell cell-auto">1</div>
+	</div>
+
+	<div class="grid  grid-gutter">
+		<div class="cell cell-auto">1</div>
+		<div class="cell cell-auto">2</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell cell-auto">1</div>
+		<div class="cell cell-auto">2</div>
+		<div class="cell cell-auto">3</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell cell-auto">1</div>
+		<div class="cell cell-auto">2</div>
+		<div class="cell cell-auto">3</div>
+		<div class="cell cell-auto">4</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell cell-auto">1</div>
+		<div class="cell cell-auto">2</div>
+		<div class="cell cell-auto">3</div>
+		<div class="cell cell-auto">4</div>
+		<div class="cell cell-auto">5</div>
+	</div>
+
+</div>
+
+
+<div class="container">
+	<h1>Responsive Grid</h1>
+	<div class="grid  grid-gutter">
+		<div class="cell md-1-1">1/1</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell sm-1-1 md-1-2">1/2</div>
+		<div class="cell sm-1-1 md-1-2">1/2</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell sm-1-1 md-1-3">1/3</div>
+		<div class="cell sm-1-1 md-1-3">1/3</div>
+		<div class="cell sm-1-1 md-1-3">1/3</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell sm-1-2 md-1-4">sm-1-2 1/4</div>
+		<div class="cell sm-1-2 md-1-4">sm-1-21/4</div>
+		<div class="cell sm-1-2 md-1-4">sm-1-21/4</div>
+		<div class="cell sm-1-2 md-1-4">sm-1-21/4</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell sm-1-2 md-1-5">sm-1-2 1/5</div>
+		<div class="cell sm-1-2 md-1-5">sm-1-2 1/5</div>
+		<div class="cell sm-1-3 md-1-5">sm-1-3 1/5</div>
+		<div class="cell sm-1-3 md-1-5">sm-1-3 1/5</div>
+		<div class="cell sm-1-3 md-1-5">sm-1-3 1/5</div>
+	</div>
+
+	<div class="grid  grid-gutter">
+		<div class="cell md-1-3">1/3</div>
+		<div class="cell md-2-3">2/3</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell md-2-3">2/3</div>
+		<div class="cell md-1-3">1/3</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell md-3-4">3/4</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell md-2-4">2/4</div>
+		<div class="cell md-2-4">2/4</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell md-3-4">3/4</div>
+		<div class="cell md-1-4">1/4</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-4-5">4/5</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell md-2-5">2/5</div>
+		<div class="cell md-3-5">3/5</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell md-3-5">3/5</div>
+		<div class="cell md-2-5">2/5</div>
+	</div>
+	<div class="grid  grid-gutter">
+		<div class="cell md-4-5">4/5</div>
+		<div class="cell md-1-5">1/5</div>
+
+	</div>
+
+</div>
+
+
+<script>
+	/*
+	 * I was lazy to modify all the example for the gutter by adding a .inner div
+	 * then i used JS to do it for all the cells automatically
+	 */
+	function start() {
+		var l = document.querySelectorAll('div.cell');
+		l.forEach(function (i) {
+			var old = i.innerHTML;
+			i.innerHTML = '<div class="inner">' + old + '</div>';
+		});
+	}
+
+	window.onload = start;
+
+</script>
+
+
+<footer>
+	<script src="menu.js"></script>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+$vanilla-text-color: #333 !default;
+$vanilla-disabled-color: #777 !default;
+
+$vanilla-headers-color: $vanilla-text-color !default;
+
+$vanilla-border-radius: 4px !default;
+
+// FORM
+$vanilla-form-background: transparent !default;
+$vanilla-form-border-color: #ccc !default;
+$vanilla-form-border: 1px solid $vanilla-form-border-color !default;
+$vanilla-form-box-shadow: inset 0 1px 3px $vanilla-form-border-color !default;
+
+// GRID
+$vanilla-breakpoint-small: 480px !default;
+$vanilla-breakpoint-medium: 768px !default;
+$vanilla-breakpoint-large: 1024px !default;
+$vanilla-breakpoint-x-large: 1224px !default;
+$vanilla-breakpoint-xx-large: 1920px !default;
+$vanilla-grid-gutter-size: 2em !default;
+
+// NAVBAR
+$vanilla-navbar-breakpoint: $vanilla-breakpoint-large !default;
+$vanilla-navbar-li-padding: 1rem !default;
+$vanilla-navbar-li-spacing: 2rem !default;
+$vanilla-navbar-overlay-background: #444 !default;
+$vanilla-navbar-overlay-color: #fff !default;
+
+// MATERIAL COLORS
+$vanilla-primary-color: #03A9F4 !default;
+
+// COMPLEMENTARY COLORS
+// https://www.sessions.edu/color-calculator/
+
+$vanilla-secondary-color:#f45303;
+$vanilla-tertiary-color: #f4cc03;
+$vanilla-quaternary-color: #a003f4;
+// quinary, senary, septenary, octonary, nonary, denary.

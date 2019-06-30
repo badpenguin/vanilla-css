@@ -1,0 +1,32 @@
+
+.inline-block {
+	display: inline-block;
+}
+
+.inline {
+	display: inline;
+}
+
+.circular {
+	border-radius: 50%;
+}
+
+.rounded {
+	border-radius: 64px;
+}
+
+.radius {
+	border-radius: $vanilla-border-radius;
+}
+
+.no-mouse {
+	pointer-events: none;
+	cursor: pointer;
+}
+
+.disabled,[disabled] {
+	-webkit-touch-callout: none;
+	pointer-events: none;
+	cursor: not-allowed;
+	color: $vanilla-disabled-color;
+}

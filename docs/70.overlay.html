@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vanilla CSS: Overlay</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="test">
+<header>
+	<script src="menu.js"></script>
+</header>
+<div class="container-fluid">
+	<h1>Overlay</h1>
+
+	<p>Overlay are created by adding <code>.cover-parent</code> with the desidered effect to the outer dive.</p>
+	<p>Then, add
+		<code>.cover-child</code> to the overlay div.</p>
+
+	<div class="cover-parent cover-overlay-opacity inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300">
+		<div class="cover-child cover-center">
+			overlay-inner
+		</div>
+	</div>
+
+	<h1>Cover Center (max)</h1>
+
+	<div class="cover-parent inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300">
+		<div class="cover-child cover-center test-gradient">
+			cover-inner
+		</div>
+	</div>
+
+	<h1>Cover Bottom</h1>
+
+	<div class="cover-parent inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300">
+		<div class="cover-child cover-bottom text-center test-background2">
+			cover-bottom with purple background
+		</div>
+	</div>
+
+	<h1>Overlay Bottom</h1>
+
+	<div class="cover-parent cover-overlay-bottom inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300">
+		<div class="cover-child cover-center">
+			overlay-inner
+		</div>
+	</div>
+
+	<h1>Overlay Top</h1>
+
+	<div class="cover-parent cover-overlay-top inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300">
+		<div class="cover-child cover-center">
+			overlay-inner
+		</div>
+	</div>
+
+	<h1>Overlay Left</h1>
+
+	<div class="cover-parent cover-overlay-left inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300">
+		<div class="cover-child cover-center">
+			overlay-inner
+		</div>
+	</div>
+
+	<h1>Overlay Right</h1>
+
+	<div class="cover-parent cover-overlay-right inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300">
+		<div class="cover-child cover-center">
+			overlay-inner
+		</div>
+	</div>
+
+</div>
+
+<footer>
+	<script src="menu.js"></script>
+</footer>
+
+</body>
+</html>

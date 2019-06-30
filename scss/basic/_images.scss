@@ -1,0 +1,41 @@
+.responsive {
+	width: 100%;
+	height: auto;
+	display: inline-block;
+}
+
+/* UNUSED - just for reference
+.soft-responsive {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	display: inline-block;
+}
+ */
+
+IMG {
+	@extend .responsive;
+
+	// cancel responsive
+	&.reset {
+		display: initial;
+		max-width: initial;
+		height: initial;
+		width: initial;
+	}
+
+	&.contain {
+		@extend IMG.reset;
+		-o-object-fit: scale-down;
+		object-fit: scale-down;
+		overflow: hidden;
+	}
+
+	&.cover {
+		@extend IMG.reset;
+		overflow: hidden;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+}

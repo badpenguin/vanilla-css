@@ -1,0 +1,79 @@
+
+input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="range"]):not([type="color"]):not([type="file"]), select, textarea {
+	padding: 0.5em 0.6em;
+	border: $vanilla-form-border;
+	box-shadow: $vanilla-form-box-shadow;
+	vertical-align: middle;
+	background: $vanilla-form-background;
+
+	@include placeholder() {
+		color: $vanilla-disabled-color;
+	}
+
+}
+
+input[type="color"] {
+	background: $vanilla-form-background;
+	box-shadow: $vanilla-form-box-shadow;
+	border: $vanilla-form-border;
+	padding: 0;
+}
+
+input[type="number"].no-spin {
+
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		margin: 0;
+	}
+}
+
+
+// Chrome Fix for placehold color
+input[type="date"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="time"] {
+	//noinspection CssInvalidPseudoSelector
+	&::-webkit-datetime-edit {
+		color: $vanilla-disabled-color;
+	}
+}
+
+input[type="range"] {
+	margin: 0;
+}
+
+
+fieldset {
+	border: $vanilla-form-border;
+	box-shadow: $vanilla-form-box-shadow;
+}
+
+
+// Make clickable elements
+label[for], .pointer {
+	cursor: pointer;
+}
+
+
+/*
+ * STYLES
+ */
+
+.form-rounded {
+	input, select, textarea, fieldset {
+		border-radius: $vanilla-border-radius;
+	}
+}
+
+.form-flat {
+
+	input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="range"]):not([type="color"]):not([type="file"]),
+	select, textarea, fieldset,
+	input[type="color"] {
+		border: none;
+		box-shadow: none;
+	}
+
+}
+

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vanilla CSS: Grid Basic, Visibility</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="test grid-debug test-grid-basic">
+<header>
+	<script src="menu.js"></script>
+</header>
+<div class="container ">
+	<p>Container Fixed 1000px</p>
+
+	<p>
+		<span class="visible-on-x-small">x-small</span>
+		<span class="visible-on-small">small</span>
+		<span class="visible-on-medium">medium</span>
+		<span class="visible-on-large">large</span>
+		<span class="visible-on-x-large">x-large</span>
+		<span class="visible-on-xx-large">xx-large</span>
+	</p>
+
+
+	<h1>Basic example</h1>
+
+	<p>Column by default are 100% width</p>
+
+	<div class="grid">
+		<div class="cell">1</div>
+		<div class="cell">2</div>
+	</div>
+
+	<p>If you add .grid-auto to the grid, or .cell-auto to the cell then they will try to be equal size.</p>
+
+	<div class="grid grid-auto">
+		<div class="cell">1 grid-auto</div>
+		<div class="cell">2 grid-auto</div>
+	</div>
+
+	<div class="grid">
+		<div class="cell cell-auto">1 cell-auto</div>
+		<div class="cell cell-auto">2 cell-auto</div>
+	</div>
+
+	<p>When they shrink to small they will always be 100% width if no other settings is used.</p>
+
+	<div class="grid">
+		<div class="cell s-1-2 sm-1-2">1 s-1-2 sm-1-2</div>
+		<div class="cell s-1-2 sm-1-2">2 s-1-2 sm-1-2</div>
+	</div>
+
+
+	<div class="grid">
+		<div class="cell md-1-2">1 md-1-2</div>
+		<div class="cell md-1-2">2 md-1-2</div>
+	</div>
+
+	<div class="grid">
+		<div class="cell sm-1-2 md-1-2">1 sm-1-2 md-1-2</div>
+		<div class="cell sm-1-2 md-1-2">2 sm-1-2 md-1-2</div>
+	</div>
+
+	<div class="grid">
+		<div class="cell lg-1-2">1 lg-1-2</div>
+		<div class="cell lg-1-2">2 lg-1-2</div>
+	</div>
+
+	<div class="grid">
+		<div class="cell xlg-1-2">1 xlg-1-2</div>
+		<div class="cell xlg-1-2">2 xlg-1-2</div>
+	</div>
+
+	<hr>
+
+
+	<h1>Fixed Grid</h1>
+
+	<p>Cells using the s-x-y class will always be fixed.</p>
+
+	<div class="grid">
+		<div class="cell s-1-1">1/1</div>
+		<div class="cell s-1-2">1/2</div>
+		<div class="cell s-1-2">1/2</div>
+		<div class="cell s-1-3">1/3</div>
+		<div class="cell s-1-3">1/3</div>
+		<div class="cell s-1-3">1/3</div>
+		<div class="cell s-1-4">1/4</div>
+		<div class="cell s-1-4">1/4</div>
+		<div class="cell s-1-4">1/4</div>
+		<div class="cell s-1-4">1/4</div>
+		<div class="cell s-1-5">1/5</div>
+		<div class="cell s-1-5">1/5</div>
+		<div class="cell s-1-5">1/5</div>
+		<div class="cell s-1-5">1/5</div>
+		<div class="cell s-1-5">1/5</div>
+	</div>
+
+	<div class="grid ">
+		<div class="cell s-1-3">1/3</div>
+		<div class="cell s-2-3">2/3</div>
+
+		<div class="cell s-2-3">2/3</div>
+		<div class="cell s-1-3">1/3</div>
+
+		<div class="cell s-1-4">1/4</div>
+		<div class="cell s-3-4">3/4</div>
+
+		<div class="cell s-2-4">2/4</div>
+		<div class="cell s-2-4">2/4</div>
+
+		<div class="cell s-3-4">3/4</div>
+		<div class="cell s-1-4">1/4</div>
+
+		<div class="cell s-1-5">1/5</div>
+		<div class="cell s-4-5">4/5</div>
+
+		<div class="cell s-2-5">2/5</div>
+		<div class="cell s-3-5">3/5</div>
+
+		<div class="cell s-3-5">3/5</div>
+		<div class="cell s-2-5">2/5</div>
+
+		<div class="cell s-4-5">4/5</div>
+		<div class="cell s-1-5">1/5</div>
+
+	</div>
+
+
+	<h1>Responsive Grid</h1>
+
+	<p>Cell responsive uses sm-x-y, md-x-y, lg-x-y, etc.</p>
+	<p>The default is only a grid with 2, 3, 4 and 5 column but you can use the mixin to build other as you wish.</p>
+	<p>Cell at small size will always try to be single column.</p>
+	<p>In this example the "md" size is used.</p>
+
+	<div class="grid">
+		<div class="cell md-1-1">1/1</div>
+		<div class="cell md-1-2">1/2</div>
+		<div class="cell md-1-2">1/2</div>
+		<div class="cell md-1-3">1/3</div>
+		<div class="cell md-1-3">1/3</div>
+		<div class="cell md-1-3">1/3</div>
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-1-5">1/5</div>
+	</div>
+
+	<div class="grid">
+		<div class="cell md-1-3">1/3</div>
+		<div class="cell md-2-3">2/3</div>
+
+		<div class="cell md-2-3">2/3</div>
+		<div class="cell md-1-3">1/3</div>
+
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell md-3-4">3/4</div>
+
+		<div class="cell md-2-4">2/4</div>
+		<div class="cell md-2-4">2/4</div>
+
+		<div class="cell md-3-4">3/4</div>
+		<div class="cell md-1-4">1/4</div>
+
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-4-5">4/5</div>
+
+		<div class="cell md-2-5">2/5</div>
+		<div class="cell md-3-5">3/5</div>
+
+		<div class="cell md-3-5">3/5</div>
+		<div class="cell md-2-5">2/5</div>
+
+		<div class="cell md-4-5">4/5</div>
+		<div class="cell md-1-5">1/5</div>
+
+	</div>
+
+
+	<h1>Responsive + Auto Grid</h1>
+
+	<p>Like before but some cells have the "cell-auto" class and wil try to fill the space.</p>
+
+	<div class="grid">
+		<div class="cell md-1-1">1/1</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+		<div class="cell md-1-2">1/2</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+		<div class="cell md-1-3">1/3</div>
+		<div class="cell md-1-3">1/3</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell cell-auto">auto</div>
+		<div class="cell md-1-4">1/4</div>
+	</div>
+	<div class="grid">
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell cell-auto">auto</div>
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell cell-auto">auto</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-1-5">1/5</div>
+	</div>
+	<div class="grid">
+		<div class="cell cell-auto">auto</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell cell-auto">auto</div>
+		<div class="cell md-1-5">1/5</div>
+	</div>
+	<div class="grid">
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell cell-auto">auto</div>
+		<div class="cell cell-auto">auto</div>
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+
+	<div class="grid">
+		<div class="cell md-1-3">1/3</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+		<div class="cell md-2-3">2/3</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+
+		<div class="cell md-1-4">1/4</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+
+		<div class="cell md-2-4">2/4</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+
+		<div class="cell md-3-4">3/4</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+
+		<div class="cell md-1-5">1/5</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+
+		<div class="cell md-2-5">2/5</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+
+		<div class="cell md-3-5">3/5</div>
+		<div class="cell cell-auto">auto</div>
+	</div>
+	<div class="grid">
+
+		<div class="cell md-4-5">4/5</div>
+		<div class="cell md-1-5">1/5</div>
+
+	</div>
+
+	<h2>Responsive with different classes</h2>
+
+	<div class="grid">
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5">sm-1-2 md-1-3 lg-1-4 xlg-1-5</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5 flex-grow">sm-1-2 md-1-3 lg-1-4 xlg-1-5 flex-grow</div>
+		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5 flex-grow">sm-1-2 md-1-3 lg-1-4 xlg-1-5 flex-grow</div>
+	</div>
+
+	<h1>Wrapped cells (centering using "flex-justify-center")</h1>
+	<div class="grid flex-justify-center">
+		<div class="cell s-1-3">1/3</div>
+		<div class="cell s-1-3">1/3</div>
+		<div class="cell s-1-3">1/3</div>
+		<!-- wraps here -->
+		<div class="cell s-1-3">1/3</div>
+		<div class="cell s-1-3">1/3</div>
+	</div>
+
+
+	<h1>Equalize (stretch and vertical center in one shot)</h1>
+
+	<div class="grid grid-equalize">
+		<div class="cell s-1-3">1 ROW</div>
+		<div class="cell s-1-3">1 ROW<br>2 ROW</div>
+		<div class="cell s-1-3">1 ROW<br>2 ROW<br>3 ROW</div>
+	</div>
+
+
+	<h1>Grid Pair / Unpair</h1>
+
+	<div class="grid grid-pair">
+		<div class="cell cell-auto">1</div>
+		<div class="cell cell-auto">2</div>
+	</div>
+	<div class="grid grid-unpair">
+		<div class="cell cell-auto">1</div>
+		<div class="cell cell-auto">2</div>
+	</div>
+
+</div>
+
+<footer>
+	<script src="menu.js"></script>
+</footer>
+
+</body>
+</html>

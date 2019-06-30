@@ -1,319 +1,362 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Vanilla CSS: Forms</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-		<link href="vanilla.css" rel="stylesheet" type="text/css"/>
-		<link href="test.css" rel="stylesheet" type="text/css"/>
-		<style>
-/*
-			.test-form-label-fixed-width label {
-				width: 200px;
-				text-align: right;
-				display: inline-block;
-				border-bottom: solid 1px graytext;
-				margin-bottom: 8px;
-			}
+<head>
+	<title>Vanilla CSS: Forms</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<style>
+		/*
+					.test-form-label-fixed-width label {
+						width: 200px;
+						text-align: right;
+						display: inline-block;
+						border-bottom: solid 1px graytext;
+						margin-bottom: 8px;
+					}
 
-			.test-form-label-fixed-width > *, .test-form-label-fixed-width fieldset > * {
-				display: block;
-				border-bottom: solid 1px graytext;
-				margin-bottom: 8px;
-			}
-*/
-			.test-mobile-container {
-				margin-top: 20px;
-				margin-bottom: 20px;
-				max-width: 480px;
-				width: 480px;
-				border: solid 2px #000;
-				overflow: visible;
-				border-radius: 4px;
-				padding: 4px;
-				display: block;
-			}
+					.test-form-label-fixed-width > *, .test-form-label-fixed-width fieldset > * {
+						display: block;
+						border-bottom: solid 1px graytext;
+						margin-bottom: 8px;
+					}
+		*/
+		.test-mobile-container {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			max-width: 480px;
+			width: 100%;
+			/*border: 1px dashed silver;*/
+			overflow: visible;
+			/*border-radius: 4px;*/
+			padding: 4px;
+			display: block;
+		}
 
-			fieldset {
-				margin-top: 20px;
-				margin-bottom: 20px;
-			}
+		fieldset {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
 
-		</style>
-	</head>
-	<body class="test test-margin">
+	</style>
+</head>
+<body class="test test-margin">
+<header>
+	<script src="menu.js"></script>
+</header>
+<!-- standard form -->
+<div class="container test-mobile-container">
 
-		<!-- standard form -->
-		<div class="container test-mobile-container">
+	<p style="color:red">FORM IS NOT OFFICIALLY COMPLETED</p>
 
+	<h1>Responsive Form</h1>
 
+	<form class="form-flex">
+		<fieldset>
+			<legend>Example fieldset's legend</legend>
 
-			<h1>Responsive Form</h1>
+			<div class="row">
+				<label>Example input</label>
+				<input type="text" placeholder="Example input">
+			</div>
 
-			<form class="form-flex">
-				<fieldset>
-					<legend>Example fieldset's legend</legend>
+			<div class="row">
+				<label>Example select</label>
+				<select>
+					<option disabled selected value="">Choose...</option>
+					<optgroup label="Option group 1">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+					</optgroup>
+					<optgroup label="Option group 2">
+						<option value="4">Option 4</option>
+						<option value="5">Option 5</option>
+						<option value="6">Option 6</option>
+					</optgroup>
+				</select>
+			</div>
 
-					<div class="row">
-						<label>Example input</label>
-						<input type="text" placeholder="Example input">
-					</div>
+			<div class="row">
+				<label>Label for checkbox</label>
+				<div>
+					<input type="checkbox" value="">
+					Check this checkbox
+				</div>
+			</div>
 
-					<div class="row">
-						<label>Example select</label>
-						<select>
-							<option value="">Choose...</option>
-							<optgroup label="Option group 1">
-								<option value="">Option 1</option>
-								<option value="">Option 2</option>
-								<option value="">Option 3</option>
-							</optgroup>
-							<optgroup label="Option group 2">
-								<option value="">Option 4</option>
-								<option value="">Option 5</option>
-								<option value="">Option 6</option>
-							</optgroup>
-						</select>
-					</div>
+			<div class="row">
+				<label>Label for radio</label>
+				<div>
+					<input type="radio" name="optionsRadios" value="option1" checked="">
+					Option one is this and that
+					<input type="radio" name="optionsRadios" value="option2">
+					Option two is something else that's also super long to demonstrate the wrapping of these fancy form
+					controls.
+					<input type="radio" name="optionsRadios" value="option3" disabled="">
+					Option three is disabled
+				</div>
+			</div>
 
-					<div class="row">
-						<label>Label for checkbox</label>
-						<input type="checkbox" value="">
-						Check this checkbox
-					</div>
+			<div class="row">
+				<label>Example textarea</label>
+				<textarea placeholder="Textarea placeholder" rows="3"></textarea>
+			</div>
 
-					<div class="norow">
-						<label>Label for radio</label>
-						<input type="radio" name="optionsRadios" value="option1" checked="">
-						Option one is this and that
-						<input type="radio" name="optionsRadios" value="option2">
-						Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
-						<input type="radio" name="optionsRadios" value="option3" disabled="">
-						Option three is disabled
-					</div>
+			<div class="row">
+				<label>Example datetime-local</label>
+				<input type="datetime-local">
+			</div>
 
-					<div class="row">
-						<label>Example textarea</label>
-						<textarea rows="3"></textarea>
-					</div>
+			<div class="row">
+				<label>Example output</label>
+				<output name="result">100</output>
+			</div>
 
-					<div class="row">
-						<label>Example datetime-local</label>
-						<input type="datetime-local" >
-					</div>
+			<div class="row">
+				<label>Disabled input</label>
+				<input type="text" disabled placeholder="Disabled input" value="Input Disabled">
+			</div>
 
-					<div class="row">
-						<label>Example output</label>
-						<output name="result" >100</output>
-					</div>
+			<div class="row">
+				<label>Readonly input</label>
+				<input type="text" readonly placeholder="Readonly input" value="ReadOnly value">
+			</div>
 
-					<div class="text-center">
-						<input type="submit" class="btn btn-primary" value="Input generic button">
-					</div>
+			<div class="row">
+				<label>File</label>
+				<input type="file" />
+			</div>
 
-				</fieldset>
+			<div class="text-center">
+				<input type="submit" class="btn btn-primary" value="Input generic button">
+			</div>
 
-				<fieldset>
-					<legend>HTML5 form's elements</legend>
+		</fieldset>
 
-					<div class="row">
-						<label>Text</label>
-						<input  type="text" placeholder="Artisanal kale">
-					</div>
-					<div class="row">
-						<label>Search</label>
-						<input  type="search" placeholder="How do I shoot web">
-					</div>
-					<div class="row">
-						<label>Email</label>
-						<input  type="email" placeholder="bootstrap@example.com">
-					</div>
-					<div class="row">
-						<label>URL</label>
-						<input  type="url" placeholder="https://getbootstrap.com">
-					</div>
-					<div class="row">
-						<label>Telephone</label>
-						<input  type="tel" placeholder="1-(555)-555-5555">
-					</div>
-					<div class="row">
-						<label>Password</label>
-						<input  type="password" placeholder="hunter2">
-					</div>
-					<div class="row">
-						<label>Number</label>
-						<input  type="number" placeholder="42">
-					</div>
-					<div class="row">
-						<label>Date and time</label>
-						<input  type="datetime-local" placeholder="2011-08-19T13:45:00">
-					</div>
-					<div class="row">
-						<label>Date</label>
-						<input  type="date" placeholder="2011-08-19">
-					</div>
-					<div class="row">
-						<label>Month</label>
-						<input  type="month" placeholder="2011-08">
-					</div>
-					<div class="row">
-						<label>Week</label>
-						<input  type="week" placeholder="2011-W33">
-					</div>
-					<div class="row">
-						<label>Time</label>
-						<input  type="time" placeholder="13:45:00">
-					</div>
-					<div class="row">
-						<label>Color</label>
-						<div><input  type="color" placeholder="#563d7c"></div>
-					</div>
-					<div class="row">
-						<label>Range</label>
-						<input type="range" min="0" max="100" />
-					</div>
-				</fieldset>
-			</form>
+		<fieldset>
+			<legend>HTML5 form's elements</legend>
 
-		</div>
+			<div class="row">
+				<label>Text</label>
+				<input type="text" placeholder="Artisanal kale">
+			</div>
+			<div class="row">
+				<label>Search</label>
+				<input type="search" placeholder="How do I shoot web">
+			</div>
+			<div class="row">
+				<label>Email</label>
+				<input type="email" placeholder="bootstrap@example.com">
+			</div>
+			<div class="row">
+				<label>URL</label>
+				<input type="url" placeholder="https://getbootstrap.com">
+			</div>
+			<div class="row">
+				<label>Telephone</label>
+				<input type="tel" placeholder="1-(555)-555-5555">
+			</div>
+			<div class="row">
+				<label>Password</label>
+				<input type="password" placeholder="hunter2">
+			</div>
+			<div class="row">
+				<label>Number</label>
+				<input type="number" placeholder="42">
+			</div>
+			<div class="row">
+				<label>Date and time</label>
+				<input type="datetime-local" placeholder="2011-08-19T13:45:00">
+			</div>
+			<div class="row">
+				<label>Date</label>
+				<input type="date" placeholder="2011-08-19">
+			</div>
+			<div class="row">
+				<label>Month</label>
+				<input type="month" placeholder="2011-08">
+			</div>
+			<div class="row">
+				<label>Week</label>
+				<input type="week" placeholder="2011-W33">
+			</div>
+			<div class="row">
+				<label>Time</label>
+				<input type="time" placeholder="13:45:00">
+			</div>
+			<div class="row">
+				<label>Color</label>
+				<div><input type="color" placeholder="#563d7c"></div>
+			</div>
+			<div class="row">
+				<label>Range</label>
+				<input type="range" min="0" max="100"/>
+			</div>
+		</fieldset>
+	</form>
 
-
-
-		<!-- flat form -->
-		<div class="container test-mobile-container">
-
-			<h1>Responsive Flat Form</h1>
-
-			<form class="form-flex form-flat">
-				<fieldset>
-					<legend>Example fieldset's legend</legend>
-
-					<div class="row">
-						<label>Example input</label>
-						<input type="text" placeholder="Example input">
-					</div>
-
-					<div class="row">
-						<label>Example select</label>
-						<select>
-							<option value="">Choose...</option>
-							<optgroup label="Option group 1">
-								<option value="">Option 1</option>
-								<option value="">Option 2</option>
-								<option value="">Option 3</option>
-							</optgroup>
-							<optgroup label="Option group 2">
-								<option value="">Option 4</option>
-								<option value="">Option 5</option>
-								<option value="">Option 6</option>
-							</optgroup>
-						</select>
-					</div>
-
-					<div class="row">
-						<label>Label for checkbox</label>
-						<input type="checkbox" value="">
-						Check this checkbox
-					</div>
-
-					<div class="norow">
-						<label>Label for radio</label>
-						<input type="radio" name="optionsRadios" value="option1" checked="">
-						Option one is this and that
-						<input type="radio" name="optionsRadios" value="option2">
-						Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
-						<input type="radio" name="optionsRadios" value="option3" disabled="">
-						Option three is disabled
-					</div>
-
-					<div class="row">
-						<label>Example textarea</label>
-						<textarea rows="3"></textarea>
-					</div>
-
-					<div class="row">
-						<label>Example datetime-local</label>
-						<input type="datetime-local" >
-					</div>
-
-					<div class="row">
-						<label>Example output</label>
-						<output name="result" >100</output>
-					</div>
-
-					<div class="text-center">
-						<input type="submit" class="btn btn-primary" value="Input generic button">
-					</div>
+</div>
 
 
-				</fieldset>
+<!--
+	**** flat form ****
+-->
+<div class="container test-mobile-container">
 
-				<fieldset>
-					<legend>HTML5 form's elements</legend>
+	<h1>Responsive Flat Form</h1>
 
-					<div class="row">
-						<label>Text</label>
-						<input  type="text" placeholder="Artisanal kale">
-					</div>
-					<div class="row">
-						<label>Search</label>
-						<input  type="search" placeholder="How do I shoot web">
-					</div>
-					<div class="row">
-						<label>Email</label>
-						<input  type="email" placeholder="bootstrap@example.com">
-					</div>
-					<div class="row">
-						<label>URL</label>
-						<input  type="url" placeholder="https://getbootstrap.com">
-					</div>
-					<div class="row">
-						<label>Telephone</label>
-						<input  type="tel" placeholder="1-(555)-555-5555">
-					</div>
-					<div class="row">
-						<label>Password</label>
-						<input  type="password" placeholder="hunter2">
-					</div>
-					<div class="row">
-						<label>Number</label>
-						<input  type="number" placeholder="42">
-					</div>
-					<div class="row">
-						<label>Date and time</label>
-						<input  type="datetime-local" placeholder="2011-08-19T13:45:00">
-					</div>
-					<div class="row">
-						<label>Date</label>
-						<input  type="date" placeholder="2011-08-19">
-					</div>
-					<div class="row">
-						<label>Month</label>
-						<input  type="month" placeholder="2011-08">
-					</div>
-					<div class="row">
-						<label>Week</label>
-						<input  type="week" placeholder="2011-W33">
-					</div>
-					<div class="row">
-						<label>Time</label>
-						<input  type="time" placeholder="13:45:00">
-					</div>
-					<div class="row">
-						<label>Color</label>
-						<div><input  type="color" placeholder="#563d7c"></div>
-					</div>
-					<div class="row">
-						<label>Range</label>
-						<input type="range" min="0" max="100" />
-					</div>
-				</fieldset>
-			</form>
+	<form class="form-flex form-flat">
+		<fieldset>
+			<legend>Example fieldset's legend</legend>
 
-		</div>
+			<div class="row">
+				<label>Example input</label>
+				<input type="text" placeholder="Example input">
+			</div>
+
+			<div class="row">
+				<label>Example select</label>
+				<select>
+					<option disabled selected value="">Choose...</option>
+					<optgroup label="Option group 1">
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+						<option value="3">Option 3</option>
+					</optgroup>
+					<optgroup label="Option group 2">
+						<option value="4">Option 4</option>
+						<option value="5">Option 5</option>
+						<option value="6">Option 6</option>
+					</optgroup>
+				</select>
+			</div>
+
+			<div class="row">
+				<label>Label for checkbox</label>
+				<div>
+					<input type="checkbox" value="">
+					Check this checkbox
+				</div>
+			</div>
+
+			<div class="row">
+				<label>Label for radio</label>
+				<div>
+					<input type="radio" name="optionsRadios" value="option1" checked="">
+					Option one is this and that
+					<input type="radio" name="optionsRadios" value="option2">
+					Option two is something else that's also super long to demonstrate the wrapping of these fancy form
+					controls.
+					<input type="radio" name="optionsRadios" value="option3" disabled="">
+					Option three is disabled
+				</div>
+			</div>
+
+			<div class="row">
+				<label>Example textarea</label>
+				<textarea placeholder="Textarea placeholder" rows="3"></textarea>
+			</div>
+
+			<div class="row">
+				<label>Example datetime-local</label>
+				<input type="datetime-local">
+			</div>
+
+			<div class="row">
+				<label>Example output</label>
+				<output name="result">100</output>
+			</div>
+
+			<div class="text-center">
+				<input type="submit" class="btn btn-primary" value="Input generic button">
+			</div>
+
+			<div class="row">
+				<label>Readonly input</label>
+				<input type="text" readonly placeholder="Readonly input" value="ReadOnly value">
+			</div>
+
+			<div class="row">
+				<label>File</label>
+				<input type="file" />
+			</div>
+
+			<div class="text-center">
+				<input type="submit" class="btn btn-primary" value="Input generic button">
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>HTML5 form's elements</legend>
+
+			<div class="row">
+				<label>Text</label>
+				<input type="text" placeholder="Artisanal kale">
+			</div>
+			<div class="row">
+				<label>Search</label>
+				<input type="search" placeholder="How do I shoot web">
+			</div>
+			<div class="row">
+				<label>Email</label>
+				<input type="email" placeholder="bootstrap@example.com">
+			</div>
+			<div class="row">
+				<label>URL</label>
+				<input type="url" placeholder="https://getbootstrap.com">
+			</div>
+			<div class="row">
+				<label>Telephone</label>
+				<input type="tel" placeholder="1-(555)-555-5555">
+			</div>
+			<div class="row">
+				<label>Password</label>
+				<input type="password" placeholder="hunter2">
+			</div>
+			<div class="row">
+				<label>Number</label>
+				<input type="number" placeholder="42">
+			</div>
+			<div class="row">
+				<label>Date and time</label>
+				<input type="datetime-local" placeholder="2011-08-19T13:45:00">
+			</div>
+			<div class="row">
+				<label>Date</label>
+				<input type="date" placeholder="2011-08-19">
+			</div>
+			<div class="row">
+				<label>Month</label>
+				<input type="month" placeholder="2011-08">
+			</div>
+			<div class="row">
+				<label>Week</label>
+				<input type="week" placeholder="2011-W33">
+			</div>
+			<div class="row">
+				<label>Time</label>
+				<input type="time" placeholder="13:45:00">
+			</div>
+			<div class="row">
+				<label>Color</label>
+				<div><input type="color" placeholder="#563d7c"></div>
+			</div>
+			<div class="row">
+				<label>Range</label>
+				<input type="range" min="0" max="100"/>
+			</div>
+		</fieldset>
+	</form>
+
+</div>
 
 
-		<script src="menu.js"></script>
+<footer>
+	<script src="menu.js"></script>
+</footer>
 
-	</body>
+</body>
 </html>

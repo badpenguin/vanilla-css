@@ -1,0 +1,90 @@
+
+.navbar {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar-menu {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+
+	li {
+		padding: $vanilla-navbar-li-padding;
+	}
+}
+
+.navbar-menu-left {
+	justify-content: flex-start;
+
+	li:not(:first-child) {
+		padding-left: $vanilla-navbar-li-spacing;
+	}
+}
+
+.navbar-menu-right {
+	justify-content: flex-end;
+
+	li:not(:last-child) {
+		padding-right: $vanilla-navbar-li-spacing;
+	}
+}
+
+.navbar-toggle {
+	display: none;
+
+	padding: 0 $vanilla-navbar-li-padding;
+
+	& > input[type="checkbox"] {
+		opacity: 0;
+		padding: 0;
+		margin: 0;
+		width: 0;
+	}
+
+}
+
+.navbar-overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem 2rem;
+	@include transform(translateX(-100%));
+	transition: all .5s ease;
+	visibility: hidden;
+	min-width: 280px;
+	background: $vanilla-navbar-overlay-background;
+	color: $vanilla-navbar-overlay-color;
+}
+
+.navbar-overlay-close {
+	display: block;
+	text-align: right;
+	font-size: 200%;
+}
+
+
+@media (max-width: $vanilla-navbar-breakpoint) {
+
+	.navbar-menu li:not(.dont-toggle) {
+		display: none;
+	}
+
+	.navbar-toggle {
+		display: block;
+
+		& > input[type="checkbox"]:checked ~ .navbar-overlay {
+			//display: block;
+			@include transform(translateX(0%));
+			visibility: visible;
+		}
+
+	}
+
+}
