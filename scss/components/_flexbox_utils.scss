@@ -12,6 +12,16 @@
 	@include flex(auto);
 }
 
+.flex-wrap {
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.flex-center {
+	justify-content: center;
+}
+
+
 
 /* SHORTCUTS */
 
@@ -25,10 +35,7 @@
 /* UNUSED
 
 
-.flex-wrap {
-	-ms-flex-wrap:wrap;
-	flex-wrap: wrap;
-}
+
 .flex-wrap-off {
 	-ms-flex-wrap:nowrap;
 	flex-wrap: nowrap;
@@ -44,9 +51,7 @@
 .flex-justify-right {
 	justify-content: flex-end;
 }
-.flex-justify-center {
-	justify-content: center;
-}
+
 .flex-justify-outer {
 	justify-content: space-between;
 }
@@ -64,7 +69,7 @@
 .flex-valign-bottom{
 	align-items: flex-end;
 }
-.flex-valign-center{
+.flex-valign-center {
 	align-items: center;
 }
 .flex-valign-baseline{

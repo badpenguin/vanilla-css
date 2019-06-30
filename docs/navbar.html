@@ -7,7 +7,7 @@
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
 	<link href="menu.css" rel="stylesheet" type="text/css"/>
-
+	<script type="text/javascript" src="menu.js"></script>
 	<style>
 
 		header {
@@ -47,7 +47,7 @@
 				<label for="navbar-toggle">&#9776; Menu</label>
 				<input type="checkbox" id="navbar-toggle"/>
 				<div class="navbar-overlay">
-					<label class="navbar-overlay-close" for="navbar-toggle">&#x1f7a9;</label>
+					<label class="navbar-overlay-close" for="navbar-toggle">&times;</label>
 					<ul>
 						<li><a href="#">one</a></li>
 						<li><a href="#">two</a></li>
@@ -75,7 +75,7 @@
 			<li><a href="#">link</a></li>
 		</ul>
 		<ul class="navbar-menu navbar-menu-right border1">
-			<li >right</li>
+			<li class="dont-toggle">right</li>
 			<li><a href="#">link</a></li>
 			<li><a href="#">link</a></li>
 		</ul>
@@ -102,13 +102,13 @@
 </article>
 
 
-<article class="container">
+<article class="container fluid">
 	<h1>Navbar without javascript</h1>
 	<p>Try to resize to 1000px to have the hambuger menù appears. It works only onto the top navbar.</p>
 </article>
 
 <footer>
-	<script src="menu.js"></script>
+	<script>writeSimpleMenu()</script>
 </footer>
 
 </body>

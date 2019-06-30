@@ -12,21 +12,38 @@ $vanilla-container-small-size: 700px !default;
 
 .container {
 	max-width: $vanilla-container-standard-size;
+
+	&.fluid {
+		@media (max-width: ($vanilla-container-standard-size+32px) ) {
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+
 }
 
 .container-small {
 	max-width: $vanilla-container-small-size;
+
+	&.fluid {
+		@media (max-width: ($vanilla-container-small-size+32px) ) {
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
+
 }
 
 .container-large {
 	max-width: $vanilla-container-large-size;
-}
 
+	&.fluid {
+		@media (max-width: ($vanilla-container-large-size+32px) ) {
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	}
 
-.container-fluid {
-	@include margin-auto;
-	width: 90%;
-	max-width: $vanilla-container-standard-size;
 }
 
 

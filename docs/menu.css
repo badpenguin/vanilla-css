@@ -1,8 +1,19 @@
-
 body {
-	/* avoid overlapping footer menu */
-	padding-bottom: 6rem;
+	min-height: 100vh;
 }
+
+.navbar {
+	background: #eee;
+}
+.navbar-overlay li {
+	padding: 1rem;
+	transition: none;
+}
+.navbar-overlay li:hover {
+	background: #eee;
+	color: #333;
+}
+
 
 /*
  * Format the JS navbar
@@ -24,21 +35,24 @@ header nav.docmenu {
 }
 
 
-nav.docmenu ol  {
+nav.docmenu ol {
 	margin: 0;
 	padding: 0;
 	display: inline-block;
 	line-height: 3rem;
 }
+
 nav.docmenu li {
 	float: left;
 	display: inline-block;
 	margin-right: 2rem;
 	text-transform: capitalize;
 }
+
 nav.docmenu a {
 	text-decoration: none;
 }
+
 nav.docmenu a:hover {
 	text-decoration: underline;
 }
@@ -46,17 +60,20 @@ nav.docmenu a:hover {
 /*
  * Convert docmenu in a normal OL
  */
-.convert-docmenu nav.docmenu  {
+.convert-docmenu nav.docmenu {
 	background: transparent;
 }
+
 .convert-docmenu nav.docmenu ol {
 	list-style-type: decimal;
 	list-style-position: inside;
 }
+
 .convert-docmenu nav.docmenu li {
 	float: none;
 	display: list-item;
 }
+
 .convert-docmenu nav.docmenu li.home {
 	display: none;
 }
@@ -74,13 +91,12 @@ nav.docmenu a:hover {
 }
 
 .test-margin h1,
-.test-margin h2
-{
+.test-margin h2 {
 	margin-top: 30px;
 	margin-bottom: 8px;
 }
 
-.test-smallbox{
+.test-smallbox {
 	max-width: 600px;
 	border: dashed 1px #777;
 	padding: 8px;
@@ -117,9 +133,11 @@ nav.docmenu a:hover {
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
+
 .grid-debug .cell:nth-child(odd) {
 	background: #ffaaaa;
 }
+
 .grid-debug .cell:nth-child(even) {
 	background: #aaaaff;
 }
@@ -137,13 +155,15 @@ nav.docmenu a:hover {
 }
 
 /* GRID NESTED */
-.test-grid-nested .cell,.test-grid-basic .cell {
+.test-grid-nested .cell, .test-grid-basic .cell {
 	padding: 8px;
 }
+
 .test-grid-nested.grid-debug .cell > .inner {
 	border: dashed 1px #777;
 	background: #fff;
 }
+
 /* GRID GUTTER */
 .grid-debug .grid-gutter .cell > .inner {
 	border: solid 2px black;
@@ -157,6 +177,7 @@ nav.docmenu a:hover {
 .test-padding {
 	padding: 2rem;
 }
+
 .test-margin-top {
 	margin-top: 2rem;
 }
@@ -165,12 +186,27 @@ nav.docmenu a:hover {
  * Overlay
  */
 .test-gradient {
-	background: rgba(0,0,0,0.5);
+	background: rgba(0, 0, 0, 0.5);
 	color: #fff;
 }
 
 
 footer {
-	position: fixed;
-	bottom: 0; left: 0; right: 0;
+	margin-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+
+
+	body {
+		padding-bottom: 6rem;
+	}
+
+	footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
 }

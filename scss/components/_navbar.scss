@@ -5,6 +5,13 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	position: relative; // for absolute
+}
+
+.navbar.scrollable {
+	overflow-y: hidden;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .navbar-menu {
@@ -17,6 +24,10 @@
 	li {
 		padding: $vanilla-navbar-li-padding;
 	}
+
+	&.flex-center {
+		justify-content: center;
+	}
 }
 
 .navbar-menu-left {
@@ -25,6 +36,7 @@
 	li:not(:first-child) {
 		padding-left: $vanilla-navbar-li-spacing;
 	}
+
 }
 
 .navbar-menu-right {
@@ -37,6 +49,8 @@
 
 .navbar-toggle {
 	display: none;
+
+	position: absolute; right: 0;
 
 	padding: 0 $vanilla-navbar-li-padding;
 
@@ -54,19 +68,25 @@
 	top: 0;
 	bottom: 0;
 	left: 0;
-	padding: 1rem 2rem;
+	padding: 1rem 0;
 	@include transform(translateX(-100%));
 	transition: all .5s ease;
 	visibility: hidden;
 	min-width: 280px;
 	background: $vanilla-navbar-overlay-background;
 	color: $vanilla-navbar-overlay-color;
+
+	li > a {
+		display: block;
+	}
+
 }
 
 .navbar-overlay-close {
 	display: block;
 	text-align: right;
 	font-size: 200%;
+	padding-right: $vanilla-navbar-li-padding;
 }
 
 

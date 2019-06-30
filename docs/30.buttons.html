@@ -7,6 +7,7 @@
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
 	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="menu.js"></script>
 	<style>
 		.space {
 			margin-top: 1rem;
@@ -15,9 +16,9 @@
 </head>
 <body class="test test-margin">
 <header>
-	<script src="menu.js"></script>
+	<script>writeResponsiveMenu()</script>
 </header>
-<div class="container">
+<div class="container fluid">
 	<h1>Buttons</h1>
 	<p>Normalize button to be the same no matter what tag or css is used.</p>
 
@@ -86,7 +87,7 @@
 </div>
 
 <footer>
-	<script src="menu.js"></script>
+	<script>writeSimpleMenu()</script>
 </footer>
 
 </body>

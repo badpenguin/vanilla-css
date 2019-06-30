@@ -7,22 +7,9 @@
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
 	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="menu.js"></script>
 	<style>
-		/*
-					.test-form-label-fixed-width label {
-						width: 200px;
-						text-align: right;
-						display: inline-block;
-						border-bottom: solid 1px graytext;
-						margin-bottom: 8px;
-					}
 
-					.test-form-label-fixed-width > *, .test-form-label-fixed-width fieldset > * {
-						display: block;
-						border-bottom: solid 1px graytext;
-						margin-bottom: 8px;
-					}
-		*/
 		.test-mobile-container {
 			margin-top: 20px;
 			margin-bottom: 20px;
@@ -44,10 +31,10 @@
 </head>
 <body class="test test-margin">
 <header>
-	<script src="menu.js"></script>
+	<script>writeResponsiveMenu()</script>
 </header>
 <!-- standard form -->
-<div class="container test-mobile-container">
+<div class="container fluid test-mobile-container">
 
 	<p style="color:red">FORM IS NOT OFFICIALLY COMPLETED</p>
 
@@ -355,7 +342,7 @@
 
 
 <footer>
-	<script src="menu.js"></script>
+	<script>writeSimpleMenu()</script>
 </footer>
 
 </body>

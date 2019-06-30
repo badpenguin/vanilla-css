@@ -19,6 +19,21 @@
 
 		margin-bottom: 1rem;
 
+		// Become stacked on small
+		@include to_breakpoint(small) {
+
+			label {
+				flex: none;
+				width: 100%;
+			}
+
+			label + * {
+				flex: none;
+				width: 100%;
+			}
+
+		}
+
 	}
 
 }

@@ -7,12 +7,21 @@
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
 	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="menu.js"></script>
+	<style>
+
+		body {
+			overflow-x: hidden;
+		}
+
+	</style>
+
 </head>
 <body class="test">
 <header>
-	<script src="menu.js"></script>
+	<script>writeResponsiveMenu()</script>
 </header>
-<div class="container">
+<div class="container fluid">
 
 	<h1>Heading H1</h1>
 	<p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
@@ -206,8 +215,9 @@
 	</section>
 </div>
 
+
 <footer>
-	<script src="menu.js"></script>
+	<script>writeSimpleMenu()</script>
 </footer>
 
 </body>
