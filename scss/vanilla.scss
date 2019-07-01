@@ -20,10 +20,10 @@
 @import "basic/typography";
 @import "basic/images";
 @import "basic/buttons";
+@import "grid/breakpoints";
 @import "basic/forms";
 
 // Grid Layout
-@import "grid/breakpoints";
 @import "grid/flexbox";
 @import "grid/grid";
 @import "grid/layout";
@@ -32,7 +32,6 @@
 // Components
 @import "components/grid_extra";
 @import "components/flexbox_utils";
-@import "components/form-flex";
 @import "components/image_filters";
 @import "components/visibility";
 

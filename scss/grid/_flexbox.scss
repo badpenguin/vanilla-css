@@ -22,9 +22,11 @@
  */
 
 // flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+/* No broser prefix anymore
 @mixin flex($fg: 1, $fs: null, $fb: null) {
 	flex: $fg $fs $fb;
 }
+ */
 
 // used in grid
 .flex-grow, .grid .cell.flex-grow {

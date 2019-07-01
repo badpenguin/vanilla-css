@@ -48,7 +48,6 @@
 		vestibulum.</p>
 
 
-
 	<section class="test-margin">
 
 		<h2>Tag HR</h2>
@@ -145,8 +144,11 @@
 			deserunt mollit anim id est laborum.
 		</div>
 
-		<h2>Tag .text-terminal (PRE + text-break-wrap)</h2>
-		<pre class="text-terminal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</pre>
+		<h2>Tag .text-terminal (like a PRE)</h2>
+		<pre class="text-terminal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<br>agx@localhost:~<span style="color:#fff">$ <span class="pulse-opacity">&#9608;</span></span>
+
+		</pre>
 
 		<h2>Tag CITE</h2>
 		<cite>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -197,6 +199,32 @@
 		<p>SUB<sub>SUB</sub>.</p>
 
 	</section>
+
+	<hr>
+
+	<h1>Fluid Typography</h1>
+
+	<p>It works by setting HTML with a fixed font-size in pixel, i.e. 16px, and then using <i>rem</i> on the whole
+		website. You can just change the pixel size according to your media queries to scale the whole website a little.
+	</p>
+
+	<p>To create really fluid things there are two mixins:</p>
+	<pre>
+		@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {...}
+		@mixin fluid-option($name, $min-vw, $max-vw, $min-font-size, $max-font-size) {...}
+	</pre>
+
+	<p>With the first one you can create a font-size scaling linearly between two breakpoints; with the second instead
+		you can apply it to any option. Example:</p>
+
+	<pre>
+		@include fluid-type(320px, 1400px, 20px, 100px);
+		@include fluid-option(margin-top, 320px, 1400px, 20px, 80px);
+	</pre>
+
+	<p>NOTE: it will only works for pixels value.</p>
+
+
 </div>
 
 

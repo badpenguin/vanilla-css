@@ -9,7 +9,8 @@
 	@for $i from 1 through $num-cells {
 		@for $j from 1 through $i {
 			.cell.#{$dim}-#{$j}-#{$i}{
-				@include flex(0, 0, (100%/$i)*$j );
+				//@include flex(0, 0, (100%/$i)*$j );
+				flex: 0 0 ((100%/$i)*$j);
 			}
 		}
 	}
@@ -29,7 +30,7 @@
 
 	// Basic Grid
 	flex-direction: row;
-	flex-wrap: wrap;
+	@extend .flex-wrap;
 	justify-content: space-between;
 	align-items: stretch;
 	align-content: space-between;
@@ -50,18 +51,21 @@
 	// Cells - by default are equal width
 	.cell {
 		//@include flex(1, 0, 0); - OLD behavior was not falling back to sm-1-1, so you always need to specify sm-x-y
-		@include flex(1, 0, 100%);
+		//@include flex(1, 0, 100%);
+		flex: 1 0 100%;
 	}
 
 	// NEW behavior: fall back to sm-1-1 and need grid-auto or cell-auto for auto size
 	@include from_breakpoint(small) {
 		&.grid-auto .cell {
-			@include flex(1, 0, 0);
+			//@include flex(1, 0, 0);
+			flex: 1 0 0;
 		}
 
 		// ... or can grow automatically
 		.cell.cell-auto {
-			@include flex(1, 0, auto);
+			//@include flex(1, 0, auto);
+			flex: 1 0 auto;
 		}
 
 	}

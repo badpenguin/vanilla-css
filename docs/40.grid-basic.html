@@ -8,6 +8,11 @@
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
 	<link href="menu.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="menu.js"></script>
+	<style>
+		br {
+			margin-top: 2rem;
+		}
+	</style>
 </head>
 <body class="test grid-debug test-grid-basic">
 <header>
@@ -16,26 +21,31 @@
 <div class="container fluid ">
 	<p>Container Fixed 1000px</p>
 
-	<p>
+	<h1>Visibility Class</h1>
+	<p>Try to resize to see the active breakpoint</p>
+	<p class="text-center"><b>
 		<span class="visible-on-x-small">x-small</span>
 		<span class="visible-on-small">small</span>
 		<span class="visible-on-medium">medium</span>
 		<span class="visible-on-large">large</span>
 		<span class="visible-on-x-large">x-large</span>
 		<span class="visible-on-xx-large">xx-large</span>
-	</p>
-
+	</b></p>
+	<p>Mixin for managing media queries are available with: <em>from_breakpoint, to_breakpoint, is_breakpoint</em></p>
 
 	<h1>Basic example</h1>
 
 	<p>Column by default are 100% width</p>
+
+	<p>Grid selector is <code>.grid</code> and must contains <code>.cell</code></p>
 
 	<div class="grid">
 		<div class="cell">1</div>
 		<div class="cell">2</div>
 	</div>
 
-	<p>If you add .grid-auto to the grid, or .cell-auto to the cell then they will try to be equal size.</p>
+	<br>
+	<p>If you add <b>.grid-auto</b> to the grid, or .cell-auto to the cell then they will try to be equal size automatically.</p>
 
 	<div class="grid grid-auto">
 		<div class="cell">1 grid-auto</div>
@@ -47,7 +57,9 @@
 		<div class="cell cell-auto">2 cell-auto</div>
 	</div>
 
-	<p>When they shrink to small they will always be 100% width if no other settings is used.</p>
+	<br>
+
+	<p>When the cells shrinks to small they will always be 100% width if no other settings is used.</p>
 
 	<div class="grid">
 		<div class="cell s-1-2 sm-1-2">1 s-1-2 sm-1-2</div>
@@ -80,7 +92,7 @@
 
 	<h1>Fixed Grid</h1>
 
-	<p>Cells using the s-x-y class will always be fixed.</p>
+	<p>Cells using the "s" prefix class will always be fixed.</p>
 
 	<div class="grid">
 		<div class="cell s-1-1">1/1</div>
@@ -133,8 +145,13 @@
 
 	<h1>Responsive Grid</h1>
 
-	<p>Cell responsive uses sm-x-y, md-x-y, lg-x-y, etc.</p>
-	<p>The default is only a grid with 2, 3, 4 and 5 column but you can use the mixin to build other as you wish.</p>
+	<p>Cell responsive uses one of the responsive classes.</p>
+	<p>There are 5 default breakpoints: sm, md, lg, xlg, xxlg; its easy to add more.</p>
+
+
+	<p>The default grid has 2, 3, 4 and 5 column but you can use the mixin to build other as you wish.</p>
+	<p>For example: <code>@include cell-builder(12, 's');</code></p>
+
 	<p>Cell at small size will always try to be single column.</p>
 	<p>In this example the "md" size is used.</p>
 
@@ -313,6 +330,8 @@
 
 	<h1>Equalize (stretch and vertical center in one shot)</h1>
 
+	<p>The cells will match height by default, this will also center them vertically.</p>
+
 	<div class="grid grid-equalize">
 		<div class="cell s-1-3">1 ROW</div>
 		<div class="cell s-1-3">1 ROW<br>2 ROW</div>
@@ -321,6 +340,8 @@
 
 
 	<h1>Grid Pair / Unpair</h1>
+
+	<p>Diverge or Converge the content of the cells, only usefull with 2 colum layout.</p>
 
 	<div class="grid grid-pair">
 		<div class="cell cell-auto">1</div>

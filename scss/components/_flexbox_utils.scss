@@ -4,13 +4,20 @@
  */
 
 
+/* UNUSED
 .flex-none {
-	@include flex(none);
+	//@include flex(none);
+	flex: none;
 }
+*/
 
+
+/* UNUSED
 .flex-auto {
 	@include flex(auto);
+	flex: auto;
 }
+ */
 
 .flex-wrap {
 	-ms-flex-wrap: wrap;
