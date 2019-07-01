@@ -10,6 +10,7 @@ var menu = [
 	['42.grid-gutter.html', 'Grid: gutter', ''],
 	['50.viewport.html', 'Viewport', ''],
 	['60.fab.html', 'FAB', ''],
+	['cards.html', 'Cards', ''],
 	['70.overlay.html', 'overlay', ''],
 	['80.animate.html', 'animate', ''],
 	['navbar.html', 'navbar', ''],
