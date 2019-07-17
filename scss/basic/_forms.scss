@@ -71,6 +71,7 @@ label[for], .pointer {
 	.row {
 		display: flex;
 		flex-direction: row;
+		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
 		align-items: stretch;
 

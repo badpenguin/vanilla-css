@@ -1,6 +1,4 @@
-$vanilla-container-large-size: 1240px !default;
-$vanilla-container-standard-size: 1000px !default;
-$vanilla-container-small-size: 700px !default;
+
 
 
 .container, .container-small, .container-large {
@@ -14,7 +12,7 @@ $vanilla-container-small-size: 700px !default;
 	max-width: $vanilla-container-standard-size;
 
 	&.fluid {
-		@media (max-width: ($vanilla-container-standard-size+32px) ) {
+		@media (max-width: ($vanilla-container-standard-size+32px)) {
 			padding-left: 16px;
 			padding-right: 16px;
 		}
@@ -26,7 +24,7 @@ $vanilla-container-small-size: 700px !default;
 	max-width: $vanilla-container-small-size;
 
 	&.fluid {
-		@media (max-width: ($vanilla-container-small-size+32px) ) {
+		@media (max-width: ($vanilla-container-small-size+32px)) {
 			padding-left: 16px;
 			padding-right: 16px;
 		}
@@ -38,7 +36,7 @@ $vanilla-container-small-size: 700px !default;
 	max-width: $vanilla-container-large-size;
 
 	&.fluid {
-		@media (max-width: ($vanilla-container-large-size+32px) ) {
+		@media (max-width: ($vanilla-container-large-size+32px)) {
 			padding-left: 16px;
 			padding-right: 16px;
 		}
@@ -47,14 +45,21 @@ $vanilla-container-small-size: 700px !default;
 }
 
 
+// Let a section break is parent container
+.break-container {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+
 // Cover the viewport or create a section
 .container-viewport {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+	@extend .flex-col-center;
+	//align-content: center;
 
 	width: 100%;
 	height: 100vh;

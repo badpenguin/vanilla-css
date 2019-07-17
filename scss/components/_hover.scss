@@ -1,9 +1,4 @@
 
-$vanilla-hover-background: #ddd;
-$vanilla-hover-color: #333;
-$vanilla-hover-active-background: #444;
-$vanilla-hover-active-color: #fff;
-
 .hover-master {
 
 	position: relative;
@@ -12,7 +7,7 @@ $vanilla-hover-active-color: #fff;
 		display:none;
 		position: absolute;
 		z-index: 1;
-		padding: 1rem 0;
+		padding: 0;
 		background: $vanilla-hover-background;
 		color: $vanilla-hover-color;
 		top: 100%;

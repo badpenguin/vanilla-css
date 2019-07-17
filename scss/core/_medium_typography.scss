@@ -1,5 +1,3 @@
-$vanilla-fontstack-headers: $generic-family-headers;
-
 @mixin medium-paragraph {
 	font-family: $vanilla-fontstack-serif;
 	color: $vanilla-text-color;
@@ -10,6 +8,7 @@ $vanilla-fontstack-headers: $generic-family-headers;
 	@extend .font-antialias;
 }
 
+
 @mixin medium-underline {
 	background-color: transparent;
 	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .6) 50%, rgba(0, 0, 0, 0) 50%);
@@ -17,6 +16,33 @@ $vanilla-fontstack-headers: $generic-family-headers;
 	background-size: 2px .1em;
 	background-position: 0 1.07em;
 }
+
+
+@mixin media-liga-salt-on {
+	-moz-font-feature-settings: "liga" on, "lnum" on;
+	-webkit-font-feature-settings: "liga" on, "lnum" on;
+	font-feature-settings: "liga" on, "lnum" on;
+}
+
+
+@mixin medium-figcaption {
+	font-family: $vanilla-fontstack-base;
+	//font-weight: 300;
+	font-weight: normal;
+	font-style: normal;
+	@include media-liga-salt-on();
+	font-size: px2rem(14);
+	line-height: 1.4;
+	color: $vanilla-alt-text-color;
+	letter-spacing: 0;
+	text-align: center; // ????
+
+	em {
+		font-style: normal;
+	}
+
+}
+
 
 @if $vanilla-use-medium == 1 {
 
@@ -43,7 +69,8 @@ $vanilla-fontstack-headers: $generic-family-headers;
 
 	}
 
-	article, .medium-content {
+	/*article,*/
+	.medium-content {
 
 		@include medium-paragraph;
 
@@ -79,7 +106,6 @@ $vanilla-fontstack-headers: $generic-family-headers;
 			letter-spacing: -.02em;
 			margin-top: px2rem(39);
 			@extend .text-break;
-			color: rgba(0, 0, 0, 0.75);
 		}
 
 		p {
@@ -87,7 +113,7 @@ $vanilla-fontstack-headers: $generic-family-headers;
 			@extend .text-break;
 			letter-spacing: .01rem;
 
-			margin-top: px2rem(29);
+			margin-top: $medium-paragraph-margin-top;
 			margin-bottom: 0;
 		}
 
@@ -101,19 +127,18 @@ $vanilla-fontstack-headers: $generic-family-headers;
 
 		strong {
 			// make it a little lighter
-			color: rgba(0, 0, 0, 0.75);
+			color: lighten($vanilla-text-color, 5%);
 		}
 
 		a {
 			//DEFAULT@include medium-underline;
 			letter-spacing: -.003em;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, .44);
+			-webkit-tap-highlight-color: $vanilla-alt-text-color;;
 		}
 
 
 		em {
-			-webkit-font-feature-settings: "liga" on, "salt" on;
-			font-feature-settings: "liga" on, "salt" on;
+			@include media-liga-salt-on();
 		}
 
 
@@ -125,7 +150,7 @@ $vanilla-fontstack-headers: $generic-family-headers;
 			letter-spacing: -.01em;
 			margin-top: px2rem(29);
 
-			border-left: 3px solid rgba(0, 0, 0, .8);
+			border-left: 3px solid $vanilla-text-color;
 			padding-left: px2rem(20);
 			margin-left: px2rem(-23);
 			padding-bottom: 2px;
@@ -140,7 +165,7 @@ $vanilla-fontstack-headers: $generic-family-headers;
 				line-height: 1.48;
 				letter-spacing: -.030em;
 
-				color: rgba(0, 0, 0, .6);
+				color: $vanilla-alt-text-color;
 				border: none;
 				padding: 0;
 				padding-left: px2rem(50);
@@ -164,7 +189,6 @@ $vanilla-fontstack-headers: $generic-family-headers;
 			-moz-font-feature-settings: "liga" on;
 			font-feature-settings: "liga" 0;
 
-			color: rgba(0, 0, 0, .8);
 			background: rgba(0, 0, 0, .05);
 		}
 
@@ -206,8 +230,7 @@ $vanilla-fontstack-headers: $generic-family-headers;
 				text-align: -webkit-match-parent;
 
 				em {
-					-webkit-font-feature-settings: "liga" on, "salt" on;
-					font-feature-settings: "liga" on,"salt" on;
+					@include media-liga-salt-on();
 					color: inherit;
 				}
 
@@ -217,9 +240,7 @@ $vanilla-fontstack-headers: $generic-family-headers;
 
 
 		ol li:before {
-			font-feature-settings: "liga" on, "lnum" on;
-			-moz-font-feature-settings: "liga" on, "lnum" on;
-			-webkit-font-feature-settings: "liga" on, "lnum" on;
+			@include media-liga-salt-on();
 			padding-right: px2rem(12);
 			counter-increment: post;
 			content: counter(post) ".";
@@ -251,31 +272,16 @@ $vanilla-fontstack-headers: $generic-family-headers;
 			margin: 0;
 			margin-top: px2rem(43);
 
-			img {
-				width: 100%;
-				height: auto;
+			&:not(.aligncenter) {
+				img {
+					width: 100%;
+					height: auto;
+				}
 			}
 
 			figcaption {
-				font-family: $vanilla-fontstack-base;
-				font-weight: 300;
-				font-style: normal;
-				font-feature-settings: "liga" on, "lnum" on;
-				-moz-font-feature-settings: "liga" on, "lnum" on;
-				-webkit-font-feature-settings: "liga" on, "lnum" on;
-				font-size: px2rem(14);
-				line-height: 1.4;
-				color: rgba(0, 0, 0, .6);
-				letter-spacing: 0;
-				text-align:center; // ????
-
-				em {
-					font-style: normal;
-				}
-
+				@include medium-figcaption();
 			}
-
-
 		}
 
 
@@ -297,12 +303,13 @@ $vanilla-fontstack-headers: $generic-family-headers;
 				content: '...';
 				display: inline-block;
 				margin-left: .6em; // TODO
-				color: rgba(0, 0, 0, .6);
+				color: $vanilla-alt-text-color;
 				position: relative;
 				top: px2rem(-30);
 			}
 
 		}
+
 
 		.highlight {
 			background-color: transparent;
@@ -329,18 +336,10 @@ $vanilla-fontstack-headers: $generic-family-headers;
 			//letter-spacing: -.022em;
 			letter-spacing: -.006em;
 			margin-top: 4px;
-			color: rgba(0,0,0,.44);
+			//color: rgba(0,0,0,.44);
+			color: $vanilla-alt-text-color;
 		}
 
-	}
-
-	// else
-}
-
-else {
-
-	article a {
-		@include medium-underline();
 	}
 
 	//endif

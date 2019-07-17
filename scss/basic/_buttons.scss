@@ -1,4 +1,3 @@
-$color-white: #fff;
 
 .btn,
 button,
@@ -17,8 +16,7 @@ input[type="reset"]
 
 	padding: 0.5rem 1rem;
 
-	//TODO transition: .3s;
-	transition: opacity .3s;
+	transition: opacity .3s ease-in-out, background .3s ease-in-out;
 
 
 	&:hover, &:focus, &:active {
@@ -40,6 +38,7 @@ input[type="reset"]
 		background-color: $color;
 		border: $border;
 		text-decoration: none;
+		transition: all .3s ease-in-out;
 
 		&:hover, &:focus, &:active {
 			background-color: $color-active;
@@ -66,6 +65,11 @@ input[type="reset"]
 
 	}
 }
+
+
+// TODO: style outline, clear, squared, rounded
+
+
 
 /*
  * We only provide the fab-primary class

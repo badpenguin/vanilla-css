@@ -3,4 +3,16 @@
 	overflow-x:auto;
 }
 
-// NOTE: the best way to implement responsive table is to use StackTable
+// NOTE: the best way to implement responsive table is to use "StackTable"
+
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	table-layout: fixed;
+
+	th {
+		font-weight: 700;
+	}
+
+}

@@ -1,6 +1,3 @@
-/*! Vanilla CSS by Antonio Gallo - https://www.badpenguin.org/
-*/
-
 /*
  * To allow to reuse only some small part of the framework i prefer to have all the most common mixins in a separate file
  * that can be imported by everyone
@@ -50,6 +47,7 @@
 @mixin aspect-ratio($ratio) {
 	position: relative;
 	overflow: hidden;
+
 	&:before {
 		display: block;
 		content: "";
@@ -57,14 +55,11 @@
 		padding-top: $ratio;
 
 	}
-	> .inner {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+	> .inner, > iframe {
+		@extend .fill-parent;
 	}
 }
+
 
 /*
  * AutoPrefixer:

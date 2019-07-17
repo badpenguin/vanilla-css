@@ -1,138 +1,4 @@
 /*
- * Many thanks to:
- * https://codepen.io/ruslan_khomiak/pen/QGmwMP
- */
-
-$fab-size: 56px !default;
-$fab-background: #E6E6E6 !default;
-$fab-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 18px 0px rgba(0,0,0,0.12) !default;
-$fab-z-index: 2 !default;
-
-
-.fab {
-	width: $fab-size;
-	height: $fab-size;
-	background: $fab-background;
-	border-radius: 50%;
-	// material
-	box-shadow: $fab-shadow;
-	z-index: $fab-z-index;
-
-	.fab-label {
-		vertical-align: middle;
-		text-align: center;
-		display: table-cell;
-		height: inherit;
-		width: inherit;
-		font-size: 32px;
-	}
-
-
-	.fab-buttons {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		opacity: 0;
-		visibility: hidden;
-		transition: 0.2s;
-
-		[data-tooltip]:before {
-			top: 50%;
-			margin-top: -11px;
-			font-weight: 600;
-			border-radius: $vanilla-border-radius;
-			background: #585858;
-			color: #fff;
-			content: attr(data-tooltip);
-			font-size: 14px;
-			text-decoration: none;
-			visibility: hidden;
-			opacity: 0;
-			padding: 4px 7px;
-			margin-right: 12px;
-			position: absolute;
-			@include transform(scale(0));
-			right: 100%;
-			white-space: nowrap;
-			@include transform-origin(top right);
-			transition: all .3s cubic-bezier(.25, .8, .25, 1);
-		}
-		[data-tooltip]:hover:before {
-			visibility: visible;
-			opacity: 1;
-			@include transform(scale(1));
-			@include transform-origin(right center 0);
-		}
-
-	}
-
-	&:hover {
-
-		.fab-buttons {
-			opacity: 1;
-			visibility: visible;
-
-			a {
-				text-decoration: none;
-				@include transform(scaleY(1) scaleX(1) translateY(-16px) translateX(0px));
-			}
-
-		}
-
-	}
-
-
-}
-
-
-.fab-bottom-left {
-	position: fixed;
-	right: 20px;
-	bottom: 20px;
-
-	.fab-buttons {
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 50px;
-	}
-
-}
-
-
-.fab-buttons li {
-	display: block;
-	text-align: center;
-	margin: 12px 0;
-}
-
-
-.fab-buttons a {
-	display: inline-block;
-	width: $fab-size;;
-	height: $fab-size;;
-	text-decoration: none;
-	background-color: $fab-background;
-	border-radius: 50%;
-	box-shadow: $fab-shadow;
-	//transform: scaleY(0.5) scaleX(0.5) translateY(0px) translateX(0px);
-	//-moz-transition: .3s;
-	//-webkit-transition: .3s;
-	//-o-transition: .3s;
-	transition: .3s;
-	z-index: $fab-z-index;
-}
-
-.fab-label:hover + .fab-buttons a:before {
-	visibility: visible;
-	opacity: 1;
-	@include transform(scale(1));
-	@include transform-origin(right center 0);
-	transition-delay: 0.3s;
-}
-
-
-/*
  * Build your own buttons
  */
 
@@ -158,13 +24,150 @@ $fab-z-index: 2 !default;
 }
 
 
-/*
- * We only provided the btn-primary class
- */
-$vanilla-fab-primary-background-color: $vanilla-button-primary-background-color !default;
-$vanilla-fab-primary-text-color: $vanilla-button-primary-text-color !default;
-$vanilla-fab-primary-active-background-color: $vanilla-button-primary-active-background-color !default;
-$vanilla-fab-primary-active-text-color: $vanilla-button-primary-active-text-color !default;
-$vanilla-fab-primary-border: $vanilla-button-primary-border !default;
+@if $vanilla-use-fabs == 1 {
 
-@include fab-builder(primary, $vanilla-button-primary-background-color, $vanilla-button-primary-text-color, $vanilla-button-primary-active-background-color, $vanilla-button-primary-active-text-color, $vanilla-button-primary-border);
+	/*
+	 * Many thanks to:
+	 * https://codepen.io/ruslan_khomiak/pen/QGmwMP
+	 */
+
+	$fab-size: 56px !default;
+	$fab-background: #E6E6E6 !default;
+	$fab-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12) !default;
+	$fab-z-index: 2 !default;
+
+
+	.fab {
+		width: $fab-size;
+		height: $fab-size;
+		background: $fab-background;
+		border-radius: 50%;
+		// material
+		box-shadow: $fab-shadow;
+		z-index: $fab-z-index;
+
+		.fab-label {
+			vertical-align: middle;
+			text-align: center;
+			display: table-cell;
+			height: inherit;
+			width: inherit;
+			font-size: 32px;
+		}
+
+
+		.fab-buttons {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.2s;
+
+			[data-tooltip]:before {
+				top: 50%;
+				margin-top: -11px;
+				font-weight: 600;
+				border-radius: $vanilla-border-radius;
+				background: #585858;
+				color: #fff;
+				content: attr(data-tooltip);
+				font-size: 14px;
+				text-decoration: none;
+				visibility: hidden;
+				opacity: 0;
+				padding: 4px 7px;
+				margin-right: 12px;
+				position: absolute;
+				@include transform(scale(0));
+				right: 100%;
+				white-space: nowrap;
+				@include transform-origin(top right);
+				transition: all .3s cubic-bezier(.25, .8, .25, 1);
+			}
+
+			[data-tooltip]:hover:before {
+				visibility: visible;
+				opacity: 1;
+				@include transform(scale(1));
+				@include transform-origin(right center 0);
+			}
+
+		}
+
+		&:hover {
+
+			.fab-buttons {
+				opacity: 1;
+				visibility: visible;
+
+				a {
+					text-decoration: none;
+					@include transform(scaleY(1) scaleX(1) translateY(-16px) translateX(0px));
+				}
+
+			}
+
+		}
+
+	}
+
+
+	.fab-bottom-left {
+		position: fixed;
+		right: 20px;
+		bottom: 20px;
+
+		.fab-buttons {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 50px;
+		}
+
+	}
+
+
+	.fab-buttons li {
+		display: block;
+		text-align: center;
+		margin: 12px 0;
+	}
+
+
+	.fab-buttons a {
+		display: inline-block;
+		width: $fab-size;;
+		height: $fab-size;;
+		text-decoration: none;
+		background-color: $fab-background;
+		border-radius: 50%;
+		box-shadow: $fab-shadow;
+		//transform: scaleY(0.5) scaleX(0.5) translateY(0px) translateX(0px);
+		//-moz-transition: .3s;
+		//-webkit-transition: .3s;
+		//-o-transition: .3s;
+		transition: .3s;
+		z-index: $fab-z-index;
+	}
+
+	.fab-label:hover + .fab-buttons a:before {
+		visibility: visible;
+		opacity: 1;
+		@include transform(scale(1));
+		@include transform-origin(right center 0);
+		transition-delay: 0.3s;
+	}
+
+	/*
+	 * We only provided the btn-primary class
+	 */
+	$vanilla-fab-primary-background-color: $vanilla-button-primary-background-color !default;
+	$vanilla-fab-primary-text-color: $vanilla-button-primary-text-color !default;
+	$vanilla-fab-primary-active-background-color: $vanilla-button-primary-active-background-color !default;
+	$vanilla-fab-primary-active-text-color: $vanilla-button-primary-active-text-color !default;
+	$vanilla-fab-primary-border: $vanilla-button-primary-border !default;
+
+	@include fab-builder(primary, $vanilla-button-primary-background-color, $vanilla-button-primary-text-color, $vanilla-button-primary-active-background-color, $vanilla-button-primary-active-text-color, $vanilla-button-primary-border);
+
+}

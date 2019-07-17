@@ -1,12 +1,10 @@
 
-
-.font-antialias, article, h1, h2, .medium-content {
+.font-antialias, article, h1, h2, h3, .medium-content {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-smoothing: antialiased;
+	font-smooth: antialiased;
 }
-
 
 
 /*
@@ -15,7 +13,7 @@
 
 // Dimensions
 small, .text-small { font-size: 80%; }
-// TODO: .text-lead { font-size: 120%; } unused for now
+.text-lead { font-size: 120%; }
 
 // WEIGHT (as named by Roboto)
 .text-black		{  font-weight: 900;}

@@ -3,19 +3,6 @@
  * -Box Sizing: https://css-tricks.com/box-sizing/
  */
 
-// Native Font, don't touch
-$native-family-base: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", Arial, sans-serif;
-$native-family-monospace: Consolas, 'Liberation Mono', Menlo, Monaco, "Courier New", Courier, monospace;
-$generic-family-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$generic-family-serif: 'PT Serif', Georgia, Cambria, "Times New Roman", Times, serif;
-$generic-family-headers: 'Source Sans Pro', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
-
-// Those are the font we use - override them
-$vanilla-fontstack-base: $native-family-base !default;
-$vanilla-fontstack-mono: $native-family-monospace !default;
-$vanilla-fontstack-headers: $native-family-base !default;
-$vanilla-fontstack-serif: $generic-family-serif !default;
-
 
 // set HTML font base to 16px then use REM
 html {
@@ -28,7 +15,19 @@ html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	// NEW
+	scroll-behavior: smooth;
 }
+
+
+// Turn off smooth scroll
+//noinspection CssInvalidMediaFeature
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 
 // Border Box
 *, *:before, *:after {
@@ -37,11 +36,13 @@ html {
 	box-sizing: inherit;
 }
 
+
 body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	color: $vanilla-text-color;
 }
+
 
 // Normalize button sizes
 BODY, button, input, select {
@@ -57,12 +58,16 @@ button, input {
 code, pre, kbd, .text-mono {
 	font-family: $vanilla-fontstack-mono;
 	tab-size: 3;
+	white-space: pre-wrap;
 }
+
 
 /*
 * HEADERS
 * https://joshnh.com/weblog/how-to-set-up-a-baseline-grid/
 */
+
+$vanilla-header-base-size: 1rem !default;
 
 h1,.h1,
 h2,.h2,
@@ -73,26 +78,27 @@ h6,.h6 {
 	font-family: $vanilla-fontstack-headers;
 	color: $vanilla-headers-color;
 	line-height: 1.5;
+	@extend .font-antialias;
 }
 
 h1,.h1 {
-	font-size: 3rem;
-	@extend .font-antialias;
+	font-size: $vanilla-header-base-size * 3;
 }
 h2,.h2 {
-	font-size: 2.25rem;
+	font-size: $vanilla-header-base-size * 2.25;
 }
 h3,.h3 {
-	font-size: 2rem;
+	font-size: $vanilla-header-base-size * 2;
 }
 h4,.h4 {
-	font-size: 1.75rem;
+	font-size: $vanilla-header-base-size * 1.75;
 }
 h5,.h5 {
-	font-size: 1.25rem;
+	font-size: $vanilla-header-base-size * 1.25;
 }
 h6,.h6 {
-	font-size: 1rem;
+	font-size: $vanilla-header-base-size;
+	font-weight: bold;
 }
 
 // Make P consistent with the baseline
@@ -101,3 +107,7 @@ p {
 	line-height: 1.5;
 }
 
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}

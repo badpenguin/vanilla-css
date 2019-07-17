@@ -1,53 +1,59 @@
-.grid {
 
-	&.grid-equalize {
+@if $vanilla-use-grid-extra == 1 {
 
-		> .cell {
-			display: flex;
-			align-items: center;
-		}
 
-	}
+	.grid {
 
-	&.grid-pair {
-		> .cell {
-			text-align: left;
+		&.grid-equalize {
 
-			+ .cell {
-				text-align: right;
+			> .cell {
+				display: flex;
+				align-items: center;
 			}
+
 		}
-	}
 
-	&.grid-unpair {
-		> .cell {
-			text-align: right;
-
-			+ .cell {
+		&.grid-pair {
+			> .cell {
 				text-align: left;
+
+				+ .cell {
+					text-align: right;
+				}
 			}
 		}
-	}
 
-	// Set order on cells
-	@include flex-item-order-builder(5, 's');
+		&.grid-unpair {
+			> .cell {
+				text-align: right;
 
-	// Responsive Cells
-	@include from_breakpoint(small) {
-		@include flex-item-order-builder(5, 'sm');
-	}
+				+ .cell {
+					text-align: left;
+				}
+			}
+		}
 
-	@include from_breakpoint(medium) {
-		@include flex-item-order-builder(5, 'md');
-	}
-	@include from_breakpoint(large) {
-		@include flex-item-order-builder(5, 'lg');
-	}
-	@include from_breakpoint(x-large) {
-		@include flex-item-order-builder(5, 'xlg');
-	}
-	@include from_breakpoint(xx-large) {
-		@include flex-item-order-builder(5, 'xxlg');
+		// Set order on cells
+		@include flex-item-order-builder(5, 's');
+
+		// Responsive Cells
+		@include from_breakpoint(small) {
+			@include flex-item-order-builder(5, 'sm');
+		}
+
+		@include from_breakpoint(medium) {
+			@include flex-item-order-builder(5, 'md');
+		}
+		@include from_breakpoint(large) {
+			@include flex-item-order-builder(5, 'lg');
+		}
+		@include from_breakpoint(x-large) {
+			@include flex-item-order-builder(5, 'xlg');
+		}
+		@include from_breakpoint(xx-large) {
+			@include flex-item-order-builder(5, 'xxlg');
+		}
+
 	}
 
 }

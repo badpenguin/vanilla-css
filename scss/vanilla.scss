@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*! Vanilla CSS by Antonio Gallo - https://www.badpenguin.org/ - v0.0.3
+/*! Vanilla CSS by Antonio Gallo - https://www.badpenguin.org/ - v0.0.4
 */
 
 
@@ -20,6 +20,7 @@
 @import "basic/typography";
 @import "basic/images";
 @import "basic/buttons";
+@import "basic/table";
 @import "grid/breakpoints";
 @import "basic/forms";
 
@@ -36,11 +37,16 @@
 @import "components/visibility";
 
 @import "components/overlay";
+@import "components/position";
 @import "components/float";
 @import "components/shadows";
 
 @import "components/navbar";
 @import "components/hover";
+
+// WP
+@import "components/wp-general";
+@import "components/wp-gutenberg";
 
 // Rarely used
 @import "components/fabs";

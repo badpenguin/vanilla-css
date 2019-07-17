@@ -5,3 +5,5 @@ materiale/
 \.hgignore
 *.swp
 TODO.md
+scss/vanilla.css
+scss/vanilla.css.map

@@ -4,7 +4,6 @@
  */
 
 
-
 @mixin cell-builder($num-cells, $dim:''){
 	@for $i from 1 through $num-cells {
 		@for $j from 1 through $i {
@@ -16,6 +15,7 @@
 	}
 }
 
+
 @mixin flex-item-order-builder($num-cells, $dim:''){
 	@for $i from 0 to $num-cells{
 		.order-#{$dim}-#{$i + 1}{
@@ -25,17 +25,22 @@
 }
 
 
-.grid {
+.flex-grid {
 	display: flex;
-
 	// Basic Grid
 	flex-direction: row;
 	@extend .flex-wrap;
 	justify-content: space-between;
 	align-items: stretch;
 	align-content: space-between;
+}
+
+
+.grid {
+	@extend .flex-grid;
 
 	// GUTTER (it still needs a bit more testing)
+
 	&.grid-gutter
 	{
 		margin-right: -($vanilla-grid-gutter-size/2);
@@ -47,6 +52,12 @@
 		}
 	}
 
+	&.grid-vgutter {
+		> .cell {
+			margin-bottom: $vanilla-grid-gutter-size;
+		}
+	}
+
 
 	// Cells - by default are equal width
 	.cell {
@@ -54,6 +65,7 @@
 		//@include flex(1, 0, 100%);
 		flex: 1 0 100%;
 	}
+
 
 	// NEW behavior: fall back to sm-1-1 and need grid-auto or cell-auto for auto size
 	@include from_breakpoint(small) {

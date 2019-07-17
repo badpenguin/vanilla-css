@@ -9,11 +9,13 @@
 	max-width: 100%;
 }
 
+
 .navbar.scrollable {
 	overflow-y: hidden;
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 }
+
 
 .navbar-menu {
 	display: flex;
@@ -36,29 +38,29 @@
 	}
 }
 
+
 .navbar-menu-left {
 	justify-content: flex-start;
 
-	li:not(:first-child) {
-		padding-left: $vanilla-navbar-li-spacing;
+	li:not(:first-child) { // rewrite TODO
+		padding-left: $vanilla-navbar-li-padding;
 	}
 
 }
+
 
 .navbar-menu-right {
 	justify-content: flex-end;
 
 	li:not(:last-child) {
-		padding-right: $vanilla-navbar-li-spacing;
+		padding-right: $vanilla-navbar-li-padding;
 	}
 }
 
+
 .navbar-toggle {
-	display: none;
 
-	position: absolute; right: 0;
-
-	padding: 0 $vanilla-navbar-li-padding;
+	padding: $vanilla-navbar-li-padding;
 
 	& > input[type="checkbox"] {
 		opacity: 0;
@@ -67,7 +69,13 @@
 		width: 0;
 	}
 
+	& > input[type="checkbox"]:checked ~ .navbar-overlay {
+		//display: block;
+		@include transform(translateX(0%));
+		visibility: visible;
+	}
 }
+
 
 .navbar-overlay {
 	position: fixed;
@@ -75,6 +83,7 @@
 	top: 0;
 	bottom: 0;
 	left: 0;
+	height: 100%;
 	padding: 1rem 0;
 	@include transform(translateX(-100%));
 	transition: all .5s ease;
@@ -83,14 +92,21 @@
 	background: $vanilla-navbar-overlay-background;
 	color: $vanilla-navbar-overlay-color;
 
-	overflow-y: scroll;
+	&.navbar-overlay__right {
+		left: initial;
+		right: 0;
+		@include transform(translateX(100%));
+	}
+
+	//overflow-y: scroll; // NOTE: show verticall scroll always on desktop
+
 
 	li > a {
 		display: block;
 	}
 
 	li {
-		padding: 1rem;
+		padding: $vanilla-navbar-li-padding;
 
 		&:hover {
 			background: $vanilla-form-border-color;
@@ -107,21 +123,28 @@
 }
 
 
-@media (max-width: $vanilla-navbar-breakpoint) {
+@mixin navbar-toggle-on-builder($size,$maxWidth) {
+	@media (max-width: $maxWidth ) {
+		.navbar-toggle-on-#{$size} {
+			.navbar-toggle {
+				display: block;
+			}
+			.navbar-menu li:not(.dont-toggle) {
+				display: none;
+			}
+		}
+	}
+}
 
-	.navbar-menu li:not(.dont-toggle) {
+.navbar-toggle-on-small,
+.navbar-toggle-on-medium,
+.navbar-toggle-on-large {
+	.navbar-toggle {
 		display: none;
 	}
-
-	.navbar-toggle {
-		display: block;
-
-		& > input[type="checkbox"]:checked ~ .navbar-overlay {
-			//display: block;
-			@include transform(translateX(0%));
-			visibility: visible;
-		}
-
-	}
-
 }
+
+// NOTE: no x-small, x-large or xx-large: does it make sense?
+@include navbar-toggle-on-builder(large,$vanilla-breakpoint-x-large - 1);
+@include navbar-toggle-on-builder(medium,$vanilla-breakpoint-large - 1);
+@include navbar-toggle-on-builder(small,$vanilla-breakpoint-medium - 1);
