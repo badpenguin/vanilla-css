@@ -27,7 +27,7 @@
 		}
 	}
 
-	@keyframes pulse-animation {
+	@include keyframes(pulse-animation) {
 		0% {
 			opacity: 1;
 			@include transform(scale(1));
@@ -57,7 +57,7 @@
 	}
 
 
-	@keyframes pulse-animation-opacity {
+	@include keyframes(pulse-animation-opacity) {
 		0% {
 			opacity: 1;
 		}

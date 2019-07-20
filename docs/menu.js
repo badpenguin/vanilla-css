@@ -1,49 +1,49 @@
 var menu = [
 	['index.html', 'Vanilla CSS', 'home dont-toggle'],
+	['https://badpenguin.github.io/vanilla-css/','GitHub','text-bold'],
 	['10.typography.html', 'Typography', ''],
 	['11.medium.html', 'Medium.Com', ''],
 	['20.images.html', 'Images', ''],
 	['30.buttons.html', 'Buttons', ''],
-	['forms.html', 'Forms', ''],
+	['35.forms.html', 'Forms', ''],
 	['40.grid-basic.html', 'Grid: basic', ''],
 	['41.grid-nested.html', 'Grid: nested', ''],
 	['42.grid-gutter.html', 'Grid: gutter', ''],
 	['50.viewport.html', 'Viewport', ''],
 	['60.fab.html', 'FAB', ''],
-	['cards.html', 'Cards', ''],
+	['65.cards.html', 'Cards', ''],
 	['70.overlay.html', 'overlay', ''],
 	['80.animate.html', 'animate', ''],
-	['navbar.html', 'navbar', ''],
+	['90.navbar.html', 'navbar', ''],
 ];
 
 
 function writeResponsiveMenu() {
-	document.write('<nav class="navbar"><ul class="navbar-menu scrollable flex-center navbar-menu-left">');
+	var html = '';
+	html += '<header><nav class="navbar navbar-toggle-on-medium"><ul class="navbar-menu scrollable flex-center navbar-menu-left">';
 
 	[].forEach.call(menu, function (item) {
-		document.write('<li class="' + item[2] + '"><a href="' + item[0] + '">' + item[1] + '</a></li>');
+		html += '<li class="' + item[2] + '"><a href="' + item[0] + '">' + item[1] + '</a></li>';
 	});
 
-	document.write(
-		'</ul><div class="navbar-toggle"><label for="navbar-toggle">&#9776; Menu</label>' +
+	html +=
+	'</ul><div class="navbar-toggle"><label for="navbar-toggle">&#9776;&nbsp;Menu</label>' +
 		'<input type="checkbox" id="navbar-toggle"/><div class="navbar-overlay">' +
 		'<label class="navbar-overlay-close" for="navbar-toggle">&times;</label><ul>'
-	);
+	;
 
 	[].forEach.call(menu, function (item) {
-		document.write('<li class="' + item[2] + '"><a href="' + item[0] + '">' + item[1] + '</a></li>');
+		html += '<li class="' + item[2] + '"><a href="' + item[0] + '">' + item[1] + '</a></li>';
 	});
 
-	document.write('</ul></div></div></nav>');
-
+	html += '</ul></div></div></nav></header>';
+	return html;
 }
 
 
-function writeSimpleMenu() {
+onPageReady(function(){
 
-	document.write('<nav class="docmenu"><ol>');
-	[].forEach.call(menu, function (item) {
-		document.write('<li class="' + item[2] + '"><a href="' + item[0] + '">' + item[1] + '</a></li>');
-	});
-	document.write('</ol></nav>');
-}
+	document.body.insertAdjacentHTML('afterbegin', writeResponsiveMenu() );
+
+	$append('<footer><a href="https://badpenguin.github.io/vanilla-css/">Download from GitHub</a></footer>');
+});

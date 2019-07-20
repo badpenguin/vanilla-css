@@ -57,6 +57,27 @@
 }
 
 
+.link-animated-underline-right {
+	border-bottom: 1px transparent;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -6px;
+		right: 100%;
+		left: 0;
+		border-bottom: 1px solid currentColor;
+		transition: right .3s ease-in-out;
+	}
+
+	&:hover::before {
+		right: 0;
+	}
+
+}
+
+
 .link-animated-underline {
 	border-bottom: 1px transparent;
 	position: relative;
@@ -65,14 +86,14 @@
 		content: "";
 		position: absolute;
 		bottom: -6px;
-		left: 0;
 		right: 100%;
+		left: 100%;
 		border-bottom: 1px solid currentColor;
-		transition: right 0.3s ease-in-out;
+		transition: right .3s ease-in-out, left .3s ease-in-out;
 	}
 
 	&:hover::before {
 		right: 0;
+		left: 0;
 	}
-
 }

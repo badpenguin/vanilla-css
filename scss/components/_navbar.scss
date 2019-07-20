@@ -136,6 +136,7 @@
 	}
 }
 
+.navbar-toggle-on-x-small,
 .navbar-toggle-on-small,
 .navbar-toggle-on-medium,
 .navbar-toggle-on-large {
@@ -148,3 +149,4 @@
 @include navbar-toggle-on-builder(large,$vanilla-breakpoint-x-large - 1);
 @include navbar-toggle-on-builder(medium,$vanilla-breakpoint-large - 1);
 @include navbar-toggle-on-builder(small,$vanilla-breakpoint-medium - 1);
+@include navbar-toggle-on-builder(x-small,$vanilla-breakpoint-small - 1);

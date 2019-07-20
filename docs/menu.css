@@ -10,66 +10,22 @@ header {
 	background: #eee;
 }
 
-
-/*
- * Format the JS navbar
- */
-nav.docmenu {
-	width: 100%;
-	background: #eee;
-	display: block;
-	text-align: center;
-	padding-left: 1rem;
-	padding-right: 1rem;
+.navbar-menu {
+	flex-wrap: nowrap;
+	overflow: hidden;
+	justify-content: flex-start !important;
 }
 
-header nav.docmenu {
-	margin: 0;
-	margin-bottom: 3rem;
+.navbar-toggle {
+	display: block !important;
 }
 
-
-nav.docmenu ol {
-	margin: 0;
-	padding: 0;
-	display: inline-block;
-	line-height: 3rem;
+.navbar-overlay {
+	overflow: auto;
 }
 
-nav.docmenu li {
-	float: left;
-	display: inline-block;
-	margin-right: 2rem;
-	text-transform: capitalize;
-}
-
-nav.docmenu a {
-	text-decoration: none;
-}
-
-nav.docmenu a:hover {
-	text-decoration: underline;
-}
-
-/*
- * Convert docmenu in a normal OL
- */
-.convert-docmenu nav.docmenu {
-	background: transparent;
-}
-
-.convert-docmenu nav.docmenu ol {
-	list-style-type: decimal;
-	list-style-position: inside;
-}
-
-.convert-docmenu nav.docmenu li {
-	float: none;
-	display: list-item;
-}
-
-.convert-docmenu nav.docmenu li.home {
-	display: none;
+.navbar-overlay li:hover {
+	color: #fff;
 }
 
 
@@ -187,6 +143,9 @@ nav.docmenu a:hover {
 
 footer {
 	margin-top: 3rem;
+	padding: 1rem;
+	text-align: center;
+	background: #eee;
 }
 
 @media (min-width: 1024px) {

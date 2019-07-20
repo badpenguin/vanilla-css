@@ -20,16 +20,16 @@
 			left: calc(50% - 4em);
 			width: 1.5em;
 			height: 1.5em;
-			transform: translate3d(-50%, -50%, 0);
+			@include transform(translate3d(-50%, -50%, 0));
 			border-radius: 50%;
 			color: $vanilla-primary-color;
 			content: '';
 			will-change: box-shadow;
-			animation: spinner1 2s infinite linear;
+			@include animation(spinner1 2s infinite linear);
 		}
 	}
 
-	@keyframes spinner1 {
+	@include keyframes(spinner1) {
 		0%,
 		100% {
 			box-shadow: 2.5em 0 0 -.8em, 5em 0 0 -.8em, 7.5em 0 0 -.8em;

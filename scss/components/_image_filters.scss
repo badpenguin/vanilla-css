@@ -22,7 +22,7 @@
 
 	// Clarendon Filter
 	.filter-clarendon {
-		filter: sepia(.15) contrast(1.25) brightness(1.25) hue-rotate(5deg);
+		@include filter(sepia(.15) contrast(1.25) brightness(1.25) hue-rotate(5deg));
 
 		&::before {
 			background: rgba(127, 187, 227, .4);
@@ -33,7 +33,7 @@
 
 	// Gingham Filter
 	.filter-gingham {
-		filter: contrast(1.1) brightness(1.1);
+		@include filter(contrast(1.1) brightness(1.1));
 
 		&::before {
 			background: rgb(230, 230, 230);
@@ -44,28 +44,28 @@
 
 	// Lark Filter
 	.filter-lark {
-		filter: sepia(.25) contrast(1.2) brightness(1.3) saturate(1.25);
+		@include filter(sepia(.25) contrast(1.2) brightness(1.3) saturate(1.25));
 	}
 
 	// Lo-Fi Filter
 	.filter-lofi {
-		filter: saturate(1.1) contrast(1.5);
+		@include filter(saturate(1.1) contrast(1.5));
 	}
 
 
 	.filter-moon {
-		filter: brightness(1.4) contrast(.95) saturate(0) sepia(.35);
+		@include filter(brightness(1.4) contrast(.95) saturate(0) sepia(.35));
 	}
 
 	// Inkwell Filter
 	.filter-inkwell {
-		filter: brightness(1.25) contrast(.85) grayscale(1);
+		@include filter(brightness(1.25) contrast(.85) grayscale(1));
 	}
 
 
 	// Walden Filter
 	.filter-walden {
-		filter: sepia(.35) contrast(.8) brightness(1.25) saturate(1.4);
+		@include filter(sepia(.35) contrast(.8) brightness(1.25) saturate(1.4));
 
 		&::before {
 			background: rgba(229, 240, 128, .5);
@@ -76,7 +76,7 @@
 
 	// Toaster Filter
 	.filter-toaster {
-		filter: sepia(.25) contrast(1.5) brightness(.95) hue-rotate(-15deg);
+		@include filter(sepia(.25) contrast(1.5) brightness(.95) hue-rotate(-15deg));
 
 		&::before {
 			background: radial-gradient(circle, rgb(128, 78, 15), rgba(0, 0, 0, .25));
