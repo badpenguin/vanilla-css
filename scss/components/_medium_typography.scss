@@ -1,3 +1,4 @@
+
 @mixin medium-paragraph {
 	font-family: $vanilla-fontstack-serif;
 	color: $vanilla-text-color;
@@ -70,7 +71,7 @@
 	}
 
 	/*article,*/
-	.medium-content {
+	.medium-content, .site-loop-base.medium-content {
 
 		@include medium-paragraph;
 

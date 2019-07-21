@@ -13,7 +13,6 @@
 @import "core/reset";
 // We set native font and basic to use REM
 @import "core/fonts";
-@import "core/medium_typography";
 
 
 // Basic (also some reset merge)
@@ -45,6 +44,7 @@
 @import "components/hover";
 
 // WP
+@import "components/medium_typography";
 @import "components/wp-general";
 @import "components/wp-gutenberg";
 

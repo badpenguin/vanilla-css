@@ -24,6 +24,13 @@
 	flex-wrap: wrap;
 }
 
+
+.flex-wrap-off {
+	-ms-flex-wrap:nowrap;
+	flex-wrap: nowrap;
+}
+
+
 .flex-center {
 	justify-content: center;
 }
@@ -55,10 +62,7 @@
 
 
 
-.flex-wrap-off {
-	-ms-flex-wrap:nowrap;
-	flex-wrap: nowrap;
-}
+
 */
 
 // Horizontal Align

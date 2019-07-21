@@ -36,9 +36,9 @@
 
 	<h1 style="" class="noauto pulse-opacity ">Animation Test (pulse-opacity)</h1>
 
-	<p>To use "animated-when-visible" a little of JS i required.</p>
-	<p>We are using our Vanilla JS library to trigger the animation.</p>
-	<p>Header will come from the right when visible while paragraph will use fade-in.</p>
+	<p>To use "<code>animated-when-visible</code>" a little of JS i required.</p>
+	<p>I am using my "<b><em>Vanilla JS</em></b>" library to trigger the animation.</p>
+	<p>The header elements will come in slideing from the right side when visibles; meanwhile the paragraphs will just fade-in.</p>
 
 </div>
 
@@ -105,29 +105,24 @@
 </div>
 
 <script>
-	JonPageLoad(function () {
-		console.log('On Page LOAD');
+	onPageReady(function () {
 
-		var headers = $('h1:not(.noauto)');
-		var paragraphs = $('.container > p');
+		var headers = $all('h1:not(.noauto)');
+		var paragraphs = $all('.container > p');
 
-		[].forEach.call(headers, function(el) {
-			elAddClass(el,'animate-slide-in-right');
-			//elAddClass(el,'animate-fade-in');
-			elAddClass(el,'animate-2s');
-
-			elAddClass(el,'animated-when-visible');
+		$forEach(headers, function(el) {
+			$addClass(el,'animate-slide-in-right');
+			$addClass(el,'animate-2s');
+			$addClass(el,'animate-when-visible');
 		});
 
-		[].forEach.call(paragraphs, function(el) {
-			elAddClass(el,'animate-fade-in');
-			//elAddClass(el,'animate-slide-in-right');
-			elAddClass(el,'animate-2s');
-			elAddClass(el,'animated-when-visible');
+		$forEach(paragraphs, function(el) {
+			$addClass(el,'animate-fade-in');
+			$addClass(el,'animate-2s');
+			$addClass(el,'animate-when-visible');
 		});
 
-		var event = new Event('vanilla-refresh');
-		document.dispatchEvent(event);
+		$visibility('.animate-when-visible',{invisibleClass:'reset-animation'});
 
 	});
 </script>

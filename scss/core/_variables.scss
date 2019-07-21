@@ -73,8 +73,8 @@ $vanilla-grid-gutter-size: 2em !default;
 $vanilla-navbar-breakpoint: $vanilla-breakpoint-large !default;
 $vanilla-navbar-li-padding: 1rem !default;
 $vanilla-navbar-li-spacing: 2rem !default;
-$vanilla-navbar-overlay-background: #444 !default;
-$vanilla-navbar-overlay-color: #fff !default;
+$vanilla-navbar-overlay-background: #ddd !default; //#444 !default;
+$vanilla-navbar-overlay-color: $vanilla-text-color !default;
 
 
 // SECTION
@@ -92,8 +92,10 @@ $vanilla-hover-active-color: $vanilla-text-color !default;
 $vanilla-cover-background-color: rgba(0,0,0,.5);
 $vanilla-cover-bottom-background: linear-gradient(0deg, rgba($color: black, $alpha: 0.7) 0, rgba($color: black, $alpha: 0.3) 60%, transparent);
 
+
 // MEDIUM
 $medium-paragraph-margin-top: px2rem(29) !default;
+
 
 // WP GENERAL
 $vanilla-wp-horizontal-spacing: 1rem !default;
@@ -101,6 +103,7 @@ $vanilla-wp-horizontal-spacing-medium: 2rem !default;
 $vanilla-wp-vertical-spacing: 1rem !default;
 $vanilla-wp-vertical-spacing-medium: $vanilla-wp-vertical-spacing * 2 !default;
 $vanilla-wp-vertical-spacing-large: $vanilla-wp-vertical-spacing * 3 !default;
+
 
 // LAYOUT
 $vanilla-container-large-size: 1100px !default;

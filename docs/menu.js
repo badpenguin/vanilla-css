@@ -3,18 +3,18 @@ var menu = [
 	['https://badpenguin.github.io/vanilla-css/','GitHub','text-bold'],
 	['10.typography.html', 'Typography', ''],
 	['11.medium.html', 'Medium.Com', ''],
-	['20.images.html', 'Images', ''],
-	['30.buttons.html', 'Buttons', ''],
-	['35.forms.html', 'Forms', ''],
+	['20.images.html', 'Image', ''],
+	['30.buttons.html', 'Button', ''],
+	['35.forms.html', 'Form', ''],
 	['40.grid-basic.html', 'Grid: basic', ''],
 	['41.grid-nested.html', 'Grid: nested', ''],
 	['42.grid-gutter.html', 'Grid: gutter', ''],
 	['50.viewport.html', 'Viewport', ''],
 	['60.fab.html', 'FAB', ''],
-	['65.cards.html', 'Cards', ''],
-	['70.overlay.html', 'overlay', ''],
-	['80.animate.html', 'animate', ''],
-	['90.navbar.html', 'navbar', ''],
+	['65.cards.html', 'Card', ''],
+	['70.overlay.html', 'Overlay', ''],
+	['80.animate.html', 'Animate', ''],
+	['90.navbar.html', 'Navbar', ''],
 ];
 
 
@@ -28,7 +28,7 @@ function writeResponsiveMenu() {
 
 	html +=
 	'</ul><div class="navbar-toggle"><label for="navbar-toggle">&#9776;&nbsp;Menu</label>' +
-		'<input type="checkbox" id="navbar-toggle"/><div class="navbar-overlay">' +
+		'<input type="checkbox" id="navbar-toggle"/><div class="navbar-overlay navbar-overlay__right">' +
 		'<label class="navbar-overlay-close" for="navbar-toggle">&times;</label><ul>'
 	;
 

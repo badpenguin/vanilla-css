@@ -23,7 +23,12 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	@extend .flex-wrap;
+	//@extend .flex-wrap;
+
+	// Disallow menu wrapping
+	@extend .flex-wrap-off;
+	overflow: hidden;
+
 
 	li  {
 		padding: $vanilla-navbar-li-padding;
@@ -110,7 +115,7 @@
 
 		&:hover {
 			background: $vanilla-form-border-color;
-			color: $vanilla-text-color;
+			//color: $vanilla-text-color;
 		}
 	}
 }

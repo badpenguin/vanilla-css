@@ -102,10 +102,32 @@
 
 
 /*
- * defined later, so it will start the animation
+ * Reset / Start Animation
  */
 
+@include keyframes(nullAnimation) {
+	0% {
+	}
+	100% {
+	}
+}
+
+
+// The trick with CSS is switching classes to reset the animation
+.reset-animation {
+	visibility: hidden;
+	-webkit-animation-name: nullAnimation;
+	animation-name: nullAnimation;
+}
+
+
+.invisible {
+	visibility: hidden;
+}
+
+
 .animated {
+	visibility: visible;
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
 	-webkit-animation-play-state: running;
