@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Overlay and Cover - Vanilla CSS</title>
 	<meta charset="UTF-8">
@@ -9,11 +9,17 @@
 	<link href="menu.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
+	<style>
+		.cover-child {
+			color: #fff;
+		}
+		.cover-parent > img {
+			display: block;
+		}
+	</style>
 </head>
 <body class="test">
-<header>
-	<script>writeResponsiveMenu()</script>
-</header>
+
 <div class="container fluid">
 	<h1>Overlay</h1>
 
@@ -22,7 +28,7 @@
 		<code>.cover-child</code> to the overlay div.</p>
 
 	<div class="cover-parent cover-overlay-opacity inline-block">
-		<img class="display-block" src="https://unsplash.it/400/300">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 1">
 		<div class="cover-child cover-center">
 			overlay-inner
 		</div>
@@ -31,54 +37,75 @@
 	<h1>Cover Center (max)</h1>
 
 	<div class="cover-parent inline-block">
-		<img class="display-block" src="https://unsplash.it/400/300">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 2">
 		<div class="cover-child cover-center test-gradient">
 			cover-inner
 		</div>
 	</div>
 
-	<h1>Cover Bottom</h1>
+	<h1>Cover Bottom, Top, Left, Right</h1>
 
 	<div class="cover-parent inline-block">
-		<img class="display-block" src="https://unsplash.it/400/300">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 3">
 		<div class="cover-child cover-bottom text-center test-background2">
 			cover-bottom with purple background
+		</div>
+	</div>
+
+	<div class="cover-parent inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 3">
+		<div class="cover-child cover-top text-center test-background2">
+			cover-top
+		</div>
+	</div>
+
+	<div class="cover-parent inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 3">
+		<div class="cover-child cover-left text-center test-background2">
+			cover-left
+		</div>
+	</div>
+
+	<div class="cover-parent inline-block">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 3">
+		<div class="cover-child cover-right text-center test-background2">
+			cover-right
 		</div>
 	</div>
 
 	<h1>Overlay Bottom</h1>
 
 	<div class="cover-parent cover-overlay-bottom inline-block">
-		<img class="display-block" src="https://unsplash.it/400/300">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 4">
 		<div class="cover-child cover-center">
-			overlay-inner
+			cover-overlay-bottom
 		</div>
 	</div>
 
 	<h1>Overlay Top</h1>
 
 	<div class="cover-parent cover-overlay-top inline-block">
-		<img class="display-block" src="https://unsplash.it/400/300">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 5">
 		<div class="cover-child cover-center">
-			overlay-inner
+			cover-overlay-top
 		</div>
 	</div>
 
 	<h1>Overlay Left</h1>
 
 	<div class="cover-parent cover-overlay-left inline-block">
-		<img class="display-block" src="https://unsplash.it/400/300">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 6">
 		<div class="cover-child cover-center">
-			overlay-inner
+			cover-overlay-left
 		</div>
 	</div>
 
 	<h1>Overlay Right</h1>
 
 	<div class="cover-parent cover-overlay-right inline-block">
-		<img class="display-block" src="https://unsplash.it/400/300">
+		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 7">
 		<div class="cover-child cover-center">
-			overlay-inner
+			cover-overlay-right
 		</div>
 	</div>
 

@@ -24,18 +24,22 @@
 
 	&.cover-top {
 		bottom: auto;
+		height: auto;
 	}
 
 	&.cover-bottom {
 		top: auto;
+		height: auto;
 	}
 
 	&.cover-left {
 		right: auto;
+		width: auto;
 	}
 
 	&.cover-right {
 		left: auto;
+		width: auto;
 	}
 
 	&.cover-top-left {

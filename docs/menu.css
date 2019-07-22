@@ -148,6 +148,13 @@ footer {
 	background: #eee;
 }
 
+
+.back-to-top {
+	float: right;
+	text-decoration: underline;
+}
+
+
 @media (min-width: 1024px) {
 
 
@@ -160,6 +167,7 @@ footer {
 		bottom: 0;
 		left: 0;
 		right: 0;
+		z-index: 0;
 	}
 
 }

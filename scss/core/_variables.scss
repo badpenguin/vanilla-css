@@ -75,7 +75,7 @@ $vanilla-navbar-li-padding: 1rem !default;
 $vanilla-navbar-li-spacing: 2rem !default;
 $vanilla-navbar-overlay-background: #ddd !default; //#444 !default;
 $vanilla-navbar-overlay-color: $vanilla-text-color !default;
-
+$vanilla-navbar-overlay-zindex: 99;
 
 // SECTION
 $vanilla-section-background-color: #f8f8f8;
@@ -86,7 +86,7 @@ $vanilla-hover-background: $vanilla-section-background-color !default;
 $vanilla-hover-color: $vanilla-text-color !default;
 $vanilla-hover-active-background: $vanilla-form-border-color !default;
 $vanilla-hover-active-color: $vanilla-text-color !default;
-
+$vanilla-hover-zindex: 89;
 
 // COVER/OVERLAY
 $vanilla-cover-background-color: rgba(0,0,0,.5);

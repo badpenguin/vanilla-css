@@ -64,7 +64,7 @@
 
 .navbar-overlay {
 	position: fixed;
-	z-index: 2;
+	z-index: $vanilla-navbar-overlay-zindex;
 	top: 0;
 	bottom: 0;
 	right: 100%;

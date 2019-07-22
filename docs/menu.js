@@ -45,5 +45,5 @@ onPageReady(function(){
 
 	document.body.insertAdjacentHTML('afterbegin', writeResponsiveMenu() );
 
-	$append('<footer><a href="https://badpenguin.github.io/vanilla-css/">Download from GitHub</a></footer>');
+	$append('<footer><a href="https://badpenguin.github.io/vanilla-css/">Download from GitHub</a><a href="#" class="back-to-top">Back to Top</a></footer>');
 });

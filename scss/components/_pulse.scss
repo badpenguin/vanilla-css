@@ -15,7 +15,7 @@
 			transition: opacity .3s, transform .3s;
 			//animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
 			@include animation(pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite);
-			z-index: 1;
+			z-index: $vanilla-hover-zindex;
 		}
 
 		overflow: initial;
