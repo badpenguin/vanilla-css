@@ -27,7 +27,6 @@
 
 	// Disallow menu wrapping
 	@extend .flex-wrap-off;
-	overflow: hidden;
 
 
 	li  {
@@ -63,6 +62,47 @@
 }
 
 
+.navbar-overlay {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	bottom: 0;
+	right: 100%;
+	left: initial;
+	height: 100%;
+	padding: 1rem 0;
+	transition: transform .5s ease;
+	min-width: 280px;
+	background: $vanilla-navbar-overlay-background;
+	color: $vanilla-navbar-overlay-color;
+
+	&.navbar-overlay__right {
+		left: 100%;
+		right: 0;
+	}
+
+	li > a {
+		display: block;
+	}
+
+	li {
+		padding: $vanilla-navbar-li-padding;
+
+		&:hover {
+			background: $vanilla-form-border-color;
+			}
+	}
+}
+
+
+.navbar-overlay-close {
+	display: block;
+	text-align: right;
+	font-size: 200%;
+	padding-right: $vanilla-navbar-li-padding;
+}
+
+
 .navbar-toggle {
 
 	padding: $vanilla-navbar-li-padding;
@@ -75,57 +115,18 @@
 	}
 
 	& > input[type="checkbox"]:checked ~ .navbar-overlay {
-		//display: block;
-		@include transform(translateX(0%));
-		visibility: visible;
-	}
-}
 
-
-.navbar-overlay {
-	position: fixed;
-	z-index: 2;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	height: 100%;
-	padding: 1rem 0;
-	@include transform(translateX(-100%));
-	transition: all .5s ease;
-	visibility: hidden;
-	min-width: 280px;
-	background: $vanilla-navbar-overlay-background;
-	color: $vanilla-navbar-overlay-color;
-
-	&.navbar-overlay__right {
-		left: initial;
-		right: 0;
+		// left
 		@include transform(translateX(100%));
-	}
 
-	//overflow-y: scroll; // NOTE: show verticall scroll always on desktop
-
-
-	li > a {
-		display: block;
-	}
-
-	li {
-		padding: $vanilla-navbar-li-padding;
-
-		&:hover {
-			background: $vanilla-form-border-color;
-			//color: $vanilla-text-color;
+		&.navbar-overlay__right {
+			@include transform(translateX(-100%));
 		}
 	}
+
+
 }
 
-.navbar-overlay-close {
-	display: block;
-	text-align: right;
-	font-size: 200%;
-	padding-right: $vanilla-navbar-li-padding;
-}
 
 
 @mixin navbar-toggle-on-builder($size,$maxWidth) {

@@ -10,14 +10,14 @@ header {
 	background: #eee;
 }
 
-.navbar-menu {
-	flex-wrap: nowrap;
-	overflow: hidden;
-	justify-content: flex-start !important;
-}
 
 .navbar-toggle {
 	display: block !important;
+	background: #eee;
+}
+
+.navbar-menu {
+	max-width: calc(100vw - 100px);
 }
 
 .navbar-overlay {

@@ -20,7 +20,7 @@ var menu = [
 
 function writeResponsiveMenu() {
 	var html = '';
-	html += '<header><nav class="navbar navbar-toggle-on-medium"><ul class="navbar-menu scrollable flex-center navbar-menu-left">';
+	html += '<header><nav class="navbar navbar-toggle-on-medium"><ul class="navbar-menu scrollable navbar-menu-left">';
 
 	[].forEach.call(menu, function (item) {
 		html += '<li class="' + item[2] + '"><a href="' + item[0] + '">' + item[1] + '</a></li>';
