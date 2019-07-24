@@ -1,6 +1,6 @@
 var menu = [
 	['index.html', 'Vanilla CSS', 'home dont-toggle'],
-	['https://badpenguin.github.io/vanilla-css/','GitHub','text-bold'],
+	['https://github.com/badpenguin/vanilla-css/','GitHub','text-bold'],
 	['10.typography.html', 'Typography', ''],
 	['11.medium.html', 'Medium.Com', ''],
 	['20.images.html', 'Image', ''],
@@ -45,5 +45,5 @@ onPageReady(function(){
 
 	document.body.insertAdjacentHTML('afterbegin', writeResponsiveMenu() );
 
-	$append('<footer><a href="https://badpenguin.github.io/vanilla-css/">Download from GitHub</a><a href="#" class="back-to-top">Back to Top</a></footer>');
+	$append('<footer><a href="https://github.com/badpenguin/vanilla-css/">Download from GitHub</a><a href="#" class="back-to-top">Back to Top</a></footer>');
 });
