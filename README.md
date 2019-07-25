@@ -6,6 +6,6 @@ It includes my simple grid system based on flexbox and other stuffs.
 
 Its written in SASS so you can use all the files or just select the one that you want to include.
 
-Its currently used on https://antoniogallo.it/
+Its currently used on https://antoniogallo.it/ and https://visitaretenerife.it/
 
 DEMO: https://badpenguin.github.io/vanilla-css/
