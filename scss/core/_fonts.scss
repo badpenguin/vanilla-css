@@ -17,7 +17,16 @@ html {
 	box-sizing: border-box;
 	// NEW
 	scroll-behavior: smooth;
+	// Android Mobile background-attachment: fixed will not work without this
+	height: 100%;
 }
+
+/*
+ NOTE: don't forget this for IOS mobile if using "fixed" as background-attachment
+ @supports (-webkit-overflow-scrolling: touch) {
+	background-attachment: initial;
+}
+ */
 
 
 // Turn off smooth scroll

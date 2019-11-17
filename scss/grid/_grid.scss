@@ -56,7 +56,19 @@
 		> .cell {
 			margin-bottom: $vanilla-grid-gutter-size;
 		}
+		// TODO: form styling can be a problem
+		&.grid-vgutter--responsive {
+			> .cell {
+				@media(max-width: $vanilla-breakpoint-medium) {
+					margin-bottom: ($vanilla-grid-gutter-size/2);
+				}
+				@media(max-width: $vanilla-breakpoint-small) {
+					margin-bottom: ($vanilla-grid-gutter-size/4);
+				}
+			}
+		}
 	}
+
 
 
 	// Cells - by default are equal width
@@ -75,9 +87,13 @@
 		}
 
 		// ... or can grow automatically
-		.cell.cell-auto {
-			//@include flex(1, 0, auto);
-			flex: 1 0 auto;
+		.cell {
+			&.cell-auto {
+				flex: 1 0 auto;
+			}
+			&.cell-size {
+				flex: 0 0 auto;
+			}
 		}
 
 	}

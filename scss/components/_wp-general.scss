@@ -145,6 +145,10 @@
 			li {
 				display: list-item;
 				line-height: 1.5;
+
+				a {
+					color: $vanilla-primary-color;
+				}
 			}
 		}
 
@@ -157,8 +161,9 @@
 			list-style-type: decimal;
 		}
 
-		p > a {
+		p a {
 			@extend .link-underline;
+			color: $vanilla-primary-color;
 		}
 
 		//.wp-block-table {
@@ -185,11 +190,7 @@
 
 	.site-layout-sidebar {
 		.widget {
-			margin-top: $vanilla-wp-vertical-spacing-medium;
-
-			&:first-child {
-				margin-top: 0;
-			}
+			margin-bottom: $vanilla-wp-vertical-spacing-medium;
 		}
 	}
 

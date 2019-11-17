@@ -2,9 +2,8 @@
 /*! Vanilla CSS by Antonio Gallo - https://www.badpenguin.org/ - v0.0.4
 */
 
-
 /*
- * You can avoid importing the "components" if you do not need them.
+ * You can avoid importing all the "components" if you do not need them.
  */
 @import "core/variables";
 @import "core/mixins";
@@ -27,7 +26,6 @@
 @import "grid/flexbox";
 @import "grid/grid";
 @import "grid/layout";
-
 
 // Components
 @import "components/grid_extra";

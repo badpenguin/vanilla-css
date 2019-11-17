@@ -11,11 +11,20 @@
 	}
 }
 
+
 @media  (min-width: $vanilla-breakpoint-large), (max-width: $vanilla-breakpoint-medium - 1) {
 	.visible-on-medium {
 		display: none !important;
 	}
 }
+
+
+@media  (min-width: $vanilla-breakpoint-large ) {
+	.visible-to-medium {
+		display: none !important;
+	}
+}
+
 
 @media  (min-width: $vanilla-breakpoint-x-large ), (max-width: $vanilla-breakpoint-large - 1) {
 	.visible-on-large {

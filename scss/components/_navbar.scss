@@ -76,6 +76,9 @@
 	background: $vanilla-navbar-overlay-background;
 	color: $vanilla-navbar-overlay-color;
 
+	// NEW
+	overflow-y: auto;
+
 	&.navbar-overlay__right {
 		left: 100%;
 		right: 0;
