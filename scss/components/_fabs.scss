@@ -127,6 +127,22 @@
 
 	}
 
+  .fab-top-left {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+
+    .fab-buttons {
+      position: absolute;
+      left: 0;
+      right: 0;
+      // TODO: avoid glitch mouse in-out
+      top: 62px;
+      padding-top: 16px
+    }
+
+  }
+
 
 	.fab-buttons li {
 		display: block;
