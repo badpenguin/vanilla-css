@@ -12,6 +12,12 @@
 	display: inline-block;
 }
 
+.img-reset {
+  display: initial;
+  max-width: initial;
+  height: initial;
+  width: initial;
+}
 
 IMG {
 	//@extend .responsive;
@@ -19,21 +25,18 @@ IMG {
 
 	// cancel responsive
 	&.reset {
-		display: initial;
-		max-width: initial;
-		height: initial;
-		width: initial;
+    @extend .img-reset;
 	}
 
 	&.contain {
-		@extend IMG.reset;
+		@extend .img-reset;
 		-o-object-fit: scale-down;
 		object-fit: scale-down;
 		overflow: hidden;
 	}
 
 	&.cover {
-		@extend IMG.reset;
+		@extend .img-reset;
 		overflow: hidden;
 		-o-object-fit: cover;
 		object-fit: cover;
