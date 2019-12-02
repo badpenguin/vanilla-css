@@ -75,6 +75,8 @@ header {
 }
 
 
+
+
 /*
  * GRID Test
  */
@@ -130,6 +132,10 @@ header {
 
 .test-margin-top {
 	margin-top: 2rem;
+}
+
+.test-image {
+	max-width: 300px;
 }
 
 /*

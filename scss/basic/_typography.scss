@@ -119,3 +119,8 @@ th.text-break, td.text-break { word-break: break-all; }
 	-webkit-column-count: 2;
 	column-count: 2;
 }
+
+
+.text-primary {
+	color: $vanilla-primary-color;
+}
