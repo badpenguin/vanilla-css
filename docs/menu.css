@@ -1,5 +1,6 @@
 body {
 	min-height: 100vh;
+  min-height: var(--vanilla-vh,100vh);
 }
 
 header {

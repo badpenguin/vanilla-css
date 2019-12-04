@@ -202,3 +202,14 @@
 	}
 
 }
+
+/* TEXT */
+
+
+@mixin text-outline($size,$color) {
+  text-shadow:
+    -$size -$size 0 $color,
+    $size -$size 0 $color,
+    -$size $size 0 $color,
+    $size $size 0 $color;
+}

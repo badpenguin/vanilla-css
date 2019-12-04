@@ -258,6 +258,7 @@
 			img {
 				width: 100%;
 				max-height: 100vh;
+        max-height: var(--vanilla-vh,100vh);
 				object-fit: cover;
 			}
 		}
@@ -267,6 +268,7 @@
 	.wp-block-cover {
 		min-height: 600px;
 		max-height: 100vh;
+    max-height: var(--vanilla-vh,100vh);
 		@extend .flex-col-center;
 
 		.wp-block-cover__inner-container {
