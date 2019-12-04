@@ -83,6 +83,10 @@
 	@include aspect-ratio(66.66%);
 }
 
+.aspect-15-9 {
+	@include aspect-ratio(60%);
+}
+
 .aspect-16-9 {
 	@include aspect-ratio(56.25%);
 }

@@ -4,6 +4,13 @@
 
 	.grid {
 
+		&.grid-stretch {
+			> .cell {
+				display: flex;
+				align-items: stretch;
+			}
+		}
+
 		&.grid-equalize {
 
 			> .cell {
