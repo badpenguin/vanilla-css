@@ -210,6 +210,9 @@
 			padding: 3px 4px;
 		}
 
+		.entry-content ol {
+			list-style-type: none;
+		}
 
 		ul, ol {
 			margin: 0;
@@ -217,7 +220,6 @@
 			counter-reset: post;
 			padding: 0;
 			list-style: none;
-			list-style-image: none;
 
 			li {
 				@include medium-paragraph;
