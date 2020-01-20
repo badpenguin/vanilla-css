@@ -10,6 +10,8 @@ input:not([type="button"]):not([type="submit"]):not([type="reset"]):not([type="r
 		color: $vanilla-disabled-color;
 	}
 
+	// Fix wordpress theme tester
+	max-width: 100%;
 }
 
 // Reset IOS
