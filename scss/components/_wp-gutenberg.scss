@@ -91,10 +91,25 @@
 		display: flex;
 		flex-direction: row;
 
+		@include to_breakpoint(medium) {
+			flex-direction: column;
+
+			.wp-block-column:not(:first-child) {
+				margin-top: $vanilla-wp-vertical-spacing;
+			}
+
+		}
+
 		.wp-block-column {
 			display: block;
 			flex: 1;
 		}
+
+		// remove on block column
+		ul, ol {
+			margin-top: 0;
+		}
+
 	}
 
 
@@ -106,7 +121,7 @@
 		margin-top: $vanilla-wp-vertical-spacing;
 
 		a {
-			@extend .btn,.btn-primary;
+			@extend .btn, .btn-primary;
 			padding: 0.5rem 2rem;
 			border-radius: 20px;
 			display: inline-block;
@@ -258,7 +273,7 @@
 			img {
 				width: 100%;
 				max-height: 100vh;
-        max-height: var(--vanilla-vh,100vh);
+				max-height: var(--vanilla-vh, 100vh);
 				object-fit: cover;
 			}
 		}
@@ -268,7 +283,7 @@
 	.wp-block-cover {
 		min-height: 600px;
 		max-height: 100vh;
-    max-height: var(--vanilla-vh,100vh);
+		max-height: var(--vanilla-vh, 100vh);
 		@extend .flex-col-center;
 
 		.wp-block-cover__inner-container {
@@ -286,9 +301,6 @@
 		}
 
 	}
-
-
-
 
 
 	.wp-block-image figcaption {
@@ -416,7 +428,6 @@
 		padding-left: $vanilla-wp-horizontal-spacing-medium;
 		border-left: solid 4px $vanilla-form-border-color;
 	}
-
 
 
 	@media (min-width: 1100px) {

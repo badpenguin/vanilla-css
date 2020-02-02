@@ -1,4 +1,5 @@
 $vanilla-container-padding: 1rem !default;
+$vanilla-container-padding-px: rem2px($vanilla-container-padding);
 
 .container, .container-small, .container-large, .container-full {
 	display: block;
@@ -12,7 +13,7 @@ $vanilla-container-padding: 1rem !default;
 	max-width: $vanilla-container-standard-size;
 
 	&.fluid {
-		@media (max-width: ($vanilla-container-standard-size+32px)) {
+		@media (max-width: ($vanilla-container-standard-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
 			padding-left: $vanilla-container-padding;
 			padding-right: $vanilla-container-padding;
 		}
@@ -24,7 +25,7 @@ $vanilla-container-padding: 1rem !default;
 	max-width: $vanilla-container-small-size;
 
 	&.fluid {
-		@media (max-width: ($vanilla-container-small-size+32px)) {
+		@media (max-width: ($vanilla-container-small-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
 			padding-left: $vanilla-container-padding;
 			padding-right: $vanilla-container-padding;
 		}
@@ -36,7 +37,7 @@ $vanilla-container-padding: 1rem !default;
 	max-width: $vanilla-container-large-size;
 
 	&.fluid {
-		@media (max-width: ($vanilla-container-large-size+32px)) {
+		@media (max-width: ($vanilla-container-large-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
 			padding-left: $vanilla-container-padding;
 			padding-right: $vanilla-container-padding;
 		}
