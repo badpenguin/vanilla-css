@@ -49,6 +49,10 @@
 		@media  (max-width: $vanilla-breakpoint-medium - 1) {
 			@content;
 		}
+	} @else if $point == x-small {
+		@media  (max-width: $vanilla-breakpoint-small - 1) {
+			@content;
+		}
 	}
 
 }

@@ -18,9 +18,14 @@
 	}
 }
 
-
 @media  (min-width: $vanilla-breakpoint-large ) {
 	.visible-to-medium {
+		display: none !important;
+	}
+}
+
+@media  (max-width: $vanilla-breakpoint-medium - 1 ) {
+	.visible-from-medium {
 		display: none !important;
 	}
 }
@@ -31,6 +36,13 @@
 		display: none !important;
 	}
 }
+
+@media  (max-width: $vanilla-breakpoint-large - 1 ) {
+	.visible-from-large {
+		display: none !important;
+	}
+}
+
 
 @media  (min-width: $vanilla-breakpoint-xx-large), (max-width: $vanilla-breakpoint-x-large - 1) {
 	.visible-on-x-large {

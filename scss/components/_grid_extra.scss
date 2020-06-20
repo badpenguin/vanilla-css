@@ -5,6 +5,7 @@
 	.grid {
 
 		&.grid-stretch {
+			align-items: stretch;
 			> .cell {
 				display: flex;
 				align-items: stretch;
@@ -12,7 +13,7 @@
 		}
 
 		&.grid-equalize {
-
+			align-items: stretch;
 			> .cell {
 				display: flex;
 				align-items: center;

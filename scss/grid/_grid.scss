@@ -33,6 +33,12 @@
 	justify-content: space-between;
 	align-items: stretch;
 	align-content: space-between;
+	&.grid-center {
+		justify-content: center;
+	}
+	&.grid-vcenter {
+		align-items: center;
+	}
 }
 
 
