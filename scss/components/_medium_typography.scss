@@ -215,8 +215,7 @@
 		}}
 
 		ul, ol {
-			margin: 0;
-			margin-top: px2rem(29);
+			margin: px2rem(29) 0 0;
 			counter-reset: post;
 			padding: 0;
 			list-style: none;
@@ -238,7 +237,6 @@
 				}
 
 			}
-
 		}
 
 
@@ -286,6 +284,13 @@
 				@include medium-figcaption();
 			}
 		}
+
+
+		.wp-block-image.reset img {
+			width: auto;
+			max-width: 100%;
+		}
+
 
 
 		hr {
