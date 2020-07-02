@@ -1,0 +1,20 @@
+@import "../mixin/flexbox";
+
+.flex-center {
+	justify-content: center;
+}
+
+.flex-vcenter {
+	align-items: center;
+}
+
+
+/* SHORTCUTS */
+
+.flex-row {
+	@include flex-row-center;
+}
+
+.flex-col {
+	@include flex-col-center;
+}

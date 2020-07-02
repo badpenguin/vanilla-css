@@ -1,0 +1,322 @@
+@import "../scss/mixin/_variables.scss";
+
+/*
+ * Layout of the DEMO
+ */
+
+body {
+	min-height: 100vh;
+}
+body {
+	min-height: var(--vanilla-vh, 100vh);
+}
+
+header#mainmenu {
+	background: #eee;
+	margin-bottom: 2rem;
+}
+
+footer {
+	margin-top: 3rem;
+	padding: 1rem;
+	text-align: center;
+	background: #eee;
+}
+
+
+.back-to-top {
+	float: right;
+	text-decoration: underline;
+}
+
+
+@media (min-width: $vanilla-breakpoint-small) {
+
+	body {
+		padding-bottom: 9rem;
+	}
+
+	footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
+	}
+
+}
+
+/*
+ * Test stuffs
+ */
+
+.test-smallbox {
+	max-width: 600px;
+	border: dashed 1px #777;
+	padding: 8px;
+}
+
+.test-minibox {
+	max-width: 300px;
+	border: dashed 1px #777;
+	padding: 8px;
+}
+
+
+.margin-before-h1 {
+	h1:not(:first-child) {
+		margin-top: 2rem;
+	}
+}
+
+.margin-before-h2 {
+	h2 {
+		margin-top: 2rem;
+	}
+}
+
+.margin-before-h3 {
+	h3 {
+		margin-top: 2rem;
+	}
+}
+
+/*
+ * GRID Test
+ */
+.grid-debug .cell {
+	text-align: center;
+}
+
+.grid-debug-margin .cell {
+	margin-bottom: .5rem;
+	margin-top: .5rem;
+}
+
+
+.grid-debug .cell:nth-child(odd) {
+	background: #ffaaaa;
+}
+
+.grid-debug .cell:nth-child(even) {
+	background: #aaaaff;
+}
+
+.test-background1 {
+	background: #ffaaaa;
+}
+
+.test-background2 {
+	background: #aaaaff;
+}
+
+.grid-debug .grid--gutter .cell .inner {
+	border: dotted 1px black;
+}
+
+/* GRID NESTED */
+.test-grid-nested .cell, .test-grid-basic .cell {
+	padding: 8px;
+}
+
+.test-grid-nested.grid-debug .cell > .inner {
+	border: dashed 1px #777;
+	background: #fff;
+}
+
+/* GRID GUTTER */
+.grid-debug .grid--gutter .cell > .inner {
+	border: solid 2px black;
+	padding: 4px;
+}
+
+
+
+/*
+ *10.typo
+ */
+@import '../scss/mixin/font_typography';
+@import '../scss/extra/terminal';
+
+.test-nowrap {
+	@include text-nowrap;
+}
+
+.test-truncate {
+	@include text-truncate;
+}
+
+.test-truncate-2nd-line {
+	@include text-truncate-2nd-line;
+}
+
+.test-truncate-3th-line {
+	@include text-truncate-3th-line;
+}
+
+.test-break {
+	@include text-break;
+}
+
+
+/*
+ * 20. Images
+ */
+
+.test-squaredimagebox, IMG.test-squaredimagebox {
+	width: 300px;
+	height: 300px;
+	border: dashed 1px #777;
+	padding: 8px;
+}
+
+.test-squaredimagebox-large, IMG.test-squaredimagebox-large {
+	width: 500px;
+	height: 500px;
+	border: dashed 1px #777;
+	padding: 8px;
+}
+
+
+/*
+ * 35. Form
+ */
+
+.test-mobile-container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	max-width: 480px;
+	width: 100%;
+	overflow: visible;
+	padding: 4px;
+	display: block;
+
+	fieldset {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}
+
+/*
+ * 40. grid
+ */
+
+.test-justify-center {
+	justify-content: center;
+}
+
+@import '../scss/extra/grid_order';
+
+/*
+ * 50. viewport
+ */
+@import '../scss/mixin/layout';
+
+.test-container-viewport {
+	@include container-viewport;
+}
+
+/*
+ * 50. aspect ratio
+ */
+@import '../scss/mixin/aspect_ratio';
+
+.test-aspect-square {
+	@include aspect-square;
+}
+
+.test-aspect-4-3 {
+	@include aspect-4-3;
+}
+
+.test-aspect-3-2 {
+	@include aspect-3-2;
+}
+
+.test-aspect-15-9 {
+	@include aspect-15-9;
+}
+
+.test-aspect-16-9 {
+	@include aspect-16-9;
+}
+
+.test-custom-aspect {
+	@include aspect-ratio(100%, '.custom-inner');
+}
+
+/*
+ * 60. Fabs + Pulse
+ */
+@import "../scss/extra/fabs";
+@import "../scss/extra/fabs_pulse";
+
+
+/*
+ * 65. card
+ */
+@import "../scss/mixin/shadows";
+@import "../scss/extra/spinner";
+
+$card-radius: 8px;
+
+.card {
+	display: block;
+	@include shadow-2;
+	transition: .3s ease; /* animate the shadow on hover */
+	border-radius: $card-radius;
+
+	&:hover {
+		@include shadow-4;
+	}
+
+}
+
+.card__top {
+	@include aspect-4-3;
+
+	.inner {
+		border-bottom: solid 1px #ddd;
+	}
+
+	img {
+		border-radius: $card-radius $card-radius 0 0;
+	}
+}
+
+.card__bottom {
+	padding: 8px 16px;
+}
+
+/*
+ * 70. Overlay
+ */
+
+.cover-inner {
+	color: #fff;
+}
+
+.test-cover-gradient {
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+}
+
+
+/*
+ * 80. Animate
+ */
+
+.example-animate {
+
+	overflow-x: hidden;
+
+	P {
+		line-height: 2;
+		margin-top: 20px;
+	}
+}
+
+
+/*
+ * 90 Navbar
+ */

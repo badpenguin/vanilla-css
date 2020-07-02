@@ -1,0 +1,11 @@
+@import "../mixin/variables";
+@import "../mixin/font_typography";
+
+//
+.text-terminal {
+	@include text-mono;
+	white-space: pre-wrap;
+	background: #111;
+	color: #00ff00;
+	padding: 1rem;
+}

@@ -6,13 +6,13 @@
 	<meta name="viewport"
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
 </head>
-<body class="test grid-debug test-grid-nested">
+<body class="grid-debug  grid-debug-margin test-grid-nested">
 
-<div class="container fluid">
+<div class="container container--outer margin-before-h2 margin-before-h1">
 
 	<h1>Fixed Grid with 3 level of nesting</h1>
 
@@ -59,7 +59,7 @@
 		extended differently from non-guttered grids.</p>
 
 
-	<div class="grid grid-gutter">
+	<div class="grid grid--gutter grid--vgutter">
 		<div class="cell md-1-2">
 			<div class="inner">
 				1/2
@@ -92,17 +92,17 @@
 
 	<h1>Grid Order</h1>
 
-	<p>Fixed order: reverse the cell.</p>
-	<div class="grid grid-auto">
+	<p>Fixed order: reversed cell order always.</p>
+	<div class="grid grid--auto">
 		<div class="cell sm-1-2 order-s-2">"1" with order-s-2</div>
 		<div class="cell sm-1-2 order-s-1">"2" with order-s-1</div>
 	</div>
 
-	<p>Calls have alternate order changing at each breakpoint.</p>
+	<p>Cells have an alternate order changing at switching at every breakpoint.</p>
 
 	<div class="grid">
-		<div class="cell s-1-2 order-sm-2 order-md-1 order-lg-2 order-xlg-1">1</div>
-		<div class="cell s-1-2 order-sm-1 order-md-2 order-lg-1 order-xlg-2">2</div>
+		<div class="cell sm-1-2  order-s-2 order-sm-1 order-md-2 order-lg-1 order-xlg-2">1</div>
+		<div class="cell sm-1-2  order-s-1 order-sm-2 order-md-1 order-lg-2 order-xlg-1">2</div>
 	</div>
 
 

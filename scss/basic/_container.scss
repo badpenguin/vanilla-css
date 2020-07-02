@@ -1,0 +1,55 @@
+@import "../mixin/variables";
+@import "../mixin/font_units";
+@import "../mixin/layout";
+
+$vanilla-container-padding: 1rem !default;
+$vanilla-container-padding-px: rem2px($vanilla-container-padding);
+
+
+.container-full {
+	@include container;
+}
+
+
+.container {
+	@extend .container-full;
+
+	max-width: $vanilla-container-standard-size;
+
+	.container--outer {
+		@media (max-width: ($vanilla-container-standard-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
+			padding-left: $vanilla-container-padding;
+			padding-right: $vanilla-container-padding;
+		}
+	}
+
+}
+
+
+.container-small {
+	@extend .container-full;
+
+	max-width: $vanilla-container-small-size;
+
+	.container--outer {
+		@media (max-width: ($vanilla-container-small-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
+			padding-left: $vanilla-container-padding;
+			padding-right: $vanilla-container-padding;
+		}
+	}
+}
+
+
+.container-large {
+	@extend .container-full;
+
+	max-width: $vanilla-container-large-size;
+
+	.container--outer {
+		@media (max-width: ($vanilla-container-large-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
+			padding-left: $vanilla-container-padding;
+			padding-right: $vanilla-container-padding;
+		}
+	}
+
+}

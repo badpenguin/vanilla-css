@@ -6,23 +6,23 @@
 	<meta name="viewport"
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
 
 	<style>
-		header {
+		/*header {
 			margin: 0;
 			position: fixed;
 			top: 0;
 			left: 0;
 			right: 0;
-		}
+		}*/
 	</style>
 
 </head>
-<body class="test">
-<div class="container-viewport test-background1">
+<body>
+<div class="test-container-viewport test-background1">
 	<div class="test-background2">
 		<h1>Viewport container</h1>
 		<p>Non-sticky 100% viewport container</p>
@@ -39,57 +39,74 @@
 
 <div class="container test-margin-top test-background2 text-center">
 	<div class="test-background1">
-		<h2>Test .container has max-width but no padding</h2>
+		<h2>.container</h2>
 	</div>
 </div>
 
-<div class="container-small test-margin-top test-background2 text-center">
+<div class="m-top container-small test-margin-top test-background2 text-center">
 	<div class="test-background1">
-		<h2>Test .container-small has max-width for text content but no padding</h2>
+		<h2>.container-small</h2>
 	</div>
 </div>
 
-<div class="container fluid test-margin-top test-background2 text-center">
+<div class="m-top container container--outer test-margin-top test-background2 text-center">
 	<div class="test-background1">
-		<h2>Test .container-fluid it will show padding marked as blue background.</h2>
+		<h2>.container + .container--outer</h2>
 	</div>
 </div>
 
-<div class="container fluid test-margin-top">
-	<div class="container-small">
-		<h2>Aspect ratio tests</h2>
-
-		<br>
-
-		<h3>Square</h3>
-		<div class="test-image">
-			<div class="aspect-square">
-				<div class="inner"><img class="filter-grayscale" src="https://unsplash.it/300/300" alt="Foto 1"></div>
-			</div>
-		</div>
-
-		<h3>4/3</h3>
-		<div class="test-image">
-			<div class="aspect-4-3">
-				<div class="inner"><img class="filter-grayscale" src="https://unsplash.it/300/300" alt="Foto 2"></div>
-			</div>
-		</div>
-
-		<h3>3/2</h3>
-		<div class="test-image">
-			<div class="aspect-3-2">
-				<div class="inner"><img class="filter-grayscale" src="https://unsplash.it/300/300" alt="Foto 3"></div>
-			</div>
-		</div>
-
-		<h3>16/9</h3>
-		<div class="test-image">
-			<div class="aspect-16-9">
-				<div class="inner"><img class="filter-grayscale" src="https://unsplash.it/300/300" alt="Foto 4"></div>
-			</div>
-		</div>
-
+<div class="m-top container-small container--outer test-margin-top test-background2 text-center">
+	<div class="test-background1">
+		<h2>.container-small + .container--outer</h2>
 	</div>
+</div>
+
+<div class="m-top container-small container--outer test-margin-top margin-before-h3">
+
+	<h2>Aspect ratio tests</h2>
+
+	<h3>Square horizontal + IMG.img-cover to not leave a vertical hole</h3>
+	<div class="test-minibox">
+		<div class="test-aspect-square">
+			<div class="inner"><img class="img-cover filter-grayscale" src="https://unsplash.it/400/300" alt="Foto 1"></div>
+		</div>
+	</div>
+
+	<h3>Square vertical</h3>
+	<div class="test-minibox">
+		<div class="test-aspect-square">
+			<div class="inner"><img class="filter-grayscale" src="https://unsplash.it/400/500" alt="Foto 1"></div>
+		</div>
+	</div>
+
+	<h3>4/3</h3>
+	<div class="test-minibox">
+		<div class="test-aspect-4-3">
+			<div class="inner"><img class="filter-grayscale" src="https://unsplash.it/400/400" alt="Foto 2"></div>
+		</div>
+	</div>
+
+	<h3>3/2</h3>
+	<div class="test-minibox">
+		<div class="test-aspect-3-2">
+			<div class="inner"><img class="filter-grayscale" src="https://unsplash.it/400/400" alt="Foto 3"></div>
+		</div>
+	</div>
+
+	<h3>16/9</h3>
+	<div class="test-minibox">
+		<div class="test-aspect-16-9">
+			<div class="inner"><img class="filter-grayscale" src="https://unsplash.it/400/400" alt="Foto 4"></div>
+		</div>
+	</div>
+
+	<h3>Square with custom .inner</h3>
+	<div class="test-minibox">
+		<div class="test-custom-aspect">
+			<div class="custom-inner"><img class="img-cover filter-grayscale" src="https://unsplash.it/400/300" alt="Foto 1"></div>
+		</div>
+	</div>
+
 </div>
 
 </body>

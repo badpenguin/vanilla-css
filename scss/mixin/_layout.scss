@@ -1,0 +1,60 @@
+@import "flexbox";
+
+
+@mixin container {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+
+@mixin circular {
+	border-radius: 50%;
+}
+
+@mixin rounded {
+	border-radius: 64px;
+}
+
+@mixin radius {
+	border-radius: $vanilla-border-radius;
+}
+
+@mixin fill-parent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+@mixin margin-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+// Let a section break is parent container
+@mixin break-container {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+
+// Cover the viewport or create a section
+@mixin container-viewport {
+	@include flex-col-center;
+	//align-content: center;
+
+	width: 100%;
+	height: 100vh;
+	height: var(--vanilla-vh, 100vh);
+}

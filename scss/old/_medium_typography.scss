@@ -1,0 +1,357 @@
+// MEDIUM
+$medium-paragraph-margin-top: px2rem(29) !default;
+
+
+@mixin medium-paragraph {
+	font-family: $vanilla-fontstack-serif;
+	color: $vanilla-text-color;
+	font-weight: 400;
+	font-size: px2rem(20); // 21px on original
+	line-height: 1.58;
+	font-style: normal;
+	@include font-antialias;
+}
+
+
+@mixin medium-underline {
+	background-color: transparent;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, .6) 50%, rgba(0, 0, 0, 0) 50%);
+	background-repeat: repeat-x;
+	background-size: 2px .1em;
+	background-position: 0 1.07em;
+}
+
+
+@mixin media-liga-salt-on {
+	-moz-font-feature-settings: "liga" on, "lnum" on;
+	-webkit-font-feature-settings: "liga" on, "lnum" on;
+	font-feature-settings: "liga" on, "lnum" on;
+}
+
+
+@mixin medium-figcaption {
+	font-family: $vanilla-fontstack-base;
+	//font-weight: 300;
+	font-weight: normal;
+	font-style: normal;
+	@include media-liga-salt-on();
+	font-size: px2rem(14);
+	line-height: 1.4;
+	color: $vanilla-alt-text-color;
+	letter-spacing: 0;
+	text-align: center; // ????
+
+	em {
+		font-style: normal;
+	}
+
+}
+
+
+@if $vanilla-use-medium == 1 {
+
+	html {
+		font-size: 18px;
+	}
+
+	.container-content {
+		display: block;
+		width: 100%;
+
+		max-width: 700px;
+		margin: 2rem auto;
+		padding: 2rem;
+
+		background: #fff;
+
+		&.fluid {
+			@media (max-width: (700px+32px)) {
+				padding-left: 16px;
+				padding-right: 16px;
+			}
+		}
+
+	}
+
+	/*article,*/
+	.medium-content {
+
+		@include medium-paragraph;
+
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: 700;
+		}
+
+		h1, .h1 {
+			font-size: px2rem(39);
+			line-height: 1.04;
+			letter-spacing: -.02em;
+		}
+
+		h2, .h2 {
+			font-size: px2rem(36);
+			line-height: 1.095;
+			letter-spacing: -.035em;
+			margin-top: px2rem(56);
+			@extend .text-break;
+		}
+
+		h3, .h3 {
+			font-size: px2rem(32);
+			line-height: 1.15;
+			letter-spacing: -.02em;
+			margin-top: px2rem(56);
+			@extend .text-break;
+		}
+
+		h4, .h4 {
+			font-size: px2rem(24);
+			line-height: 1.22;
+			letter-spacing: -.02em;
+			margin-top: px2rem(39);
+			@extend .text-break;
+		}
+
+		p {
+			@include medium-paragraph;
+			@extend .text-break;
+			letter-spacing: .01rem;
+
+			margin-top: $medium-paragraph-margin-top;
+			margin-bottom: 0;
+		}
+
+		h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+			margin-top: px2rem(8);
+		}
+
+		b, strong {
+			font-weight: 700;
+		}
+
+		strong {
+			// make it a little lighter
+			color: lighten($vanilla-text-color, 5%);
+		}
+
+		a {
+			//DEFAULT@include medium-underline;
+			letter-spacing: -.003em;
+			-webkit-tap-highlight-color: $vanilla-alt-text-color;;
+		}
+
+
+		em {
+			@include media-liga-salt-on();
+		}
+
+
+		blockquote {
+			@include medium-paragraph;
+			@extend .text-break;
+
+			font-style: italic;
+			letter-spacing: -.01em;
+			margin-top: px2rem(29);
+
+			border-left: 3px solid $vanilla-text-color;
+			padding-left: px2rem(20);
+			margin-left: px2rem(-23);
+			padding-bottom: 2px;
+
+			/* TODO: replace with a font with weigth300 support */
+			&.alternate {
+				margin-top: px2rem(55);
+				font-style: italic;
+				font-size: px2rem(26);
+
+				margin-left: 0;
+				line-height: 1.48;
+				letter-spacing: -.030em;
+
+				color: $vanilla-alt-text-color;
+				border: none;
+				padding: 0;
+				padding-left: px2rem(50);
+				text-align: left;
+
+				&.alternate strong {
+					font-weight: 400;
+				}
+			}
+		}
+
+
+		pre, code {
+			@extend .text-break;
+			font-size: px2rem(18);
+			line-height: 1.58;
+
+			@include font-antialias;
+
+			// disable ligature
+			-moz-font-feature-settings: "liga" on;
+			font-feature-settings: "liga" 0;
+
+			background: rgba(0, 0, 0, .05);
+		}
+
+
+		pre {
+			letter-spacing: 0;
+			margin-top: px2rem(43);
+			padding: px2rem(20);
+
+			white-space: pre-wrap;
+			overflow: auto;
+		}
+
+
+		code {
+			letter-spacing: -.003em;
+			margin: 0 2px;
+			padding: 3px 4px;
+		}
+
+		.entry-content {ul,ol {
+			list-style-type: none;
+		}}
+
+		ul, ol {
+			margin: px2rem(29) 0 0;
+			counter-reset: post;
+			padding: 0;
+			list-style: none;
+
+			li {
+				@include medium-paragraph;
+
+				letter-spacing: -.003em;
+
+				margin-left: px2rem(30);
+				margin-bottom: px2rem(14);
+
+				display: list-item;
+				text-align: -webkit-match-parent;
+
+				em {
+					@include media-liga-salt-on();
+					color: inherit;
+				}
+
+			}
+		}
+
+
+		ol li:before {
+			@include media-liga-salt-on();
+			padding-right: px2rem(12);
+			counter-increment: post;
+			content: counter(post) ".";
+			position: absolute;
+			display: inline-block;
+			box-sizing: border-box;
+			width: px2rem(78);
+			margin-left: px2rem(-78);
+			text-align: right;
+		}
+
+		ul li:before {
+			font-size: px2rem(16.8);
+
+			padding-top: 4px;
+			padding-right: px2rem(15);
+			content: '•';
+
+			position: absolute;
+			display: inline-block;
+			box-sizing: border-box;
+			width: px2rem(78);
+			margin-left: px2rem(-78);
+			text-align: right;
+		}
+
+
+		figure {
+			margin: 0;
+			margin-top: px2rem(43);
+
+			&:not(.aligncenter) {
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+			figcaption {
+				@include medium-figcaption();
+			}
+		}
+
+
+		.wp-block-image.img-reset img {
+			width: auto;
+			max-width: 100%;
+		}
+
+
+
+		hr {
+			margin-top: px2rem(52);
+			margin-bottom: px2rem(42);
+			display: block;
+			border: 0;
+			text-align: center;
+			height: 0;
+
+			&:before {
+				font-family: $vanilla-fontstack-serif;
+				font-weight: 400;
+				font-style: italic;
+				font-size: px2rem(28);
+				letter-spacing: .6em; // .6 at 18px TODO
+
+				content: '...';
+				display: inline-block;
+				margin-left: .6em; // TODO
+				color: $vanilla-alt-text-color;
+				position: relative;
+				top: px2rem(-30);
+			}
+
+		}
+
+
+		.highlight {
+			background-color: transparent;
+			background-image: linear-gradient(to bottom, rgba(233, 253, 240, 1), rgba(233, 253, 240, 1));
+			transition: .2s background-color;
+			cursor: pointer;
+
+			&:hover {
+				background-image: linear-gradient(to bottom, rgba(125, 255, 179, 1), rgba(125, 255, 179, 1));
+			}
+
+		}
+
+
+		.subtitle {
+			font-family: $vanilla-fontstack-headers;
+			font-style: normal;
+			@include font-antialias;
+			margin: 0;
+			//font-weight: 300;
+			font-weight: 400;
+			font-size: px2rem(27);
+			line-height: 1.22;
+			//letter-spacing: -.022em;
+			letter-spacing: -.006em;
+			margin-top: 4px;
+			//color: rgba(0,0,0,.44);
+			color: $vanilla-alt-text-color;
+		}
+
+	}
+
+	//endif
+}

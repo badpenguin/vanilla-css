@@ -6,36 +6,14 @@
 	<meta name="viewport"
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
-	<style>
-
-		.test-mobile-container {
-			margin-top: 20px;
-			margin-bottom: 20px;
-			max-width: 480px;
-			width: 100%;
-			/*border: 1px dashed silver;*/
-			overflow: visible;
-			/*border-radius: 4px;*/
-			padding: 4px;
-			display: block;
-		}
-
-		fieldset {
-			margin-top: 20px;
-			margin-bottom: 20px;
-		}
-
-	</style>
 </head>
-<body class="test test-margin">
+<body>
 
 <!-- standard form -->
-<div class="container fluid test-mobile-container">
-
-	<p style="color:red">FORM IS NOT OFFICIALLY COMPLETED</p>
+<div class="container container--outer test-mobile-container">
 
 	<h1>Responsive Form + Rounded Form</h1>
 
@@ -51,7 +29,7 @@
 			<div class="row">
 				<label>Example select</label>
 				<select>
-					<option disabled selected value="">Choose...</option>
+					<option disabled selected hidden value="">Choose...</option>
 					<optgroup label="Option group 1">
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
@@ -68,8 +46,8 @@
 			<div class="row">
 				<label>Label for checkbox</label>
 				<div>
-					<input type="checkbox" value="">
-					Check this checkbox
+					<input id="checkbox1" type="checkbox" value="">
+					<label for="checkbox1"> Check this checkbox</label>
 				</div>
 			</div>
 
@@ -117,7 +95,7 @@
 			</div>
 
 			<div class="text-center">
-				<input type="submit" class="btn btn-primary" value="Input generic button">
+				<input type="submit" class="btn btn--primary" value="Input generic button">
 			</div>
 
 		</fieldset>
@@ -206,7 +184,7 @@
 			<div class="row">
 				<label>Example select</label>
 				<select>
-					<option disabled selected value="">Choose...</option>
+					<option disabled selected hidden value="">Choose...</option>
 					<optgroup label="Option group 1">
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
@@ -223,8 +201,8 @@
 			<div class="row">
 				<label>Label for checkbox</label>
 				<div>
-					<input type="checkbox" value="">
-					Check this checkbox
+					<input id="checkbox2" type="checkbox" value="">
+					<label for="checkbox2"> Check this checkbox</label>
 				</div>
 			</div>
 
@@ -257,7 +235,7 @@
 			</div>
 
 			<div class="text-center">
-				<input type="submit" class="btn btn-primary" value="Input generic button">
+				<input type="submit" class="btn btn--primary" value="Input generic button">
 			</div>
 
 			<div class="row">
@@ -271,7 +249,7 @@
 			</div>
 
 			<div class="text-center">
-				<input type="submit" class="btn btn-primary" value="Input generic button">
+				<input type="submit" class="btn btn--primary" value="Input generic button">
 			</div>
 		</fieldset>
 

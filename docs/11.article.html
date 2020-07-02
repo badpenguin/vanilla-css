@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Emulate Medium.com's typography - Vanilla CSS</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
+	<script src="vanilla-js.min.js"></script>
+	<script type="text/javascript" src="vanilla-js.min.js"></script>
+	<script type="text/javascript" src="menu.js"></script>
+</head>
+<body>
+
+<article class="container-small container--outer">
+
+	<small>H1 test</small>
+
+	<h1>How to Turn a Job Opening into a Dream Job for Top Tech Talent</h1>
+
+	<hr>
+
+	<small>blockquote test</small>
+
+	<blockquote>The general finding that “There are order-of-magnitude differences among programmers” has been confirmed
+		by many other studies of professional programmers (Curtis 1981, Mills 1983, DeMarco and Lister 1985, Curtis et
+		al. 1986, Card 1987, Boehm and Papaccio 1988, Valett and McGarry 1989, Boehm et al 2000).
+	</blockquote>
+
+	<hr>
+
+	<small>h4 + em test</small>
+
+	<h4>In the beginning (some&nbsp;history)</h4>
+	<p>Roughly 2 years ago I joined Obvious Corp. to work on the software application, <em>medium.com</em> (which,
+		you’re ~hopefully~ reading on).</p>
+	<p>At the time, Medium had already gone through a series of “re-styles” (<em>A re-style is where designers ruin your
+		life by coming up with something prettier than they had previously come up with, resulting in you having to
+		rewrite a bunch of CSS/LESS/SASS/etc</em>). Because of these re-styles, there was a lot of built up cruft – the
+		company was leaning pretty heavily on LESS’s language features, with page driven semantics,
+		non-sprited/non-retina image assets, and other such things.</p>
+
+	<hr>
+
+	<small>ul test</small>
+
+	<p>I dug through git and managed to pull out our old profile page implementation from back in 2012 ~shudder~. Check
+		it out below and notice some of these unfortunate patterns:</p>
+
+	<ul>
+		<li>everything nested under a&nbsp;.<strong>profile-page</strong> class, with zero reusable components (also
+			~almost~ everything is prefixed with&nbsp;<strong>.profile</strong>)
+		</li>
+		<li>super generic variable names like <strong>@link-color</strong> which weren’t scoped to anything, but
+			presumably only to be used in <strong>profile-page.less</strong></li>
+		<li>deep nesting (<strong>.profile-page&nbsp;.profile-posts&nbsp;.home-post-summary&nbsp;.home-post-collection-image
+			img</strong> is an actual selector being generated below — super rough on perf)
+		</li>
+		<li>no image spriting</li>
+		<li>no z-index scale, no font scale, no color scale, no scalesss…</li>
+	</ul>
+
+	<hr>
+
+	<small>blockquote alternative test</small>
+
+	<blockquote class="alternate">People were confused. And what’s worse, they were thinking they were writing CSS
+		really well, when in reality they weren’t.
+	</blockquote>
+
+	<hr>
+
+	<small>h1 + subheader + p test</small>
+
+	<h1>Why Does Digital Advertising Suck?</h1>
+	<div class="subtitle">It’s easy to blame the platforms for the blandification of advertising on the web, but the
+		truth might be a little less palatable…
+	</div>
+	<p>A year or two ago I was pitching a piece of work to a very senior, hugely experienced creative at an advertising
+		agency. As an example of the sort of content that amuses and is shared on the web, I showed him Double Rainbow
+		Man — not the most up-to-date reference, I know, but a crowd pleaser 40million times over.</p>
+
+	<hr>
+
+	<small>code test</small>
+
+	<p>Whenever I tried to download images, I would get <code><a href="#">ECONNRESET</a></code> errors. I start the
+		program, download half an image and <strong>boom</strong>. Error.</p>
+
+	<hr>
+
+	<small>pre test</small>
+
+	<p>Open up your <code>~/.gitconfig</code> file in your favorite text editor and add the following alias:</p>
+	<pre>hello = "!echo \"Hello World\""<br># (the backslashes are for escaping the quotes.)</pre>
+	<p>Now when you run <code>$ git hello</code> in your terminal, you’ll get <code>Hello World</code> as the output.
+		Awesome! Armed with this knowledge, let’s walk through the 3 examples outlined above and the aliases I’ve used
+		to accomplish them.</p>
+
+	<hr>
+
+	<small>highlighted text test</small>
+
+	<h3>Start Up Performance</h3>
+	<p><span class="highlight">React Native has a start up overhead mostly caused by having to inject the JavaScript bundle into JavaScriptCore (the VM used by React Native both on iOS and Android) and instantiate native modules and view managers.</span>
+		Although the React Native team has come a long way in <a href="#">improving performance</a>, for Instagram
+		integration we wanted to measure this gap to figure if the tradeoffs would make sense for us. To do so, we
+		ported the existing native <em>Edit Profile</em> view to React Native. Along the way, we built product
+		infrastructure that started being used by product teams in parallel (e.g. navigation, translations, core
+		components).</p>
+
+	<hr>
+
+	<h3>Image with caption</h3>
+
+	<figure>
+		<img src="https://cdn-images-1.medium.com/max/800/1*78qeb8R1AjVmSPUP25sOQA.png" alt="Medium Example">
+		<figcaption>
+			<a href="#" rel="noopener"><em>Michael Nino Everson</em></a> <em>’s entire portfolio is built around a
+			single project&#8202;—&#8202;SoundCloud for iOS. The process that he follows is described in-depth and is
+			backed up with great examples of imagery, giving a clear insight into the way he&nbsp;works.</em>
+		</figcaption>
+	</figure>
+
+	<h3>More list example</h3>
+	<p>The overview section should come first. The reviewer should be able quickly understand what the product is about
+		and how it functions. Here are a subsections to include in the “overview”:</p>
+
+	<ul>
+		<li><em>Purpose of the project</em>&#8202;—&#8202;Why was this project started?</li>
+		<li><em>Objective&#8202;—&#8202;</em>What were the deliverables?</li>
+		<li><em>Project duration&#8202;—&#8202;</em>How long did it take?</li>
+	</ul>
+
+	<h3>OL example</h3>
+
+	<p>Millions of years later we are still telling stories about what just happened and why we feel the way we feel, so
+		we’d do well to remember two things:</p>
+	<ol>
+		<li>Every feeling is a feeling about change.</li>
+		<li>Every change implies a story.</li>
+	</ol>
+	<p>So whether it’s a news story in a paper, or a marketing story about a product, whether it’s an anecdote you tell
+		your friends or the tale of a great romance—every story is the story of change.</p>
+
+	<hr>
+
+	<h1>Lorem Ipsum h1</h1>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit mollis lorem eu iaculis.
+		Vivamus eleifend sagittis justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+		ridiculus mus. Integer a elit in diam blandit congue.
+	</p>
+	<h2>Morbi feugiat dignissim efficitur h2</h2>
+	<p>Morbi feugiat dignissim efficitur. Cras posuere
+		pretium aliquet. Cras tincidunt pharetra felis eu varius. <a href="#">Ut pellentesque porta nunc in
+			tempor</a>. In sed
+		velit euismod, fringilla sapien ut, tempor nulla. Aenean vel libero est.
+	</p>
+	<h3>Etiam at euismod magna h3</h3>
+	<p>
+		Etiam at euismod magna. Curabitur sit amet dui nulla. Nunc vitae fermentum metus. Praesent sit amet orci
+		nisl. Aliquam gravida, eros id pharetra pretium, nunc lorem ultrices lectus, id aliquam diam lectus
+		vitae dui. Nulla mollis quis magna a vestibulum.</p>
+	<p> Pellentesque habitant morbi tristique senectus et netus
+		et malesuada fames ac turpis egestas. <a href="#">Quisque at arcu tellus</a>. Nam in cursus felis. Proin congue
+		nunc et
+		nulla lacinia, eu pretium nisi rutrum.
+	</p>
+	<h4>Aliquam erat volutpat h4</h4>
+	<p>
+		Aliquam erat volutpat. Integer feugiat nibh quis dui posuere tristique. Aenean ornare est non volutpat
+		scelerisque. Duis tortor lectus, convallis vel lectus id, volutpat convallis felis. Nulla facilisi. In
+		hac habitasse platea dictumst. <a href="#">Pellentesque tincidunt pharetra sem condimentum varius</a>. Sed
+		accumsan
+		lacus elit, eget accumsan enim feugiat a.</p>
+	<p>Phasellus massa augue, convallis in dapibus sit amet,
+		ultricies id felis. Vivamus lacinia, ligula non scelerisque dapibus, leo nisl laoreet sapien, eu
+		ultrices risus dolor ac sapien. Suspendisse et mollis elit. Maecenas ornare vel nisi in scelerisque.
+		Pellentesque hendrerit mi eu dolor ornare sagittis.
+	</p>
+
+</article>
+
+</body>
+</html>

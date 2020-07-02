@@ -1,0 +1,77 @@
+@import "../mixin/variables";
+@import "../mixin/wordpress";
+
+@if $vanilla-use-wordpress == 1 {
+
+
+	/*
+	 * https://codex.wordpress.org/Content_Width
+	 */
+	.size-auto,
+	.size-full,
+	.size-large,
+	.size-medium,
+	.size-thumbnail {
+		max-width: 100%;
+		height: auto;
+		width: auto;
+	}
+
+	/*
+	 * https://codex.wordpress.org/Wrapping_Text_Around_Images
+	 */
+
+	.alignnone {
+		display: inline;
+	}
+
+
+	.alignright {
+		float: right;
+		text-align: right;
+	}
+	.has-text-align-right {
+		text-align: right;
+	}
+
+	.alignleft {
+		float: left;
+		text-align: left;
+	}
+
+
+	.aligncenter {
+		display: block;
+		text-align: center;
+	}
+
+	.aligncenter, .alignwide, .alignfull {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	.alignright {
+		margin: 0 0 $vanilla-horizontal-spacing $vanilla-horizontal-spacing;
+	}
+
+	.alignleft {
+		margin: 0 $vanilla-horizontal-spacing $vanilla-horizontal-spacing 0;
+	}
+
+
+	/* Text meant only for screen readers. */
+	.screen-reader-text {
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		clip-path: inset(50%);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute !important;
+		width: 1px;
+		word-wrap: normal !important;
+	}
+
+}

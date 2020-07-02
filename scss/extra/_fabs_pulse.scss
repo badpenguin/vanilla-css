@@ -1,0 +1,27 @@
+@import "../mixin/variables";
+@import "../mixin/animation";
+@import "animation_pulse";
+
+.fab.fab--pulse {
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: inherit;
+		border-radius: inherit;
+		transition: opacity .3s, transform .3s;
+		//animation: pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+		@include animation(pulse-animation 1s cubic-bezier(0.24, 0, 0.38, 1) infinite);
+		z-index: $vanilla-hover-zindex;
+	}
+
+	overflow: initial;
+
+	// AGX: stop animation on hover
+	&:hover::before {
+		-webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+		animation-play-state: paused;
+	}
+}

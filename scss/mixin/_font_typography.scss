@@ -1,0 +1,104 @@
+@import "../mixin/variables";
+
+/* TEXT */
+
+@mixin text-outline($size,$color) {
+	text-shadow:
+			-$size -$size 0 $color,
+			$size -$size 0 $color,
+			-$size $size 0 $color,
+			$size $size 0 $color;
+}
+
+
+@mixin font-antialias {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;    /* It only works on Mac OS X/macOS. */
+	-moz-osx-font-smoothing: grayscale;     /* Firefox - It only works on Mac OS X/macOS. */
+	font-smooth: antialiased;   /* non standard */
+}
+
+
+@mixin text-mono {
+	font-family: $vanilla-fontstack-mono;
+	tab-size: 3;
+	white-space: pre-wrap;
+}
+
+
+// NOTE: you have to handle the overflow yourself as you wish
+@mixin text-nowrap {
+	white-space: nowrap;
+}
+
+
+@mixin text-truncate {
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+// TODO: th.text-truncate, td.text-truncate { max-width: 0; }
+
+
+/*
+ * Inspired by:
+ * https://css-tricks.com/line-clampin/
+ * https://dropshado.ws/post/1015351370/webkit-line-clamp
+ * NOTE: probably will work only con chrome; provide the "height" option as fallback for other browsers
+ */
+@mixin text-truncate-2nd-line {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	// Remove the padding or you'll see clamped line
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+
+/*
+ * Inspired by:
+ * https://css-tricks.com/line-clampin/
+ */
+@mixin text-truncate-3th-line {
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	// Remove padding or you'll seel clamped line
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+
+/*
+ * Inspired by:
+ * https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+ * https://justmarkup.com/log/2015/07/dealing-with-long-words-in-css/
+ * Fixed crhrome with: https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+ */
+@mixin text-break {
+
+	white-space: inherit;
+
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	-ms-word-break: break-all;
+	//noinspection CssOverwrittenProperties
+	word-break: break-all;
+	//noinspection CssOverwrittenProperties
+	word-break: break-word;
+
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+
+

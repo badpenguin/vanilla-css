@@ -1,0 +1,358 @@
+@import "../mixin/variables";
+@import "../mixin/shadows";
+@import "../mixin/font_units";
+@import "../mixin/image";
+@import "../mixin/layout";
+@import "../mixin/wordpress";
+@import "../mixin/breakpoints";
+
+
+@if $vanilla-use-wordpress == 1 {
+
+	.wp-block-subhead {
+		@extend .h2;
+	}
+
+	.wp-block-quote {
+		padding-left: $vanilla-horizontal-spacing-medium;
+		border-left: solid 4px $vanilla-form-border-color;
+	}
+
+	.wp-block-preformatted, .wp-block-code {
+		background-color: $vanilla-form-background;
+		border: $vanilla-form-border;
+		padding: $vanilla-horizontal-spacing-medium;
+	}
+
+
+	/*
+	 * BLOCK QUOTE
+	 */
+
+	.wp-block-pullquote {
+
+		p, cite {
+			text-align: center;
+			display: block;
+		}
+
+		cite {
+			margin-top: $vanilla-vertical-spacing-medium;
+		}
+
+		em {
+			font-size: 1.9rem;
+			line-height: 1.677;
+		}
+
+		border-top: 3px solid $vanilla-text-color;
+		border-bottom: 3px solid $vanilla-text-color;
+
+		padding-top: $vanilla-vertical-spacing-medium;
+		padding-bottom: $vanilla-vertical-spacing-medium;
+
+		blockquote {
+			border: none;
+		}
+	}
+
+
+	/*
+	 * BUTTON
+	 */
+
+	.wp-block-button {
+		margin-top: $vanilla-vertical-spacing;
+
+		a {
+			@extend .btn;
+			@extend .btn--primary;
+			padding: 0.5rem 2rem;
+			border-radius: 20px;
+			display: inline-block;
+		}
+	}
+
+	.wp-block-button.is-style-outline > a {
+		background: transparent;
+		border-radius: 20px;
+		border: solid 1px rgba($vanilla-button-primary-background-color, .7);
+		color: $vanilla-button-primary-background-color;
+
+		&:hover {
+			@include shadow-1;
+		}
+	}
+
+	.wp-block-button.is-style-squared > a {
+		border: solid 1px rgba($vanilla-button-primary-background-color, .7);
+		border-radius: 0;
+	}
+
+
+	/*
+	 * Image
+	 */
+
+	.wp-block-image {
+		figcaption {
+			text-align: center;
+			font-size: px2rem(14);
+			color: $vanilla-alt-text-color;
+			line-height: 1.3;
+		}
+	}
+
+	// VIDEO
+	.wp-block-video > video {
+		@include img-responsive;
+	}
+
+	/*
+     * EMBED
+     */
+
+	.wp-block-embed-youtube {
+		//TODO: compare with aspect 16-9
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-bottom: 56.25%;
+
+		.wp-block-embed__wrapper > iframe {
+			@include fill-parent;
+		}
+
+	}
+
+
+	// Margin Bottom Sotto Tutti i Blocchi standard
+	.wp-block-button,
+	.wp-block-quote,
+	.wp-block-pullquote,
+	.wp-block-gallery,
+	.wp-block-image,
+	.wp-block-cover,
+		//.bp-video-container
+	{
+		margin-bottom: $vanilla-vertical-spacing;
+	}
+
+	/*
+     * Vertical Spacer
+     */
+
+	.wp-block-spacer {
+		height: $vanilla-vertical-spacing-large;
+	}
+
+	.wp-block-separator {
+		border-color: rgba(0, 0, 0, 0.1);
+	}
+
+
+	/*
+     * GALLERY
+     */
+
+	.wp-block-gallery {
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		list-style-type: none;
+		padding: 0;
+		// allow gallery items to go edge to edge
+		margin-left: -$vanilla-horizontal-spacing / 2;
+		margin-right: -$vanilla-horizontal-spacing / 2;
+
+
+		.blocks-gallery-image,
+		.blocks-gallery-item {
+			margin: 8px;
+			display: flex;
+			flex-grow: 1;
+			flex-direction: column;
+			justify-content: center;
+			position: relative;
+
+			figure {
+				margin: 0;
+				height: 100%;
+				display: flex;
+				align-items: flex-end;
+			}
+
+			img {
+				display: block;
+				max-width: 100%;
+				height: auto;
+			}
+
+			figcaption {
+				@include wordpress-gallery-overlay-bottom-caption;
+				pointer-events: none; // Avoid figcaption to stop lightbox
+			}
+		}
+
+		// Cropped
+		&.is-cropped .blocks-gallery-image,
+		&.is-cropped .blocks-gallery-item {
+			a,
+			img {
+				flex: 1;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+
+			}
+		}
+
+		// Responsive fallback value, 2 columns
+		& .blocks-gallery-image,
+		& .blocks-gallery-item {
+			width: calc(100% / 2 - #{$vanilla-horizontal-spacing});
+		}
+
+		&.columns-1 .blocks-gallery-image,
+		&.columns-1 .blocks-gallery-item {
+			width: calc(100% / 1 - #{$vanilla-horizontal-spacing});
+		}
+
+		/*@include break-small {*/
+		@media (min-width: $vanilla-breakpoint-small) {
+			@for $i from 3 through 8 {
+				&.columns-#{ $i } .blocks-gallery-image,
+				&.columns-#{ $i } .blocks-gallery-item {
+					width: calc(100% / #{ $i } - #{$vanilla-horizontal-spacing});
+				}
+			}
+		}
+
+		&.columns-3 .blocks-gallery-item {
+			@media (max-width: $vanilla-breakpoint-medium) {
+				width: calc(100% / 2 - #{$vanilla-horizontal-spacing});
+			}
+			@media (max-width: $vanilla-breakpoint-small) {
+				width: 100%;
+			}
+		}
+
+		// Make the "Add new Gallery item" button full-width (so it always appears
+		// below other items).
+		.blocks-gallery-item {
+			&.has-add-item-button {
+				width: 100%;
+			}
+		}
+
+		// Apply max-width to floated items that have no intrinsic width
+		[data-align="left"] &,
+		[data-align="right"] &,
+		&.alignleft,
+		&.alignright {
+			//max-width: $content-width / 2;
+			width: 100%;
+		}
+
+	}
+
+
+	/*
+	 * COLUMNS: 2
+	 */
+
+	.wp-block-columns {
+		display: flex;
+		flex-direction: row;
+
+		@include to_breakpoint(medium) {
+			//flex-direction: column;
+
+			.wp-block-column:not(:first-child) {
+				margin-top: $vanilla-vertical-spacing;
+			}
+
+		}
+
+		.wp-block-column {
+			display: block;
+			flex: 1;
+		}
+
+		// remove on block column
+		ul, ol {
+			margin-top: 0;
+		}
+
+	}
+
+
+	.wp-block-text-columns {
+		&.columns-2 {
+			-webkit-column-count: 2;
+			column-count: 2;
+		}
+		&.columns-3 {
+			-webkit-column-count: 3;
+			column-count: 3;
+		}
+		&.columns-4 {
+			-webkit-column-count: 4;
+			column-count: 4;
+		}
+	}
+
+
+	/*
+	 * MEDIA (a two column block layout)
+	 */
+
+	.wp-block-media-text {
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		-ms-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+
+		figure { // .wp-block-media-text__media {
+			display: block;
+			flex: 0 0 50%;
+		}
+
+		.wp-block-media-text__content {
+			display: block;
+			flex: 0 0 50%;
+			padding-left: $vanilla-horizontal-spacing;
+		}
+
+		&.has-media-on-the-right {
+			.wp-block-media-text__content {
+				order: -1;
+				padding-left: 0;
+				padding-right: $vanilla-horizontal-spacing;
+			}
+		}
+
+
+		// Override responsive
+
+		@media(max-width: $vanilla-breakpoint-small) {
+
+			display: block;
+
+			.wp-block-media-text__content {
+				padding-left: 0;
+				flex: none;
+			}
+
+			&.has-media-on-the-right {
+				.wp-block-media-text__content {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+}

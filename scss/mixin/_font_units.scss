@@ -1,0 +1,35 @@
+
+/*
+ * Units
+ */
+
+
+// https://css-tricks.com/snippets/sass/strip-unit-function/
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}
+
+
+@function rem2px($value) {
+	@return strip-unit($value)*16px;
+}
+
+
+// 12pt	16px	1em
+@function pt2px($value) {
+	@return ($value/12*14px);
+}
+
+
+@function px2rem($value) {
+	@return strip-unit($value / 16 ) * 1rem;
+}
+
+// Convert PSD Tracking to rem
+@function kerning($unit) {
+	@return ($unit / 1000)+rem;
+}

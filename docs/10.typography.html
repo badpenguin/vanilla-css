@@ -6,7 +6,7 @@
 	<meta name="viewport"
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
 	<style>
@@ -18,9 +18,9 @@
 	</style>
 
 </head>
-<body class="test">
+<body>
 
-<div class="container fluid">
+<div class="container container--outer">
 
 	<h1>Heading H1</h1>
 	<p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
@@ -47,12 +47,12 @@
 		vestibulum.</p>
 
 
-	<section class="test-margin">
+	<section class="margin-before-h2">
 
 		<h2>Tag HR</h2>
 		<hr>
 
-		<h1>Font sizes and weightes</h1>
+		<h2>Font sizes and weightes</h2>
 
 		<p>
 			<small>tag SMALL</small>
@@ -61,61 +61,48 @@
 
 		<br/>
 
-		<p class="text-thin">100 .text-thin</p>
-		<p class="text-extra-light">200 .text-extra-light</p>
-		<p class="text-light">300 .text-light</p>
-		<p class="text-regular">400 .text-regular</p>
-		<p class="text-medium">500 .text-medium</p>
-		<p class="text-semi-bold">600 .text-semi-bold</p>
 		<p class="text-bold">700 .text-bold</p>
-		<p class="text-extra-bold">800 .text-extra-bold</p>
-		<p class="text-black">900 .text-black</p>
 
 		<br/>
 		<div class="test-smallbox">
 			<p class="text-left">.text-left</p>
 			<p class="text-right">.text-right</p>
 			<p class="text-center">.text-center</p>
-			<p class="text-justify">.text-justify = text justify text justify text justify text justify text justify
-				text justify</p>
 		</div>
 		<br/>
-		<p class="text-uppercase">.text-uppercase</p>
-		<p class="text-lowercase">.text-lowercase</p>
-		<p class="text-capitalize">.text-capitalize</p>
 
 
-		<h2>.text-nowrap</h2>
+		<h2>text-nowrap()</h2>
 		<p>Its up to you to add overflow:hidden or not</p>
-		<p class="test-smallbox text-nowrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+		<p class="test-smallbox test-nowrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 			ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
 			velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 			culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<h2>.text-truncate</h2>
-		<p class="test-smallbox text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+		<h2>text-truncate()</h2>
+		<p class="test-smallbox test-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
 			ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
 			velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 			culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<h2>.text-truncate-2nd-line</h2>
-		<p class="test-smallbox text-truncate-2nd-line test-zeropadding">Lorem ipsum dolor sit amet, consectetur
+		<h2>text-truncate-2nd-line()</h2>
+		<p class="test-smallbox test-truncate-2nd-line">Lorem ipsum dolor sit amet, consectetur
 			adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
 			reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 			cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<h2>.text-truncate-3th-line</h2>
-		<p class="test-smallbox text-truncate-3th-line test-zeropadding">Lorem ipsum dolor sit amet, consectetur
+		<h2>text-truncate-3th-line()</h2>
+		<p class="test-smallbox test-truncate-3th-line">Lorem ipsum dolor sit amet, consectetur
 			adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
 			reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 			cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<h2>.text-break</h2>
-		<p class="test-smallbox text-break">
+		<h2>text-break()</h2>
+		<p class="test-smallbox test-break">
 			LoremipsumdolorsitametconsecteturadipiscingelitseddoeiusmodtemporincididuntutlaboreetdoloremagnaaliquaUtenimadminimveniamquisnostrudexercitationullamcolaborisnisiutaliquipexeacommodoconsequatDuisauteiruredolorinreprehenderitinvoluptatevelitessecillumdoloreeufugiatnullapariaturExcepteursintoccaecatcupidatatnonproidentsuntinculpaquiofficiadeseruntmollitanimidestlaborum.</p>
 
 		<h2>.text-column</h2>
@@ -135,7 +122,7 @@
 			nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
 			anim id est laborum.</code>
 
-		<h2>.text-mono</h2>
+		<h2>div.text-mono</h2>
 		<div class="text-mono">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 			ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
 			aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -143,9 +130,9 @@
 			deserunt mollit anim id est laborum.
 		</div>
 
-		<h2>Tag .text-terminal (like a PRE)</h2>
+		<h2>Component .text-terminal (like a PRE)</h2>
 		<pre class="text-terminal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			<br>agx@localhost:~<span style="color:#fff">$ <span class="pulse-opacity">&#9608;</span></span>
+			<br>agx@localhost:~<span style="color:#fff">$ <span class="animate--pulse-opacity">&#9608;</span></span>
 
 		</pre>
 

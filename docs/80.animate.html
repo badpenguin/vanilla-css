@@ -4,51 +4,36 @@
 	<title>Animation when Visible - Vanilla CSS</title>
 	<meta charset="UTF-8">
 	<meta name="viewport"
-	      content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
-	<style>
-
-		body {
-			overflow-x: hidden;
-		}
-
-		.container { max-width:600px; }
-
-		P { line-height: 2; margin-top: 20px; }
-
-
-		.container.slideInUp {
-			animation-delay: 1s;
-		}
-
-
-	</style>
 </head>
-<body class="test grid-debug test-grid-basic">
+<body class="example-animate grid-debug test-grid-basic">
 
-<div class="container fluid">
+<div class="container-small container--outer">
 
-	<h1 style="" class="noauto pulse-opacity ">Animation Test (pulse-opacity)</h1>
+	<h1 style="" class="noauto animate--pulse-opacity ">Animation Test (animate--pulse-opacity)</h1>
 
-	<p>To use "<code>animated-when-visible</code>" a little of JS i required.</p>
+	<p>To use "<code>animate--when-visible</code>" a little of JS i required.</p>
 	<p>I am using my "<b><em>Vanilla JS</em></b>" library to trigger the animation.</p>
-	<p>The header elements will come in slideing from the right side when visibles; meanwhile the paragraphs will just fade-in.</p>
+	<p>The header elements will come in slideing from the right side when visibles; meanwhile the paragraphs will just
+		fade-in.</p>
 
 </div>
 
-<div class="container fluid">
+<div class="container-small container--outer">
 	<h1>We'll arrive in 1 second! Wait...</h1>
 </div>
-<div class="container fluid Xanimated XslideInUp">
 
+<div class="container-small container--outer">
 
-	<div class="Xanimated Xinfinite Xpulse">
+	<div class="">
 		<h1 class="">Paragraph One</h1>
 	</div>
+
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
 		magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
@@ -94,7 +79,8 @@
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 		pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 		laborum.</p>
-	<p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+	<p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+		dolore
 		magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 		pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
@@ -103,24 +89,21 @@
 </div>
 
 <script>
-	onPageReady(function () {
+	$onLoad(function () {
 
-		var headers = $all('h1:not(.noauto)');
-		var paragraphs = $all('.container > p');
-
-		$forEach(headers, function(el) {
-			$addClass(el,'animate-slide-in-right');
-			$addClass(el,'animate-2s');
-			$addClass(el,'animate-when-visible');
+		$allEach('h1:not(.noauto)', function (el) {
+			$addClass(el, 'animate--slide-in-right');
+			$addClass(el, 'animate--2s');
+			$addClass(el, 'animate--when-visible');
 		});
 
-		$forEach(paragraphs, function(el) {
-			$addClass(el,'animate-fade-in');
-			$addClass(el,'animate-2s');
-			$addClass(el,'animate-when-visible');
+		$allEach('.container-small > p', function (el) {
+			$addClass(el, 'animate--fade-in');
+			$addClass(el, 'animate--2s');
+			$addClass(el, 'animate--when-visible');
 		});
 
-		$visibility('.animate-when-visible',{invisibleClass:'reset-animation'});
+		$visibility('.animate--when-visible', {invisibleClass: 'animate--reset'});
 
 	});
 </script>

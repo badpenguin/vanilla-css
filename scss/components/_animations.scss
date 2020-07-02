@@ -1,0 +1,140 @@
+@import "../mixin/variables";
+@import "../mixin/animation";
+
+
+@if $vanilla-use-animations == 1 {
+
+	/*
+	 * To make "animate--when-visible" to work then Vanilla JS is required too.
+	 */
+
+
+	/*
+	 * FADE IN
+	 */
+
+	@include keyframes(fadeIn) {
+		0% {
+			opacity: 0
+		}
+		100% {
+			opacity: 1
+		}
+	}
+
+	.animate--fade-in {
+		@include default-animation;
+		-webkit-animation-name: fadeIn;
+		animation-name: fadeIn;
+		// change default
+		-webkit-animation-duration: 2s;
+		animation-duration: 2s;
+	}
+
+	.animate--start.animate--fade-in {
+		-webkit-animation-duration: 2s;
+		animation-duration: 2s;
+	}
+
+
+	/*
+	 * Slide-In
+	 */
+
+	@include keyframes(slideInRight) {
+		from {
+			@include transform(translate3d(100%, 0, 0));
+			visibility: visible;
+		}
+		to {
+			@include transform(translate3d(0, 0, 0));
+		}
+	}
+
+	.animate--slide-in-right {
+		@include default-animation;
+		-webkit-animation-name: slideInRight;
+		animation-name: slideInRight;
+	}
+
+
+	/*
+	 * bounce - animate.css
+	 */
+
+	@include keyframes(bounce) {
+		from,
+		20%,
+		53%,
+		80%,
+		to {
+			@include transform(translate3d(0, 0, 0));
+		}
+
+		40%,
+		43% {
+			@include transform(translate3d(0, -30px, 0));
+		}
+
+		70% {
+			@include transform(translate3d(0, -15px, 0));
+		}
+
+		90% {
+			@include transform(translate3d(0, -4px, 0));
+		}
+	}
+
+	.animate--bounce {
+		@include default-animation;
+		-webkit-animation-name: bounce;
+		animation-name: bounce;
+	}
+
+
+	/*
+	 * Reset / Start Animation
+	 */
+
+	@include keyframes(nullAnimation) {
+		0% {
+		}
+		100% {
+		}
+	}
+
+
+	// The trick with CSS is switching classes to reset the animation
+	.animate--reset {
+		visibility: hidden;
+		-webkit-animation-name: nullAnimation;
+		animation-name: nullAnimation;
+	}
+
+
+	// This class is used by $visibility in vanilla-js
+	.invisible {
+		visibility: hidden;
+	}
+
+
+	.animate--start {
+		visibility: visible;
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-play-state: running;
+		animation-play-state: running;
+
+		&.animate--1s {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+		}
+
+		&.animate--2s {
+			-webkit-animation-duration: 2s;
+			animation-duration: 2s;
+		}
+
+	}
+
+}

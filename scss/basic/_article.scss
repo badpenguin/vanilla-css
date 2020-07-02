@@ -1,0 +1,58 @@
+@import "../mixin/variables";
+@import "../mixin/layout";
+
+
+article, .article, .entry-content {
+
+	h2, h3, h4, h5, h6 {
+		//margin-top: 2rem; // TODO
+	}
+
+	p a:not(.btn) {
+		//@extend .link-underline;
+		color: $vanilla-primary-color;
+	}
+
+	ul, ol {
+		list-style-position: inside;
+		margin-bottom: 1rem;
+
+		li {
+			display: list-item;
+			line-height: 1.5;
+
+			a {
+				color: $vanilla-primary-color;
+			}
+		}
+	}
+
+	ul {
+		list-style-type: disc;
+
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	//.wp-block-table {
+	table {
+		width: 100%;
+		border: $vanilla-form-border;
+		border-width: 1px 0 0 1px;
+		@include margin-center;
+		margin-bottom: $vanilla-vertical-spacing;
+
+		th {
+			border-width: 0 1px 0 1px;
+		}
+
+		th, td {
+			border: $vanilla-form-border;
+			padding: 8px;
+		}
+
+	}
+
+}

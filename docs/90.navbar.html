@@ -6,76 +6,64 @@
 	<meta name="viewport"
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
-	<style>
-
-		header {
-			background: #ddd;
-		}
-
-		article {
-			margin-top: 3rem;
-		}
-
-		.border1 {
-			border: dotted 1px #ddd;
-		}
-
-	</style>
 </head>
 <body>
+
+<article class="container-small container--outer">
+	<h1>Navbar without javascript</h1>
+	<p>Try to resize to 1000px to have the hambuger menù appears. It works only onto the top navbar.</p>
+
+	<h2>How It Works</h2>
+	<p>The main container is: nav.navbar pluse a toggle class: navbar--toggle-on-medium</p>
+	<p>The modifier: .navbar--wrap allow for longer navbar to wrap instead of generating x-overflow.</p>
+	<p>The modifier: .navbar--toggle-always prevents the navbar wrapping and always show the toggle menù</p>
+	<p>The child is: ul.navbar__menu plus a position class: navbar__menu--center, left or right</p>
+	<p>The toggle button is not within the UL. Its into a separate element: div.navbar__toggle</p>
+	<p>The toggle can contain a LABEL, a CHECKBOX and the hidden overlay: div.navbar__overlay</p>
+	<p>It has an utility modifier: .navbar__overlay--right</p>
+	<p>And a close button with: div.navbar__overlay__close</p>
+
+</article>
 
 <header>
 
 	<div class="container">
 
-		<nav class="navbar">
+		<nav class="navbar navbar--toggle-on-small">
 
-			<ul class="navbar-menu  navbar-menu-left">
+			<ul class="navbar__menu navbar__menu--left">
 				<li>left</li>
 				<li><a href="#">link</a></li>
 				<li><a href="#">link</a></li>
 			</ul>
 
-			<ul class="navbar-menu  navbar-menu-center">
+			<ul class="navbar__menu navbar__menu--center">
 				<li class="dont-toggle">LOGO</li>
 			</ul>
 
-			<ul class="navbar-menu  navbar-menu-right">
+			<ul class="navbar__menu navbar__menu--right">
 				<li>right</li>
-				<li class="hover-master">
+				<li class="hover-overlay">
 					<a href="#">Hover me</a>
-					<ul class="hover-slave">
+					<ul class="hover-inner">
 						<li><a href="#">one</a></li>
 						<li><a href="#">two</a></li>
 						<li><a href="#">three</a></li>
 					</ul>
 				</li>
-<!--
-<div class="pure-menu pure-menu-horizontal">
-	<ul class="pure-menu-list">
 
-		<li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
-			<a href="#" id="menuLink1" class="pure-menu-link">Contact</a>
-			<ul class="pure-menu-children">
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Email</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
-				<li class="pure-menu-item"><a href="#" class="pure-menu-link">Tumblr Blog</a></li>
-			</ul>
-		</li>
-	</ul>
-</div>
--->
 				<li><a href="#">link</a></li>
 			</ul>
 
-			<div class="navbar-toggle">
-				<label for="navbar-toggle">&#9776; Menu</label>
-				<input type="checkbox" id="navbar-toggle"/>
-				<div class="navbar-overlay">
-					<label class="navbar-overlay-close" for="navbar-toggle">&times;</label>
+			<!-- change id="navbar-toggle" to support more menues -->
+			<div class="navbar__toggle">
+				<label for="navbar-toggle2">&#9776; Menu</label>
+				<input type="checkbox" id="navbar-toggle2"/>
+				<div class="navbar__overlay navbar__overlay--right">
+					<label class="navbar__overlay__close" for="navbar-toggle2">&times;</label>
 					<ul>
 						<li><a href="#">one</a></li>
 						<li><a href="#">two</a></li>
@@ -91,53 +79,7 @@
 </header>
 
 
-<article>
-
-	<p class="text-center" style="color:red">NAVBAR IS NOT OFFICIALLY COMPLETED</p>
-
-<p>Navbar with 2 elements:</p>
-
-<div class="container">
-	<nav class="navbar">
-		<ul class="navbar-menu navbar-menu-left border1">
-			<li class="dont-toggle">left</li>
-			<li><a href="#">link</a></li>
-			<li><a href="#">link</a></li>
-		</ul>
-		<ul class="navbar-menu navbar-menu-right border1">
-			<li>right</li>
-			<li><a href="#">link</a></li>
-			<li><a href="#">link</a></li>
-		</ul>
-
-		<a class="navbar-toggle" href="#">&#9776;</a>
-
-	</nav>
-</div>
-</article>
-
-<article>
-<p>Navbar with 1 elements:</p>
-
-<div class="container">
-	<nav class="navbar">
-		<ul class="navbar-menu border1">
-			<li class="dont-toggle">left</li>
-			<li><a href="#">link</a></li>
-			<li><a href="#">link</a></li>
-		</ul>
-		<a class="navbar-toggle" href="#">&#9776;</a>
-	</nav>
-</div>
-</article>
-
-
-<article class="container fluid">
-	<h1>Navbar without javascript</h1>
-	<p>Try to resize to 1000px to have the hambuger menù appears. It works only onto the top navbar.</p>
-</article>
 
 
 </body>
 </html>
-

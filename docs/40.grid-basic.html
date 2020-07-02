@@ -6,19 +6,14 @@
 	<meta name="viewport"
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
-	<style>
-		br {
-			margin-top: 2rem;
-		}
-	</style>
 </head>
-<body class="test grid-debug test-grid-basic">
+<body class="grid-debug grid-debug-margin test-grid-basic">
 
-<div class="container fluid ">
-	<p>Container Fixed 1000px</p>
+<div class="container container--outer margin-before-h2 margin-before-h1">
+	<p style="display:block; width:100%; border-bottom: dashed 1px gray">Container Fixed 1000px</p>
 
 	<h1>Visibility Class</h1>
 	<p>Try to resize to see the active breakpoint</p>
@@ -44,16 +39,16 @@
 	</div>
 
 	<br>
-	<p>If you add <b>.grid-auto</b> to the grid, or .cell-auto to the cell then they will try to be equal size automatically.</p>
+	<p>If you add <b>.grid--auto</b> to the grid, or .cell--auto to the cell then they will try to be equal size automatically.</p>
 
-	<div class="grid grid-auto">
-		<div class="cell">1 grid-auto</div>
-		<div class="cell">2 grid-auto</div>
+	<div class="grid grid--auto">
+		<div class="cell">1 grid--auto</div>
+		<div class="cell">2 grid--auto</div>
 	</div>
 
 	<div class="grid">
-		<div class="cell cell-auto">1 cell-auto</div>
-		<div class="cell cell-auto">2 cell-auto</div>
+		<div class="cell cell--auto">1 cell--auto</div>
+		<div class="cell cell--auto">2 cell--auto</div>
 	</div>
 
 	<br>
@@ -205,92 +200,92 @@
 
 	<h1>Responsive + Auto Grid</h1>
 
-	<p>Like before but some cells have the "cell-auto" class and wil try to fill the space.</p>
+	<p>Like before but some cells have the "cell--auto" class and wil try to fill the space.</p>
 
 	<div class="grid">
 		<div class="cell md-1-1">1/1</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 		<div class="cell md-1-2">1/2</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 		<div class="cell md-1-3">1/3</div>
 		<div class="cell md-1-3">1/3</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 		<div class="cell md-1-4">1/4</div>
 		<div class="cell md-1-4">1/4</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 		<div class="cell md-1-4">1/4</div>
 	</div>
 	<div class="grid">
 		<div class="cell md-1-4">1/4</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 		<div class="cell md-1-4">1/4</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 		<div class="cell md-1-5">1/5</div>
 		<div class="cell md-1-5">1/5</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 		<div class="cell md-1-5">1/5</div>
 		<div class="cell md-1-5">1/5</div>
 	</div>
 	<div class="grid">
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 		<div class="cell md-1-5">1/5</div>
 		<div class="cell md-1-5">1/5</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 		<div class="cell md-1-5">1/5</div>
 	</div>
 	<div class="grid">
 		<div class="cell md-1-5">1/5</div>
-		<div class="cell cell-auto">auto</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 		<div class="cell md-1-5">1/5</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 
 	<div class="grid">
 		<div class="cell md-1-3">1/3</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 		<div class="cell md-2-3">2/3</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 
 		<div class="cell md-1-4">1/4</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 
 		<div class="cell md-2-4">2/4</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 
 		<div class="cell md-3-4">3/4</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 
 		<div class="cell md-1-5">1/5</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 
 		<div class="cell md-2-5">2/5</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 
 		<div class="cell md-3-5">3/5</div>
-		<div class="cell cell-auto">auto</div>
+		<div class="cell cell--auto">auto</div>
 	</div>
 	<div class="grid">
 
@@ -316,8 +311,8 @@
 		<div class="cell sm-1-2 md-1-3 lg-1-4 xlg-1-5 flex-grow">sm-1-2 md-1-3 lg-1-4 xlg-1-5 flex-grow</div>
 	</div>
 
-	<h1>Wrapped cells (centering using "flex-justify-center")</h1>
-	<div class="grid flex-justify-center">
+	<h1>Wrapped cells (centering using "test-justify-center")</h1>
+	<div class="grid test-justify-center">
 		<div class="cell s-1-3">1/3</div>
 		<div class="cell s-1-3">1/3</div>
 		<div class="cell s-1-3">1/3</div>
@@ -327,28 +322,25 @@
 	</div>
 
 
-	<h1>Equalize (stretch and vertical center in one shot)</h1>
+	<h1>Equalize (Convert cells in vertical centered columns)</h1>
 
-	<p>The cells will match height by default, this will also center them vertically.</p>
-
-	<div class="grid grid-equalize">
+	<div class="grid grid--equalize">
 		<div class="cell s-1-3">1 ROW</div>
 		<div class="cell s-1-3">1 ROW<br>2 ROW</div>
 		<div class="cell s-1-3">1 ROW<br>2 ROW<br>3 ROW</div>
 	</div>
 
-
 	<h1>Grid Pair / Unpair</h1>
 
 	<p>Diverge or Converge the content of the cells, only usefull with 2 colum layout.</p>
 
-	<div class="grid grid-pair">
-		<div class="cell cell-auto">1</div>
-		<div class="cell cell-auto">2</div>
+	<div class="grid grid--pair">
+		<div class="cell cell--auto">1</div>
+		<div class="cell cell--auto">2</div>
 	</div>
-	<div class="grid grid-unpair">
-		<div class="cell cell-auto">1</div>
-		<div class="cell cell-auto">2</div>
+	<div class="grid grid--unpair">
+		<div class="cell cell--auto">1</div>
+		<div class="cell cell--auto">2</div>
 	</div>
 
 </div>

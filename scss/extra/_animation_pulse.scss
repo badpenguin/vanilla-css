@@ -1,0 +1,44 @@
+@import "../mixin/animation";
+
+@include keyframes(pulse-animation) {
+	0% {
+		opacity: 1;
+		@include transform(scale(1));
+	}
+	50% {
+		opacity: 0;
+		@include transform(scale(1.5));
+	}
+	100% {
+		opacity: 0;
+		@include transform(scale(1.5));
+	}
+}
+
+
+@include keyframes(pulse-animation-opacity) {
+	0% {
+		opacity: 1;
+	}
+	50% {
+
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+// BLINK
+.animate--pulse-opacity {
+	transition: opacity .3s, transform .3s;
+	//animation: pulse-animation-opacity 1s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+	@include animation(pulse-animation-opacity 1s cubic-bezier(0.24, 0, 0.38, 1) infinite);
+
+	&:hover::before {
+		-webkit-animation-play-state: paused; /* Safari 4.0 - 8.0 */
+		animation-play-state: paused;
+	}
+
+}

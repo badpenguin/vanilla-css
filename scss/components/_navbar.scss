@@ -1,160 +1,179 @@
-
-.navbar {
-	display: flex;
-	flex-grow: 1;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	position: relative; // for absolute
-	max-width: 100%;
-}
-
-
-.navbar.scrollable {
-	overflow-y: hidden;
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
-}
-
-
-.navbar-menu {
-	display: flex;
-	flex-grow: 1;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-around;
-	//@extend .flex-wrap;
-
-	// Disallow menu wrapping
-	@extend .flex-wrap-off;
-
-	li  {
-		padding: $vanilla-navbar-li-padding;
-	}
-
-	li > a {
-		display: block;
-	}
-
-	&.flex-center {
-		justify-content: center;
-	}
-}
-
-
-.navbar-menu-left {
-	justify-content: flex-start;
-
-	li:not(:first-child) { // rewrite TODO
-		padding-left: $vanilla-navbar-li-padding;
-	}
-
-}
-
-
-.navbar-menu-right {
-	justify-content: flex-end;
-
-	li:not(:last-child) {
-		padding-right: $vanilla-navbar-li-padding;
-	}
-}
-
-
-.navbar-overlay {
-	position: fixed;
-	z-index: $vanilla-navbar-overlay-zindex;
-	top: 0;
-	bottom: 0;
-	right: 100%;
-	left: initial;
-	height: 100vh;
-	padding: 1rem 0;
-	transition: transform .5s ease;
-	min-width: 280px;
-	background: $vanilla-navbar-overlay-background;
-	color: $vanilla-navbar-overlay-color;
-
-	// NEW
-	overflow-y: auto;
-
-	&.navbar-overlay__right {
-		left: 100%;
-		right: 0;
-	}
-
-	li > a {
-		display: block;
-	}
-
-	li {
-		padding: $vanilla-navbar-li-padding;
-
-		&:hover {
-			background: $vanilla-form-border-color;
-			}
-	}
-}
-
-
-.navbar-overlay-close {
-	display: block;
-	text-align: right;
-	font-size: 200%;
-	padding-right: $vanilla-navbar-li-padding;
-}
-
-
-.navbar-toggle {
-
-	padding: $vanilla-navbar-li-padding;
-
-	& > input[type="checkbox"] {
-		opacity: 0;
-		padding: 0;
-		margin: 0;
-		width: 0;
-	}
-
-	& > input[type="checkbox"]:checked ~ .navbar-overlay {
-
-		// left
-		@include transform(translateX(100%));
-
-		&.navbar-overlay__right {
-			@include transform(translateX(-100%));
-		}
-	}
-
-
-}
-
+@import "../mixin/variables";
+@import "../mixin/flexbox";
+@import "../mixin/animation";
 
 
 @mixin navbar-toggle-on-builder($size,$maxWidth) {
-	@media (max-width: $maxWidth ) {
-		.navbar-toggle-on-#{$size} {
-			.navbar-toggle {
+	@media (max-width: $maxWidth) {
+		.navbar--toggle-on-#{$size} {
+			.navbar__toggle {
 				display: block;
 			}
-			.navbar-menu li:not(.dont-toggle) {
+
+			.navbar__menu li:not(.dont-toggle) {
 				display: none;
 			}
 		}
 	}
 }
 
-.navbar-toggle-on-x-small,
-.navbar-toggle-on-small,
-.navbar-toggle-on-medium,
-.navbar-toggle-on-large {
-	.navbar-toggle {
-		display: none;
-	}
-}
 
-// NOTE: no x-small, x-large or xx-large: does it make sense?
-@include navbar-toggle-on-builder(large,$vanilla-breakpoint-x-large - 1);
-@include navbar-toggle-on-builder(medium,$vanilla-breakpoint-large - 1);
-@include navbar-toggle-on-builder(small,$vanilla-breakpoint-medium - 1);
-@include navbar-toggle-on-builder(x-small,$vanilla-breakpoint-small - 1);
+@if $vanilla-use-navbar == 1 {
+
+	.navbar {
+		display: flex;
+		flex-grow: 1;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		position: relative; // for absolute
+		max-width: 100%;
+	}
+
+
+	.navbar__menu {
+		display: flex;
+		flex-grow: 1;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+
+		// Disallow menu wrapping
+		@include flex-wrap-off;
+
+		li {
+			padding: $vanilla-navbar-li-padding;
+
+		}
+
+		li > a {
+			display: block;
+		}
+
+		&.flex-center {
+			justify-content: center;
+		}
+	}
+
+
+	.navbar--wrap {
+		.navbar__menu {
+			@include flex-wrap;
+		}
+	}
+
+
+	.navbar__menu--left {
+		justify-content: flex-start;
+
+		li:not(:first-child) { // rewrite TODO
+			padding-left: $vanilla-navbar-li-padding;
+		}
+
+	}
+
+
+	.navbar__menu--right {
+		justify-content: flex-end;
+
+		li:not(:last-child) {
+			padding-right: $vanilla-navbar-li-padding;
+		}
+	}
+
+
+	.navbar__overlay {
+		position: fixed;
+		z-index: $vanilla-navbar-overlay-zindex;
+		top: 0;
+		bottom: 0;
+		right: 100%;
+		left: initial;
+		height: 100vh;
+		padding: 1rem 0;
+		transition: transform .5s ease;
+		min-width: 280px;
+		background: $vanilla-navbar-overlay-background;
+		color: $vanilla-navbar-overlay-color;
+
+		// NEW
+		overflow-y: auto;
+
+		&.navbar__overlay--right {
+			left: 100%;
+			right: 0;
+		}
+
+		li > a {
+			display: block;
+		}
+
+		li {
+			padding: $vanilla-navbar-li-padding;
+
+			&:hover {
+				background: $vanilla-form-border-color;
+			}
+		}
+	}
+
+
+	.navbar__overlay__close {
+		display: block;
+		text-align: right;
+		font-size: 200%;
+		padding-right: $vanilla-navbar-li-padding;
+	}
+
+
+	.navbar__toggle {
+
+		padding: $vanilla-navbar-li-padding;
+
+		& > input[type="checkbox"] {
+			opacity: 0;
+			padding: 0;
+			margin: 0;
+			width: 0;
+		}
+
+		& > input[type="checkbox"]:checked ~ .navbar__overlay {
+
+			// left
+			@include transform(translateX(100%));
+
+			&.navbar__overlay--right {
+				@include transform(translateX(-100%));
+			}
+		}
+	}
+
+
+	.navbar--toggle-on-x-small,
+	.navbar--toggle-on-small,
+	.navbar--toggle-on-medium,
+	.navbar--toggle-on-large {
+		.navbar__toggle {
+			display: none;
+		}
+	}
+
+	// NOTE: no x-small, x-large or xx-large: does it make sense?
+	@include navbar-toggle-on-builder(large, $vanilla-breakpoint-x-large - 1);
+	@include navbar-toggle-on-builder(medium, $vanilla-breakpoint-large - 1);
+	@include navbar-toggle-on-builder(small, $vanilla-breakpoint-medium - 1);
+	@include navbar-toggle-on-builder(x-small, $vanilla-breakpoint-small - 1);
+
+
+	// Modifier to make the navbar toggle always visible
+	.navbar--toggle-always {
+		// Make room for the toggle button
+		.navbar__menu {
+			max-width: calc(100vw - 100px);
+		}
+		.navbar__toggle {
+			display: block;
+		}
+	}
+
+}

@@ -1,0 +1,45 @@
+@import "layout";
+
+/**
+ * $ratio must be a % between width and height. i.e. 100% = SQUARE
+ * You have to use a double container <div class="aspect-X-Y"><div class="inner">content</div></div>
+ */
+@mixin aspect-ratio($ratio, $innerClass: '.inner') {
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		display: block;
+		content: "";
+		width: 100%;
+		padding-top: $ratio;
+	}
+	> #{$innerClass}, > iframe {
+		@include fill-parent;
+	}
+}
+
+
+/*
+ * Aspects for images and content
+ */
+
+@mixin aspect-square {
+	@include aspect-ratio(100%);
+}
+
+@mixin aspect-4-3 {
+	@include aspect-ratio(75%);
+}
+
+@mixin aspect-3-2 {
+	@include aspect-ratio(66.66%);
+}
+
+@mixin aspect-15-9 {
+	@include aspect-ratio(60%);
+}
+
+@mixin aspect-16-9 {
+	@include aspect-ratio(56.25%);
+}

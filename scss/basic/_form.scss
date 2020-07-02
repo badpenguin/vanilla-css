@@ -1,0 +1,103 @@
+@import "../mixin/variables";
+@import "../mixin/button";
+@import "../mixin/form";
+
+
+input, select, textarea {
+	padding: 0.5em 0.6em;
+	border: $vanilla-form-border;
+	box-shadow: $vanilla-form-box-shadow;
+	vertical-align: middle;
+	background: $vanilla-form-background;
+
+	@include placeholder() {
+		color: $vanilla-disabled-color;
+	}
+
+	// Fix wordpress theme tester
+	max-width: 100%;
+}
+
+// Body classes not affecting this when changing the select color
+optgroup, option {
+	color: $vanilla-text-color;
+}
+
+
+// Reset IOS
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+	// EXTRA
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	//appearance: none;
+	//-moz-appearance: none;
+	-webkit-appearance: none;
+	//border-radius: 0;
+	//-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+}
+
+
+input[type="color"] {
+	background: $vanilla-form-background;
+	box-shadow: $vanilla-form-box-shadow;
+	border: $vanilla-form-border;
+	padding: 0;
+}
+
+input[type="number"].no-spin {
+
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		margin: 0;
+	}
+}
+
+
+input[type="range"] {
+	margin: 0;
+	border: none;
+	box-shadow: none;
+}
+
+
+::-webkit-file-upload-button {
+	@include button;
+	background: $vanilla-button-primary-background-color;
+	color: $vanilla-button-primary-text-color;
+}
+
+
+fieldset {
+	border: $vanilla-form-border;
+	box-shadow: $vanilla-form-box-shadow;
+}
+
+
+legend {
+	background: white;
+	text-align: center;
+	@extend .h5;
+}
+
+
+// Make clickable elements
+label[for], .pointer {
+	cursor: pointer;
+}
+
+
+.disabled, [disabled] {
+	-webkit-touch-callout: none;
+	pointer-events: none;
+	cursor: not-allowed;
+	color: $vanilla-disabled-color;
+}

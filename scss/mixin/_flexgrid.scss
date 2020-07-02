@@ -1,0 +1,45 @@
+@import "flexbox";
+
+/*
+ * Thanks to
+ * - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+ */
+
+
+@mixin cell-builder($num-cells, $dim:''){
+	@for $i from 1 through $num-cells {
+		@for $j from 1 through $i {
+			.cell.#{$dim}-#{$j}-#{$i}{
+				//@include flex(0, 0, (100%/$i)*$j );
+				flex: 0 0 ((100%/$i)*$j);
+			}
+		}
+	}
+}
+
+
+@mixin flex-item-order-builder($num-cells, $dim:''){
+	@for $i from 0 to $num-cells{
+		.order-#{$dim}-#{$i + 1}{
+			order: ( $i + 1 );
+		}
+	}
+}
+
+
+@mixin flex-grid {
+	display: flex;
+	// Basic Grid
+	flex-direction: row;
+	@include flex-wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: space-between;
+	&.grid-center {
+		justify-content: center;
+	}
+	&.grid-vcenter {
+		align-items: center;
+	}
+}
+

@@ -1,0 +1,76 @@
+@import "../mixin/variables";
+@import "../mixin/breakpoints";
+
+
+@if $vanilla-use-form-layouts == 1 {
+
+
+	/*
+	 * LAYOUT
+	 */
+
+
+	.form-flex {
+		.row {
+			display: flex;
+			flex-direction: row;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			align-items: stretch;
+
+			label {
+				flex-shrink: 1;
+				flex-basis: 30%;
+				align-self: center;
+				padding-right: 0.5rem;
+			}
+
+			label + * {
+				flex-grow: 1;
+				flex-basis: 70%;
+			}
+
+			margin-bottom: 1rem;
+
+			// Become stacked on small
+			@include to_breakpoint(small) {
+
+				label {
+					flex: none;
+					width: 100%;
+				}
+
+				label + * {
+					flex: none;
+					width: 100%;
+				}
+
+			}
+
+		}
+
+	}
+
+
+	/*
+	 * STYLES
+	 */
+
+	.form-rounded {
+		input, select, textarea, fieldset {
+			border-radius: $vanilla-border-radius;
+		}
+	}
+
+
+	.form-flat {
+
+		input, select, textarea, fieldset, ::-webkit-file-upload-button {
+			border: none;
+			box-shadow: none;
+			border-radius: 0;
+		}
+
+	}
+
+}

@@ -6,43 +6,12 @@
 	<meta name="viewport"
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
 	<style>
 
-		.card {
-			display: block;
-			transition: .3s ease;   /* animate the shadow on hover */
-		}
-
-		.card:hover {
-			/* shadow 4 */
-			box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
-		}
-
-		.card .label {
-			padding: 8px 16px;
-		}
-
-		.card .inner {
-			border-bottom: solid 1px #ddd;
-		}
-
-		/* rounted card */
-
-		:root {
-			--radius: 8px;
-		}
-
-		.card.card-rounded {
-			border-radius: var(--radius);
-		}
-
-		.card.card-rounded img {
-			border-radius: var(--radius) var(--radius) 0 0;
-		}
 
 	</style>
 </head>
@@ -52,21 +21,23 @@
 
 	<h1>CARDS (and Image's Filters)</h1>
 
-	<p>Cards are easy to do. No special class is required, just look at the source. Also its possibile to use a loader placeholder without javascript when using aspects.</p>
+	<p>Cards are easy to do. No special class is required, just look at the source. Also its possibile to use a loader
+		placeholder without javascript when using the aspects.</p>
 	<p>1. squared card; 2. rounded card; 3. rounded card with failed image loading</p>
 	<p>Also shadow depth on the cards will increase from left to right</p>
 
-	<div class="grid grid-gutter grid-vgutter">
+	<div class="grid grid--gutter grid--vgutter">
 
 		<div class="cell sm-1-2 md-1-3">
 
 			<div class="card shadow-1">
-				<div class="aspect-4-3 ">
+				<div class="card__top">
 					<div class="inner img-placeholder">
-						<img class="Xfilter-grayscale" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 1">
+						<img class="Xfilter-grayscale" src="https://source.unsplash.com/ROJFuWCsfmA/400x300"
+								alt="Foto 1">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>Architect & Engineer</p>
 				</div>
@@ -76,13 +47,14 @@
 
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
-						<img class="filter-clarendon" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 2">
+						<img class="filter-clarendon" src="https://source.unsplash.com/ROJFuWCsfmA/400x300"
+								alt="Foto 2">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-clarendon & Engineer</p>
 				</div>
@@ -91,16 +63,15 @@
 		</div>
 
 
-
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
 						<img class="filter-gingham" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 3">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-gingham & Engineer</p>
 				</div>
@@ -111,13 +82,13 @@
 
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
 						<img class="filter-lark" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 4">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-lark & Engineer</p>
 				</div>
@@ -127,13 +98,13 @@
 
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
 						<img class="filter-lofi" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 5">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-filter-lofi & Engineer</p>
 				</div>
@@ -142,16 +113,15 @@
 		</div>
 
 
-
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
 						<img class="filter-walden" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 6">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-walden - & Engineer</p>
 				</div>
@@ -161,13 +131,13 @@
 
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
 						<img class="filter-toaster" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 7">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-toaster - & Engineer</p>
 				</div>
@@ -179,13 +149,14 @@
 
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
-						<img class="filter-grayscale" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 8">
+						<img class="filter-grayscale" src="https://source.unsplash.com/ROJFuWCsfmA/400x300"
+								alt="Foto 8">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-grayscale</p>
 				</div>
@@ -195,13 +166,13 @@
 
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
 						<img class="filter-moon" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 9">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-moon & Engineer</p>
 				</div>
@@ -211,13 +182,13 @@
 
 		<div class="cell sm-1-2 md-1-3">
 
-			<div class="card shadow-2 Card-rounded">
-				<div class="aspect-4-3">
+			<div class="card">
+				<div class="card__top">
 					<div class="inner img-placeholder">
 						<img class="filter-inkwell" src="https://source.unsplash.com/ROJFuWCsfmA/400x300" alt="Foto 10">
 					</div>
 				</div>
-				<div class="label">
+				<div class=card__bottom>
 					<h4><b>John Doe</b></h4>
 					<p>filter-inkwell</p>
 				</div>
@@ -226,6 +197,35 @@
 		</div>
 
 	</div>
+
+	<h2>Example</h2>
+
+
+	<code class="small">
+$card-radius: 8px;
+
+.card {
+	display: block;
+	@include shadow-2;
+	transition: .3s ease;
+	border-radius: $card-radius;
+	&:hover {
+		@include shadow-4;
+	}
+}
+.card__top {
+	@include aspect-4-3;
+	.inner {
+		border-bottom: solid 1px #ddd;
+	}
+	img {
+		border-radius: $card-radius $card-radius 0 0;
+	}
+}
+.card__bottom {
+	padding: 8px 16px;
+}
+	</code>
 
 </div>
 

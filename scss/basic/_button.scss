@@ -1,0 +1,31 @@
+@import "../mixin/button";
+@import "../mixin/shadows";
+
+.btn,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+{
+	@include button
+}
+
+
+/*
+ * We only provide the fab--primary class
+ */
+
+@include button-builder(primary, $vanilla-button-primary-background-color, $vanilla-button-primary-text-color, $vanilla-button-primary-active-background-color, $vanilla-button-primary-active-text-color, $vanilla-button-primary-border);
+
+/*
+ * Variations
+ */
+
+// TODO: style outline, clear, squared, rounded (IN LAYOUYT MIXIN)
+
+.btn--material {
+	@include shadow-1;
+	&:hover {
+		@include shadow-3;
+	}
+}

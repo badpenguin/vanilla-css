@@ -1,0 +1,19 @@
+@mixin img-responsive {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+@mixin img-soft-responsive {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+@mixin img-reset {
+  display: initial;
+  max-width: initial;
+  height: initial;
+  width: initial;
+}

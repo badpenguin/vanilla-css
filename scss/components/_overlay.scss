@@ -1,138 +1,153 @@
+@import "../mixin/variables";
+@import "../mixin/animation";
+@import "../mixin/layout";
 
 
-.cover-parent {
-	position: relative;
-	overflow: hidden;
-}
+@if $vanilla-use-overlay == 1 {
 
-.cover-child {
-	@extend .fill-parent;
-
-	&.cover-inline {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		@include transform(translate(-50%,-50%));
-	}
-
-	&.cover-center {
-		display: flex;
-		align-content: center;
-		align-items: center;
-		justify-content: center;
-	}
-
-	&.cover-top {
-		bottom: auto;
-		height: auto;
-	}
-
-	&.cover-bottom {
-		top: auto;
-		height: auto;
-	}
-
-	&.cover-left {
-		right: auto;
-		width: auto;
-	}
-
-	&.cover-right {
-		left: auto;
-		width: auto;
-	}
-
-	&.cover-top-left {
-		bottom: auto;
-		right: auto;
-	}
-
-	&.cover-top-right {
-		bottom: auto;
-		left: auto;
-	}
-
-	&.cover-bottom-left {
-		top: auto;
-		right: auto;
-	}
-
-	&.cover-bottom-right {
-		top: auto;
-		left: auto;
-	}
-
-}
-
-
-.cover-overlay-opacity {
-	.cover-child {
-		opacity: 0;
-		transition: .5s ease;
-		background-color: $vanilla-cover-background-color;
-	}
-
-	&:hover	.cover-child {
-		opacity: 1;
-	}
-}
-
-.cover-overlay-bottom {
-	.cover-child {
-		height: 0;
-		transition: .5s ease;
-		background-color: $vanilla-cover-background-color;
-		top: auto;
-	}
-
-	&:hover	.cover-child {
-		height: 100%;
-	}
-}
-
-
-.cover-overlay-top {
-	.cover-child {
-		bottom: 100%;
-		height: 0;
-		transition: .5s ease;
-		background-color: $vanilla-cover-background-color;
-		//top: auto;
+	.cover-overlay {
+		position: relative;
 		overflow: hidden;
+		display: inline-block;
+
+		// fix img as direct children
+		/*> img {
+			display: block;
+		}*/
 	}
 
-	&:hover	.cover-child {
-		bottom: 0;
-		height: 100%;
-	}
-}
+	.cover-inner {
+		@include fill-parent;
 
-.cover-overlay-left {
-	.cover-child {
-		width: 0;
-		transition: .5s ease;
-		background-color: $vanilla-cover-background-color;
-		overflow: hidden;
+		&.cover-inner--inline {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include transform(translate(-50%, -50%));
+		}
+
+		&.cover-inner--center {
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&.cover-inner--top {
+			bottom: auto;
+			height: auto;
+		}
+
+		&.cover-inner--bottom {
+			top: auto;
+			height: auto;
+		}
+
+		&.cover-inner--left {
+			right: auto;
+			width: auto;
+		}
+
+		&.cover-inner--right {
+			left: auto;
+			width: auto;
+		}
+
+		&.cover-inner--top-left {
+			bottom: auto;
+			right: auto;
+		}
+
+		&.cover-inner--top-right {
+			bottom: auto;
+			left: auto;
+		}
+
+		&.cover-inner--bottom-left {
+			top: auto;
+			right: auto;
+		}
+
+		&.cover-inner--bottom-right {
+			top: auto;
+			left: auto;
+		}
+
 	}
 
-	&:hover	.cover-child {
-		width: 100%;
-	}
-}
 
+	.cover-overlay--opacity {
+		.cover-inner {
+			opacity: 0;
+			transition: .5s ease;
+			background-color: $vanilla-cover-background-color;
+		}
 
-.cover-overlay-right {
-	.cover-child {
-		left: 100%;
-		width: 0;
-		transition: .5s ease;
-		background-color: $vanilla-cover-background-color;
-		//top: auto;
-		overflow: hidden;
+		&:hover .cover-inner {
+			opacity: 1;
+		}
 	}
 
-	&:hover	.cover-child {
-		left: 0;
-		width: 100%;
+
+	.cover-overlay--bottom {
+		.cover-inner {
+			height: 0;
+			transition: .5s ease;
+			background-color: $vanilla-cover-background-color;
+			top: auto;
+		}
+
+		&:hover .cover-inner {
+			height: 100%;
+		}
 	}
+
+
+	.cover-overlay--top {
+		.cover-inner {
+			bottom: 100%;
+			height: 0;
+			transition: .5s ease;
+			background-color: $vanilla-cover-background-color;
+			//top: auto;
+			overflow: hidden;
+		}
+
+		&:hover .cover-inner {
+			bottom: 0;
+			height: 100%;
+		}
+	}
+
+
+	.cover-overlay--left {
+		.cover-inner {
+			width: 0;
+			transition: .5s ease;
+			background-color: $vanilla-cover-background-color;
+			overflow: hidden;
+		}
+
+		&:hover .cover-inner {
+			width: 100%;
+		}
+	}
+
+
+	.cover-overlay--right {
+		.cover-inner {
+			left: 100%;
+			width: 0;
+			transition: .5s ease;
+			background-color: $vanilla-cover-background-color;
+			//top: auto;
+			overflow: hidden;
+		}
+
+		&:hover .cover-inner {
+			left: 0;
+			width: 100%;
+		}
+	}
+
 }

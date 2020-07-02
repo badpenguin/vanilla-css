@@ -6,106 +6,97 @@
 	<meta name="viewport"
 			content="width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 	<link href="vanilla.min.css" rel="stylesheet" type="text/css"/>
-	<link href="menu.css" rel="stylesheet" type="text/css"/>
+	<link href="menu.min.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="vanilla-js.min.js"></script>
 	<script type="text/javascript" src="menu.js"></script>
-	<style>
-		.cover-child {
-			color: #fff;
-		}
-		.cover-parent > img {
-			display: block;
-		}
-	</style>
 </head>
-<body class="test">
+<body>
 
-<div class="container fluid">
+<div class="container container--outer margin-before-h2">
 	<h1>Overlay</h1>
 
-	<p>Overlay are created by adding <code>.cover-parent</code> with the desidered effect to the outer dive.</p>
-	<p>Then, add
-		<code>.cover-child</code> to the overlay div.</p>
+	<p>Overlay are created by adding to a parent container the class <code>.cover-overlay</code> plus the desidered effect's class.</p>
+	<p>Use <code>cover-inner</code> for the hidden overlay divs.</p>
 
-	<div class="cover-parent cover-overlay-opacity inline-block">
+	<div class="cover-overlay cover-overlay--opacity ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 1">
-		<div class="cover-child cover-center">
+		<div class="cover-inner cover-inner--center">
 			overlay-inner
 		</div>
 	</div>
 
-	<h1>Cover Center (max)</h1>
+	<h2>Cover Center (max) with gradient</h2>
 
-	<div class="cover-parent inline-block">
+	<div class="cover-overlay ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 2">
-		<div class="cover-child cover-center test-gradient">
+		<div class="cover-inner cover-inner--center test-cover-gradient">
 			cover-inner
 		</div>
 	</div>
 
-	<h1>Cover Bottom, Top, Left, Right</h1>
+	<h2>Cover Bottom, Top, Left, Right</h2>
 
-	<div class="cover-parent inline-block">
+	<div class="cover-overlay ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 3">
-		<div class="cover-child cover-bottom text-center test-background2">
-			cover-bottom with purple background
+		<div class="cover-inner cover-inner--bottom text-center test-background2">
+			cover-inner--bottom with purple background
 		</div>
 	</div>
 
-	<div class="cover-parent inline-block">
+	<div class="cover-overlay ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 3">
-		<div class="cover-child cover-top text-center test-background2">
-			cover-top
+		<div class="cover-inner cover-inner--top text-center test-background2">
+			cover-inner--top
 		</div>
 	</div>
 
-	<div class="cover-parent inline-block">
+	<div class="cover-overlay ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 3">
-		<div class="cover-child cover-left text-center test-background2">
-			cover-left
+		<div class="cover-inner cover-inner--left text-center test-background2">
+			cover-inner--left
 		</div>
 	</div>
 
-	<div class="cover-parent inline-block">
+	<div class="cover-overlay ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 3">
-		<div class="cover-child cover-right text-center test-background2">
-			cover-right
+		<div class="cover-inner cover-inner--right text-center test-background2">
+			cover-inner--right
 		</div>
 	</div>
 
-	<h1>Overlay Bottom</h1>
+	<h2>Overlay Bottom</h2>
 
-	<div class="cover-parent cover-overlay-bottom inline-block">
+	<div class="cover-overlay cover-overlay--bottom ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 4">
-		<div class="cover-child cover-center">
-			cover-overlay-bottom
+		<div class="cover-inner cover-inner--center">
+			cover-overlay--bottom
 		</div>
 	</div>
 
-	<h1>Overlay Top</h1>
+	<h2>Overlay Top</h2>
 
-	<div class="cover-parent cover-overlay-top inline-block">
+	<div class="cover-overlay cover-overlay--top ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 5">
-		<div class="cover-child cover-center">
-			cover-overlay-top
+		<div class="cover-inner cover-inner--center">
+			cover-overlay--top
 		</div>
 	</div>
 
-	<h1>Overlay Left</h1>
+	<h2>Overlay Left</h2>
 
-	<div class="cover-parent cover-overlay-left inline-block">
+	<div class="cover-overlay cover-overlay--left ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 6">
-		<div class="cover-child cover-center">
-			cover-overlay-left
+		<div class="cover-inner cover-inner--center">
+			cover-overlay--left
 		</div>
 	</div>
 
-	<h1>Overlay Right</h1>
+	<h2>Overlay Right</h2>
 
-	<div class="cover-parent cover-overlay-right inline-block">
+	<div class="cover-overlay cover-overlay--right ">
 		<img class="display-block" src="https://unsplash.it/400/300" alt="Foto 7">
-		<div class="cover-child cover-center">
-			cover-overlay-right
+		<div class="cover-inner cover-inner--center">
+			cover-overlay--right
 		</div>
 	</div>
 

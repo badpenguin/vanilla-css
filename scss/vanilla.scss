@@ -5,56 +5,33 @@
 /*
  * You can avoid importing all the "components" if you do not need them.
  */
-@import "core/mixins";
-@import "core/variables";
-
-// RESET
-@import "core/reset";
-// We set native font and basic to use REM
-@import "core/fonts";
+//@import "core/mixins";
+//@import "core/variables";
 
 
-// Basic (also some reset merge)
+// MINIMAL SETTINGS
+@import "basic/reset";
 @import "basic/typography";
-@import "basic/images";
-@import "basic/buttons";
+@import "basic/button";
+@import "basic/image";
+@import "basic/form";
+
+// MINIMAL FEATURES
 @import "basic/table";
-@import "grid/breakpoints";
-@import "basic/forms";
+@import "basic/flexbox";
+@import "basic/flexgrid";
+@import "basic/container";
+@import "basic/utils";
+@import "basic/hover"; // dropdown
+@import "basic/article";
 
-// Grid Layout
-@import "grid/flexbox";
-@import "grid/grid";
-@import "grid/layout";
-
-// Components
-@import "components/grid_extra";
-@import "components/flexbox_utils";
+// COMPONENTS
+@import "components/form_layout";
 @import "components/image_filters";
 @import "components/visibility";
-
-@import "components/overlay";
-@import "components/position";
-@import "components/float";
-@import "components/shadows";
-
+@import "components/overlay"; //cover
+@import "components/animations";
 @import "components/navbar";
-@import "components/hover";
+@import "components/wordpress";
+@import "components/wordpress_gutenberg";
 
-// WP
-@import "components/medium_typography";
-@import "components/wp-general";
-@import "components/wp-gutenberg";
-
-// Rarely used
-@import "components/fabs";
-@import "components/pulse";
-@import "components/misc";
-@import "components/spinner";
-
-// Animations - requires Vanilla JS to add the "animate-when-visible" class
-@import "animations/animations";
-
-
-// Include general rules at the end so them can be used to override any other of the above components
-@import "core/general";
