@@ -3,3 +3,7 @@
 .m-top {
 	margin-top: $vanilla-vertical-spacing;
 }
+
+.m-center {
+	@include margin-center;
+}
