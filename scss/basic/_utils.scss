@@ -1,7 +1,11 @@
 @import "../mixin/variables";
 
 .m-top {
-	margin-top: $vanilla-vertical-spacing;
+	margin-top: $vanilla-vertical-spacing !important;
+}
+
+.m-top-2 {
+	margin-top: $vanilla-vertical-spacing * 2 !important;
 }
 
 .m-center {
