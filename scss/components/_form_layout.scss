@@ -26,8 +26,10 @@
 			}
 
 			label + * {
-				flex-grow: 1;
-				flex-basis: 70%;
+				// IE11 fails
+				//flex-grow: 1;
+				//flex-basis: 70%;
+				flex: 1;
 			}
 
 			margin-bottom: 1rem;
