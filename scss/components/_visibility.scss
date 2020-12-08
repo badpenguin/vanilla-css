@@ -45,6 +45,11 @@
 	/*
      * Visibile from 0 "upto" breaking
      */
+	@media (min-width: $vanilla-breakpoint-medium) {
+		.visible-to-small {
+			display: none !important;
+		}
+	}
 
 	@media (min-width: $vanilla-breakpoint-large) {
 		.visible-to-medium {

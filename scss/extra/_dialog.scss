@@ -1,0 +1,105 @@
+/*
+ * Dialog's Classes used by Vanilla-JS in $dialog
+ */
+
+@import "../mixin/variables";
+@import "../mixin/layout";
+@import "../mixin/shadows";
+@import "../mixin/breakpoints";
+
+
+.dialog-backdrop {
+	@include fill-parent;
+	@include flex-row-center;
+
+	// Behavior
+	position: fixed;
+	z-index: $vanilla-navbar-dialog-zindex;
+	overflow-y: auto;
+
+	// Style
+	background: rgba(0, 0, 0, 0.75);
+
+	// Animation
+	opacity: 0;
+	visibility: hidden;
+	transition: visibility 0s linear 0.1s, opacity 0.3s ease;
+
+	&.open {
+		visibility: visible;
+		opacity: 1;
+		transition-delay: 0s;
+	}
+}
+
+.dialog-backdrop--error {
+	.dialog-window {
+		border: solid 2px $vanilla-form-error-color;
+	}
+	.dialog-window__title {
+		color: $vanilla-form-error-color;
+	}
+}
+
+
+.dialog-window {
+	@include flex-row-center;
+	@include shadow-5;
+	position: relative;
+
+	// Style
+	background: #fff;
+	border-radius: 10px;
+
+	// Responsive
+	max-width: 95vw;
+}
+
+
+.dialog-window__close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 1.5rem;
+	background: transparent;
+	padding: 0 8px;
+}
+
+
+.dialog-window__inner {
+	padding: 1.5rem 1rem;
+}
+
+
+.dialog-window__title {
+	@extend .h3;
+	text-align: center;
+	//font-weight: bold;
+	//font-size: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding: 0 2rem;
+}
+
+
+.dialog-window__content {
+	margin-bottom: 2rem;
+	padding: 0;
+	@include from_breakpoint(medium) {
+		padding: 0 2rem;
+	}
+}
+
+.dialog-window__spinner {
+	margin-bottom: 1rem;
+}
+
+.dialog-window__buttons {
+	@include flex-row-center;
+	justify-content: space-around;
+
+	button {
+		margin: 0 4px;
+	}
+
+}

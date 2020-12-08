@@ -19,6 +19,11 @@
 }
 
 
+@mixin font-extra-antialias {
+	text-shadow: 0 0 1px rgba(51,51,51,0.5);
+}
+
+
 @mixin text-mono {
 	font-family: $vanilla-fontstack-mono;
 	tab-size: 3;
