@@ -132,6 +132,11 @@ small, .text-small { font-size: 80%; }
 // Weight
 .text-bold {  font-weight: 700;}
 
+// Case
+.text-upper {
+	text-transform: uppercase;
+}
+
 // H-ALIGN
 .text-left		{ text-align: left; }
 .text-right		{ text-align: right; }

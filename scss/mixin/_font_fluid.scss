@@ -1,4 +1,5 @@
 @import "font_units";
+@import "breakpoints";
 
 /*
  * Fluid Typography - https://css-tricks.com/snippets/css/fluid-typography/
@@ -76,6 +77,21 @@
 		@media screen and (min-width: $max-vw) {
 			#{$name}: $max-font-size;
 		}
+	}
+
+}
+
+
+
+@mixin padding-responsive($small,$medium,$large) {
+	padding: $small;
+
+	@include from_breakpoint(medium) {
+		padding: $medium;
+	}
+
+	@include from_breakpoint(large) {
+		padding: $large;
 	}
 
 }
