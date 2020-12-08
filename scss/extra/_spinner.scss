@@ -63,11 +63,6 @@
 }
 
 
-/*
- * Basic Usage
- */
-
-
 .img-placeholder {
 	display: block;
 
@@ -78,3 +73,57 @@
 	}
 }
 
+
+.spinner1 {
+	@include spinner1;
+}
+
+
+/*
+ * FROM: https://projects.lukehaas.me/css-loaders/
+ */
+
+$vanilla-spinner2-size: 3rem;
+
+@mixin spinner2 {
+	position: relative;
+	color: transparent;
+
+	margin: 0 auto;
+	font-size: 10px;
+	//text-indent: -9999em;
+	border-top: 1.1em solid rgba($vanilla-disabled-color, 0.2);
+	border-right: 1.1em solid rgba($vanilla-disabled-color, 0.2);
+	border-bottom: 1.1em solid rgba($vanilla-disabled-color, 0.2);
+	border-left: 1.1em solid $vanilla-primary-color;
+
+	@include transform(translateZ(0));
+	@include animation(spinner2 1.1s infinite linear);
+
+	border-radius: 50%;
+	width: $vanilla-spinner2-size;
+	height: $vanilla-spinner2-size;
+
+	&::after {
+		border-radius: 50%;
+		//width: $vanilla-spinner2-size;
+		//height: $vanilla-spinner2-size;
+	}
+}
+
+
+@include keyframes(spinner2) {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+
+.spinner2 {
+	@include spinner2;
+}

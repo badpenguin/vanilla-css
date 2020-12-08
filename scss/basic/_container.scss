@@ -16,7 +16,7 @@ $vanilla-container-padding-px: rem2px($vanilla-container-padding);
 
 	max-width: $vanilla-container-standard-size;
 
-	.container--outer {
+	&.container--outer {
 		@media (max-width: ($vanilla-container-standard-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
 			padding-left: $vanilla-container-padding;
 			padding-right: $vanilla-container-padding;
@@ -31,7 +31,7 @@ $vanilla-container-padding-px: rem2px($vanilla-container-padding);
 
 	max-width: $vanilla-container-small-size;
 
-	.container--outer {
+	&.container--outer {
 		@media (max-width: ($vanilla-container-small-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
 			padding-left: $vanilla-container-padding;
 			padding-right: $vanilla-container-padding;
@@ -45,7 +45,7 @@ $vanilla-container-padding-px: rem2px($vanilla-container-padding);
 
 	max-width: $vanilla-container-large-size;
 
-	.container--outer {
+	&.container--outer {
 		@media (max-width: ($vanilla-container-large-size+$vanilla-container-padding-px+$vanilla-container-padding-px)) {
 			padding-left: $vanilla-container-padding;
 			padding-right: $vanilla-container-padding;

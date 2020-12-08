@@ -1,4 +1,5 @@
 @import "variables";
+@import "breakpoints";
 
 
 @mixin button {
@@ -17,9 +18,22 @@
 
 
 	&:hover, &:focus, &:active {
-	//	@include filter(alpha(opacity=90));
-		opacity: 0.9;
+		//opacity: 0.9; NOTE: removed because generate a bad effect
 		background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+	}
+
+	&.btn--flat {
+		border: none;
+		border-radius: 0;
+	}
+
+	&.btn--large {
+		padding: 0.5rem 2rem;
+
+		@include from_breakpoint('medium') {
+			padding: 0.5rem 3rem;
+		}
+
 	}
 
 }
@@ -55,10 +69,6 @@
 
 		}
 
-		&.btn--flat {
-			border: none;
-			border-radius: 0;
-		}
 
 	}
 }

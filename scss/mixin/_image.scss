@@ -8,7 +8,7 @@
 	width: auto;
 	max-width: 100%;
 	height: auto;
-	display: block;
+	display: inline-block; // 2020.10.04
 }
 
 @mixin img-reset {
