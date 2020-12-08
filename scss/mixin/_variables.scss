@@ -50,6 +50,7 @@ $vanilla-border-radius: 4px !default;
 
 // MATERIAL COLORS
 $vanilla-primary-color: #03A9F4 !default;
+$vanilla-primary-reverse-color: $vanilla-alt-text-color !default;
 
 // COMPLEMENTARY COLORS
 // https://www.sessions.edu/color-calculator/
@@ -73,7 +74,7 @@ $vanilla-form-background: rgba(0,0,0,.03) !default;
 $vanilla-form-border-color: rgba(0,0,0,.1) !default;
 $vanilla-form-border: 1px solid $vanilla-form-border-color !default;
 $vanilla-form-box-shadow: inset 0 1px 3px $vanilla-form-border-color !default;
-
+$vanilla-form-error-color: #f45303;
 
 // GRID
 $vanilla-breakpoint-small: 480px !default;
@@ -90,7 +91,7 @@ $vanilla-navbar-li-padding: 1rem !default;
 $vanilla-navbar-li-spacing: 2rem !default;
 $vanilla-navbar-overlay-background: #ddd !default; //#444 !default;
 $vanilla-navbar-overlay-color: $vanilla-text-color !default;
-$vanilla-navbar-overlay-zindex: 99;
+
 
 // SECTION
 $vanilla-section-background-color: #f8f8f8;
@@ -101,7 +102,7 @@ $vanilla-hover-background: $vanilla-section-background-color !default;
 $vanilla-hover-color: $vanilla-text-color !default;
 $vanilla-hover-active-background: $vanilla-form-border-color !default;
 $vanilla-hover-active-color: $vanilla-text-color !default;
-$vanilla-hover-zindex: 89;
+
 
 // COVER/OVERLAY
 $vanilla-cover-background-color: rgba(0,0,0,.5);
@@ -114,9 +115,13 @@ $vanilla-vertical-spacing: 1rem !default;
 $vanilla-vertical-spacing-medium: $vanilla-vertical-spacing * 2 !default;
 $vanilla-vertical-spacing-large: $vanilla-vertical-spacing * 3 !default;
 
-
 // LAYOUT
 $vanilla-container-large-size: 1100px !default;
 $vanilla-container-standard-size: 1000px !default;
 $vanilla-container-small-size: 700px !default;
 $vanilla-container-full-size: 1920px !default;
+
+// Z-INDEX
+$vanilla-hover-zindex: 89;
+$vanilla-navbar-overlay-zindex: 99;
+$vanilla-navbar-dialog-zindex: 100;
