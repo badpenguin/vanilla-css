@@ -95,3 +95,17 @@
 	}
 
 }
+
+
+@mixin css-responsive($name, $small,$medium,$large) {
+	#{$name}: $small;
+
+	@include from_breakpoint(medium) {
+		#{$name}: $medium;
+	}
+
+	@include from_breakpoint(large) {
+		#{$name}: $large;
+	}
+
+}

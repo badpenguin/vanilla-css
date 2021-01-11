@@ -41,5 +41,8 @@
 	&.grid--vcenter {
 		align-items: center;
 	}
+	&.grid--vend {
+		align-items: flex-end;
+	}
 }
 
