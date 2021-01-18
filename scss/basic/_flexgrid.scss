@@ -75,6 +75,17 @@
 		}
 	}
 
+	&.grid--gutter--small
+	{
+		margin-right: -($vanilla-grid-gutter-size/4);
+		margin-left: -($vanilla-grid-gutter-size/4);
+
+		> .cell {
+			padding-right: ($vanilla-grid-gutter-size/4);
+			padding-left: ($vanilla-grid-gutter-size/4);
+		}
+	}
+
 	&.grid--vgutter {
 
 		margin-bottom: -$vanilla-grid-gutter-size;
