@@ -1,0 +1,12 @@
+
+.grid--debug {
+	background: #aaffaa;
+}
+
+.grid--debug .cell:nth-child(odd) {
+	background: #ffaaaa;
+}
+
+.grid--debug .cell:nth-child(even) {
+	background: #aaaaff;
+}

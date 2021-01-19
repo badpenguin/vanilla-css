@@ -23,13 +23,15 @@
 			flex: 1 0 0;
 		}
 
+		// NOTE: 2021.01.19 adding "!important" allowed to control the cell at "XS" using "s-1-X" class.
+
 		// ... or can grow automatically
 		.cell {
 			&.cell--auto {
-				flex: 1 0 auto;
+				flex: 1 0 auto !important;
 			}
 			&.cell--size {
-				flex: 0 0 auto;
+				flex: 0 0 auto !important;
 			}
 		}
 
