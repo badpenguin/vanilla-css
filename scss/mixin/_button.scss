@@ -51,7 +51,7 @@
 		text-decoration: none;
 		transition: all .3s ease-in-out;
 
-		&:hover, &:focus, &:active {
+		&:hover, &:focus, &:active, &.btn--active {
 			background-color: $color-active;
 			color: $color-active-text;
 			text-decoration: none;
@@ -62,7 +62,7 @@
 			background-color: transparent;
 			border: solid 1px $color;
 
-			&:hover, &:focus, &:active {
+			&:hover, &:focus, &:active, &.btn--active {
 				background-color: $color-active;
 				color: $color-active-text;
 			}

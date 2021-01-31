@@ -10,7 +10,7 @@ article, .article, .entry-content {
 
 	p a:not(.btn) {
 		//@extend .link-underline;
-		color: $vanilla-primary-color;
+		color: $vanilla-link-color;
 	}
 
 	ul, ol {
@@ -22,7 +22,7 @@ article, .article, .entry-content {
 			line-height: 1.5;
 
 			a {
-				color: $vanilla-primary-color;
+				color: $vanilla-link-color;;
 			}
 		}
 	}

@@ -92,7 +92,7 @@
 		height: 100vh;
 		padding: 1rem 0;
 		transition: transform .5s ease;
-		min-width: 280px;
+		min-width: 290px;
 		background: $vanilla-navbar-overlay-background;
 		color: $vanilla-navbar-overlay-color;
 
@@ -126,6 +126,23 @@
 	}
 
 
+	/* NEW */
+	.navbar__overlay__backdrop {
+		background: darken($vanilla-navbar-overlay-background,10%);
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		transition: all .5s ease-in-out;
+		z-index: $vanilla-navbar-backdrop-zindex;
+		//display: none;
+	}
+
+
 	.navbar__toggle {
 
 		padding: $vanilla-navbar-li-padding;
@@ -146,6 +163,12 @@
 				@include transform(translateX(-100%));
 			}
 		}
+
+		& > input[type="checkbox"]:checked ~ .navbar__overlay__backdrop {
+			display: block;
+			opacity: .5;
+		}
+
 	}
 
 
@@ -157,6 +180,7 @@
 			display: none;
 		}
 	}
+
 
 	// NOTE: no x-small, x-large or xx-large: does it make sense?
 	@include navbar-toggle-on-builder(large, $vanilla-breakpoint-x-large - 1);

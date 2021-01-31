@@ -51,6 +51,7 @@ $vanilla-border-radius: 4px !default;
 // MATERIAL COLORS
 $vanilla-primary-color: #03A9F4 !default;
 $vanilla-primary-reverse-color: $vanilla-alt-text-color !default;
+$vanilla-link-color: $vanilla-primary-color !default;
 
 // COMPLEMENTARY COLORS
 // https://www.sessions.edu/color-calculator/
@@ -123,5 +124,6 @@ $vanilla-container-full-size: 1920px !default;
 
 // Z-INDEX
 $vanilla-hover-zindex: 89 !default;
+$vanilla-navbar-backdrop-zindex: 98 !default;
 $vanilla-navbar-overlay-zindex: 99 !default;
 $vanilla-navbar-dialog-zindex: 100 !default;
