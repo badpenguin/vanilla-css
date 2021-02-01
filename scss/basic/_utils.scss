@@ -8,6 +8,14 @@
 	margin-top: $vanilla-vertical-spacing * 2 !important;
 }
 
+.m-bottom {
+	margin-bottom: $vanilla-vertical-spacing !important;
+}
+
+.m-bottom-2 {
+	margin-bottom: $vanilla-vertical-spacing * 2 !important;
+}
+
 .m-center {
 	@include margin-center;
 }

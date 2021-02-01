@@ -29,6 +29,13 @@
 	@return strip-unit($value / 16 ) * 1rem;
 }
 
+
+// TODO
+@function px2em($value) {
+	@return strip-unit($value / 16 ) * 1em;
+}
+
+
 // Convert PSD Tracking to rem
 @function kerning($unit) {
 	@return ($unit / 1000)+rem;
