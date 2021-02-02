@@ -107,6 +107,22 @@
 		}
 	}
 
+	&.grid--vgutter--small {
+
+		margin-bottom: -($vanilla-grid-gutter-size/2);
+
+		> .cell {
+			margin-bottom: ($vanilla-grid-gutter-size/2);
+		}
+
+		@media(max-width: $vanilla-breakpoint-medium) {
+			margin-bottom: -($vanilla-grid-gutter-size/4);
+			> .cell {
+				margin-bottom: ($vanilla-grid-gutter-size/4);
+			}
+		}
+	}
+
 	// Add space between grid following each others - cancel it using a parent container
 	&.grid--vgutter + .grid--vgutter {
 		margin-top: $vanilla-grid-gutter-size;
