@@ -30,9 +30,11 @@
 			&.cell--auto {
 				flex: 1 0 auto !important;
 			}
+
 			&.cell--size {
 				flex: 0 0 auto !important;
 			}
+
 			&.cell--any {
 				flex: 1 1 auto !important;
 			}
@@ -69,8 +71,7 @@
 
 	// GUTTER (it still needs a bit more testing)
 
-	&.grid--gutter
-	{
+	&.grid--gutter {
 		margin-right: -($vanilla-grid-gutter-size/2);
 		margin-left: -($vanilla-grid-gutter-size/2);
 
@@ -80,8 +81,7 @@
 		}
 	}
 
-	&.grid--gutter--small
-	{
+	&.grid--gutter--small {
 		margin-right: -($vanilla-grid-gutter-size/4);
 		margin-left: -($vanilla-grid-gutter-size/4);
 
@@ -149,4 +149,36 @@
 
 .flex-shrink, .grid .cell.flex-shrink {
 	flex-shrink: 1;
+}
+
+
+@if $vanilla-fix-ie11-flexbox {
+	_:-ms-fullscreen, :root {
+		.grid {
+			.cell {
+				max-width: 100%;
+			}
+
+			// Fixed size cells, non-responsive
+			@include cell-builder-ie11-fix(5, 's');
+
+			// Responsive Cells
+			@include from_breakpoint(small) {
+				@include cell-builder-ie11-fix(5, 'sm');
+			}
+			@include from_breakpoint(medium) {
+				@include cell-builder-ie11-fix(5, 'md');
+			}
+			@include from_breakpoint(large) {
+				@include cell-builder-ie11-fix(5, 'lg');
+			}
+			@include from_breakpoint(x-large) {
+				@include cell-builder-ie11-fix(5, 'xlg');
+			}
+			@include from_breakpoint(xx-large) {
+				@include cell-builder-ie11-fix(5, 'xxlg');
+			}
+
+		}
+	}
 }

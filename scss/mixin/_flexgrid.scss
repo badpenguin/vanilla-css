@@ -1,3 +1,4 @@
+@import "variables";
 @import "flexbox";
 
 /*
@@ -6,10 +7,10 @@
  */
 
 
-@mixin cell-builder($num-cells, $dim:''){
+@mixin cell-builder($num-cells, $dim:'') {
 	@for $i from 1 through $num-cells {
 		@for $j from 1 through $i {
-			.cell.#{$dim}-#{$j}-#{$i}{
+			.cell.#{$dim}-#{$j}-#{$i} {
 				//@include flex(0, 0, (100%/$i)*$j );
 				flex: 0 0 ((100%/$i)*$j);
 			}
@@ -17,11 +18,22 @@
 	}
 }
 
+@mixin cell-builder-ie11-fix($num-cells, $dim:'') {
+	@for $i from 1 through $num-cells {
+		@for $j from 1 through $i {
+			.cell.#{$dim}-#{$j}-#{$i} {
+				//@include flex(0, 0, (100%/$i)*$j );
+				max-width: percentage($j / $i);
+			}
+		}
+	}
+}
 
-@mixin flex-item-order-builder($num-cells, $dim:''){
-	@for $i from 0 to $num-cells{
-		.order-#{$dim}-#{$i + 1}{
-			order: ( $i + 1 );
+
+@mixin flex-item-order-builder($num-cells, $dim:'') {
+	@for $i from 0 to $num-cells {
+		.order-#{$dim}-#{$i + 1} {
+			order: ($i + 1);
 		}
 	}
 }
