@@ -81,7 +81,7 @@
 		}
 	}
 
-	&.grid--gutter--small {
+	&.grid--gutter-small {
 		margin-right: -($vanilla-grid-gutter-size/4);
 		margin-left: -($vanilla-grid-gutter-size/4);
 
@@ -107,7 +107,7 @@
 		}
 	}
 
-	&.grid--vgutter--small {
+	&.grid--vgutter-small {
 
 		margin-bottom: -($vanilla-grid-gutter-size/2);
 
@@ -152,7 +152,7 @@
 }
 
 
-@if $vanilla-fix-ie11-flexbox {
+@if $vanilla-fix-ie11-flexbox == 1 {
 	_:-ms-fullscreen, :root {
 		.grid {
 			.cell {
