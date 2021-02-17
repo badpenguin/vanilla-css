@@ -61,6 +61,12 @@
      * Visibile "from" breakpoint to max
      */
 
+	@media (max-width: $vanilla-breakpoint-small - 1) {
+		.visible-from-small {
+			display: none !important;
+		}
+	}
+
 	@media (max-width: $vanilla-breakpoint-medium - 1) {
 		.visible-from-medium {
 			display: none !important;

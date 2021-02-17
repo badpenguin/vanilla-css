@@ -18,3 +18,7 @@
 .flex-col {
 	@include flex-col-center;
 }
+
+.flex-wrap-off {
+	@include flex-wrap-off;
+}
