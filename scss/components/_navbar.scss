@@ -152,6 +152,7 @@
 			padding: 0;
 			margin: 0;
 			width: 0;
+			position: absolute;
 		}
 
 		& > input[type="checkbox"]:checked ~ .navbar__overlay {
