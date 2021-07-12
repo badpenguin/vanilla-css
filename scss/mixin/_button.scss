@@ -28,10 +28,15 @@
 	}
 
 	&.btn--large {
-		padding: 0.5rem 2rem;
+
+		@include from_breakpoint('small') {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
 
 		@include from_breakpoint('medium') {
-			padding: 0.5rem 3rem;
+			padding-left: 3rem;
+			padding-right: 3rem;
 		}
 
 	}
