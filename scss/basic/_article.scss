@@ -2,7 +2,7 @@
 @import "../mixin/layout";
 
 
-article, .article, .entry-content {
+.article, .entry-content {
 
 	h2, h3, h4, h5, h6 {
 		//margin-top: 2rem; // TODO
@@ -56,3 +56,4 @@ article, .article, .entry-content {
 	}
 
 }
+

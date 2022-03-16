@@ -12,7 +12,7 @@ $vanilla-container-padding-px: rem2px($vanilla-container-padding);
 
 
 .container {
-	@extend .container-full;
+	@include container;
 
 	max-width: $vanilla-container-standard-size;
 
@@ -27,7 +27,7 @@ $vanilla-container-padding-px: rem2px($vanilla-container-padding);
 
 
 .container-small {
-	@extend .container-full;
+	@include container;
 
 	max-width: $vanilla-container-small-size;
 
@@ -41,7 +41,7 @@ $vanilla-container-padding-px: rem2px($vanilla-container-padding);
 
 
 .container-large {
-	@extend .container-full;
+	@include container;
 
 	max-width: $vanilla-container-large-size;
 

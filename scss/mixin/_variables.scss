@@ -2,19 +2,12 @@
  * Optional components
  */
 $vanilla-use-form-layouts: 1 !default;
-$vanilla-use-image-filters: 1 !default;
 $vanilla-use-visibility: 1 !default;
 $vanilla-use-overlay: 1 !default;
 $vanilla-use-animations: 1 !default;
 $vanilla-use-navbar: 1 !default;
-
-// OLD
 $vanilla-use-wordpress: 1 !default;
-$vanilla-use-medium: 1 !default;
-$vanilla-use-pulse: 1 !default;
-$vanilla-use-grid-extra: 1 !default;
-$vanilla-use-fabs: 1 !default;
-$vanilla-use-spinner: 1 !default;
+
 
 /*
  * Constants (don't  !default)
@@ -35,7 +28,7 @@ $vanilla-fontstack-mono: $native-family-monospace !default;
 $vanilla-fontstack-serif: $generic-family-serif !default;
 
 // Medium uses different headers
-$vanilla-fontstack-headers: if($vanilla-use-medium == 1, $generic-family-headers, $native-family-base ) !default;
+$vanilla-fontstack-headers: $generic-family-headers !default;
 
 
 /*

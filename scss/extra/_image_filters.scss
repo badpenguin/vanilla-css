@@ -1,0 +1,89 @@
+@import "../mixin/variables";
+@import "../mixin/animation";
+
+
+/*
+ * Thanks to
+ * https://www.w3schools.com/howto/howto_css_image_effects.asp
+ */
+
+.filter-grayscale {
+	@include filter(grayscale(100%));
+}
+
+.filter-blur {
+	@include filter(blur(5px));
+}
+
+
+/*
+ * FOR MORE FILTERS JUST SEE/USE:
+ * - https://github.com/picturepan2/instagram.css
+ * - https://github.com/una/CSSgram
+ */
+
+// Clarendon Filter
+.filter-clarendon {
+	@include filter(sepia(.15) contrast(1.25) brightness(1.25) hue-rotate(5deg));
+
+	&::before {
+		background: rgba(127, 187, 227, .4);
+		content: "";
+		mix-blend-mode: overlay;
+	}
+}
+
+// Gingham Filter
+.filter-gingham {
+	@include filter(contrast(1.1) brightness(1.1));
+
+	&::before {
+		background: rgb(230, 230, 230);
+		content: "";
+		mix-blend-mode: soft-light;
+	}
+}
+
+// Lark Filter
+.filter-lark {
+	@include filter(sepia(.25) contrast(1.2) brightness(1.3) saturate(1.25));
+}
+
+// Lo-Fi Filter
+.filter-lofi {
+	@include filter(saturate(1.1) contrast(1.5));
+}
+
+
+.filter-moon {
+	@include filter(brightness(1.4) contrast(.95) saturate(0) sepia(.35));
+}
+
+// Inkwell Filter
+.filter-inkwell {
+	@include filter(brightness(1.25) contrast(.85) grayscale(1));
+}
+
+
+// Walden Filter
+.filter-walden {
+	@include filter(sepia(.35) contrast(.8) brightness(1.25) saturate(1.4));
+
+	&::before {
+		background: rgba(229, 240, 128, .5);
+		content: "";
+		mix-blend-mode: darken;
+	}
+}
+
+// Toaster Filter
+.filter-toaster {
+	@include filter(sepia(.25) contrast(1.5) brightness(.95) hue-rotate(-15deg));
+
+	&::before {
+		background: radial-gradient(circle, rgb(128, 78, 15), rgba(0, 0, 0, .25));
+		content: "";
+		mix-blend-mode: screen;
+	}
+}
+
