@@ -1,5 +1,5 @@
 var menu = [
-	['index.html', 'Vanilla CSS', 'home dont-toggle'],
+	['index.html', 'Vanilla CSS v3', 'home dont-toggle'],
 	['10.typography.html', 'Typography', ''],
 	['11.article.html', 'Article', ''],
 	['20.images.html', 'Image', ''],
